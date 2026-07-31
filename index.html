@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sánchez & Sánchez — Pizzería y Cafetería en Almagro</title>
+<meta name="description" content="Sánchez & Sánchez, pizzería y cafetería en Almagro (CABA) hace más de 20 años. Mirá la carta, pedí delivery por WhatsApp, Mercado Pago, Rappi o PedidosYa.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:title" content="Sánchez & Sánchez — Pizzería y Cafetería en Almagro">
+<meta property="og:description" content="Pizzería y Cafetería en Almagro (CABA) · Más de 20 años en el barrio. Carta completa, delivery y ubicación.">
+<meta property="og:image" content="img/og-cover.svg"><!-- REEMPLAZAR: idealmente por img/og-cover.jpg (1200x630) real para compartir en redes -->
+<meta property="og:locale" content="es_AR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Schema.org LocalBusiness / Restaurant -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Sánchez & Sánchez",
+  "image": "img/og-cover.svg",
+  "servesCuisine": ["Pizza", "Cafetería", "Comida argentina"],
+  "priceRange": "$$",
+  "telephone": "+5491159273756",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Rivadavia 3399",
+    "addressLocality": "CABA",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "07:00",
+      "closes": "23:59"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "01:00"
+    }
+  ],
+  "sameAs": [
+    "https://instagram.com/sanchezysanchez_ok"
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand">Sánchez <span>&</span> Sánchez</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#menu">Carta</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#contacto">Ubicación</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <!-- REEMPLAZAR: img/hero-bg.svg por foto real de pizza / mesa servida (ej. img/hero-bg.jpg) -->
+  <div class="hero__bg" style="background-image:url('img/hero-bg.svg');"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">Almagro · CABA</p>
+    <h1 class="hero__title">Sánchez <span>&amp;</span> Sánchez</h1>
+    <p class="hero__subtitle">Pizzería y Cafetería en Almagro · desde hace más de 20 años</p>
+    <div class="hero__actions">
+      <a href="#menu" class="btn btn--primary">Ver la carta</a>
+      <a href="#delivery" class="btn btn--outline">Pedir delivery</a>
+    </div>
+  </div>
+  <a href="#nosotros" class="hero__scroll" aria-label="Bajar">
+    <span></span>
+  </a>
+</section>
+
+<!-- ===== SOBRE NOSOTROS ===== -->
+<section class="about" id="nosotros">
+  <div class="container about__grid">
+    <div class="about__text">
+      <p class="eyebrow">Nuestra historia</p>
+      <h2>Más de 20 años en el corazón de Almagro</h2>
+      <p>Hace más de dos décadas abrimos las puertas de Sánchez &amp; Sánchez en Av. Rivadavia, y desde entonces somos parte del barrio. Nuestras pizzas a la piedra, las empanadas caseras y la cocina de siempre nos convirtieron en un clásico para familias, vecinos y de paso.</p>
+      <p>A la hora del café, la cafetería suma un rincón cálido para desayunar, merendar o hacer una pausa con medialunas recién hechas, tortas caseras y tostados de siempre. Un lugar de barrio, para todos los días.</p>
+    </div>
+    <div class="about__image">
+      <!-- REEMPLAZAR: img/about.svg por foto real del local o del salón (ej. img/about.jpg) -->
+      <img src="img/about.svg" alt="Salón de Sánchez & Sánchez" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===== CARTA / MENU ===== -->
+<section class="menu" id="menu">
+  <div class="container">
+    <p class="eyebrow eyebrow--light">La carta</p>
+    <h2 class="menu__title">Nuestra Carta</h2>
+
+    <div class="menu__tabs" id="menuTabs" role="tablist">
+      <button class="menu__tab is-active" role="tab" data-target="comidas" aria-selected="true">Comidas</button>
+      <button class="menu__tab" role="tab" data-target="pizzas" aria-selected="false">Pizzas</button>
+      <button class="menu__tab" role="tab" data-target="empanadas" aria-selected="false">Empanadas</button>
+      <button class="menu__tab" role="tab" data-target="cafeteria" aria-selected="false">Cafetería</button>
+      <button class="menu__tab" role="tab" data-target="menudeldia" aria-selected="false">Menú del Día</button>
+      <button class="menu__tab" role="tab" data-target="promos" aria-selected="false">Promos</button>
+    </div>
+
+    <!-- COMIDAS -->
+    <div class="menu__panel is-active" id="comidas" role="tabpanel">
+      <h3 class="menu__category">Minutas + Guarnición</h3>
+      <p class="menu__note">A elección: provenzal, ajillo, verdeo u oreganato</p>
+      <ul class="menu__list">
+        <li><span>Milanesa</span><span class="menu__price">$21.000</span></li>
+        <li><span>Milanesa Napolitana</span><span class="menu__price">$23.500</span></li>
+        <li><span>Suprema</span><span class="menu__price">$18.500</span></li>
+        <li><span>Suprema Napolitana</span><span class="menu__price">$22.000</span></li>
+        <li><span>Pollo Deshuesado</span><span class="menu__price">$17.000</span></li>
+        <li><span>Pollo Argentino</span><span class="menu__price">$19.000</span></li>
+        <li><span>Pollo a la Mostaza</span><span class="menu__price">$21.500</span></li>
+      </ul>
+
+      <h3 class="menu__category">Ensaladas</h3>
+      <ul class="menu__list">
+        <li><span>Caesar <em>— pollo, lechuga, croutons, parmesano, aderezo caesar</em></span><span class="menu__price">$17.000</span></li>
+        <li><span>Brie <em>— rúcula, queso brie, tomates secos, panceta crocante</em></span><span class="menu__price">$19.500</span></li>
+        <li><span>Lucero <em>— pollo, rúcula, tomates secos, huevo, cebolla colorada</em></span><span class="menu__price">$18.000</span></li>
+        <li><span>Lucero con Atún</span><span class="menu__price">$19.500</span></li>
+        <li><span>Amelia <em>— atún, lechuga, zanahoria, huevo, arroz, cebolla colorada</em></span><span class="menu__price">$19.500</span></li>
+        <li><span>Caprese <em>— mozzarella, tomate, albahaca, aceitunas</em></span><span class="menu__price">$18.000</span></li>
+      </ul>
+
+      <h3 class="menu__category">Tartas <span class="menu__category-note">$11.500 c/u</span></h3>
+      <ul class="menu__list menu__list--inline">
+        <li>Jamón y Queso</li>
+        <li>Calabaza y Mozzarella</li>
+        <li>Pascualina</li>
+        <li>Vegetales y Pollo</li>
+      </ul>
+
+      <h3 class="menu__category">Lomito al Pan</h3>
+      <p class="menu__note">Chivito uruguayo, con papas fritas</p>
+      <ul class="menu__list">
+        <li><span>Clásico</span><span class="menu__price">$26.000</span></li>
+        <li><span>Natural</span><span class="menu__price">$26.000</span></li>
+        <li><span>Canadiense</span><span class="menu__price">$27.000</span></li>
+        <li><span>De la Casa</span><span class="menu__price">$27.000</span></li>
+      </ul>
+
+      <h3 class="menu__category">Lomito al Plato</h3>
+      <p class="menu__note">Con papas fritas</p>
+      <ul class="menu__list">
+        <li><span>Natural</span><span class="menu__price">$25.000</span></li>
+        <li><span>De la Casa para 1</span><span class="menu__price">$26.000</span></li>
+        <li><span>De la Casa para 2</span><span class="menu__price">$32.000</span></li>
+      </ul>
+    </div>
+
+    <!-- PIZZAS -->
+    <div class="menu__panel" id="pizzas" role="tabpanel">
+      <h3 class="menu__category">Las de Siempre <span class="menu__category-note">Chica / Grande</span></h3>
+      <ul class="menu__list">
+        <li><span>Mozzarella</span><span class="menu__price">$20.000 / $24.000</span></li>
+        <li><span>Jamón</span><span class="menu__price">$27.000 / $31.000</span></li>
+        <li><span>Morrón</span><span class="menu__price">$23.000 / $30.000</span></li>
+        <li><span>Jamón y Morrón</span><span class="menu__price">$24.500 / $33.000</span></li>
+        <li><span>Napolitana</span><span class="menu__price">$25.000 / $33.000</span></li>
+        <li><span>Provolone</span><span class="menu__price">$24.000 / $33.000</span></li>
+        <li><span>Fugazzeta</span><span class="menu__price">$24.000 / $33.000</span></li>
+        <li><span>Fugazzeta Rellena Gourmet</span><span class="menu__price">$34.000 / $43.000</span></li>
+        <li><span>Fugazza</span><span class="menu__price">$18.000 / $22.000</span></li>
+        <li><span>Cuatro Quesos</span><span class="menu__price">$25.000 / $34.500</span></li>
+        <li><span>Queso Brie</span><span class="menu__price">$27.000 / $33.000</span></li>
+      </ul>
+
+      <h3 class="menu__category">Las de Hoy <span class="menu__category-note">Chica / Grande</span></h3>
+      <ul class="menu__list">
+        <li><span>Rústica</span><span class="menu__price">$24.500 / $33.000</span></li>
+        <li><span>Caprese</span><span class="menu__price">$26.500 / $32.000</span></li>
+        <li><span>Parma</span><span class="menu__price">$26.500 / $29.500</span></li>
+        <li><span>Especial "Sánchez"</span><span class="menu__price">$28.000 / $34.000</span></li>
+        <li><span>Espinaca con Salsa Blanca</span><span class="menu__price">$26.500 / $30.500</span></li>
+        <li><span>Queso Azul Argentino</span><span class="menu__price">$26.500 / $30.000</span></li>
+        <li><span>Carbonara</span><span class="menu__price">$28.000 / $30.500</span></li>
+        <li><span>Vegetariana</span><span class="menu__price">$25.000 / $29.000</span></li>
+        <li><span>Papas a Caballo</span><span class="menu__price">$27.500 / $33.000</span></li>
+        <li><span>Peperoni</span><span class="menu__price">$25.000 / $33.000</span></li>
+        <li><span>Calabresa</span><span class="menu__price">$26.000 / $33.000</span></li>
+      </ul>
+
+      <h3 class="menu__category">Porciones</h3>
+      <ul class="menu__list">
+        <li><span>Mozzarella</span><span class="menu__price">$3.300</span></li>
+        <li><span>Napolitana</span><span class="menu__price">$3.700</span></li>
+        <li><span>Jamón y Morrón</span><span class="menu__price">$4.100</span></li>
+        <li><span>Fugazzeta</span><span class="menu__price">$4.800</span></li>
+        <li><span>Faina</span><span class="menu__price">$1.200</span></li>
+        <li><span>Faina Rellena</span><span class="menu__price">$1.500</span></li>
+      </ul>
+    </div>
+
+    <!-- EMPANADAS -->
+    <div class="menu__panel" id="empanadas" role="tabpanel">
+      <h3 class="menu__category">Empanadas <span class="menu__category-note">$3.000 c/u</span></h3>
+      <ul class="menu__list menu__list--inline">
+        <li>Carne</li>
+        <li>Carne Picante</li>
+        <li>Carne Cheeseburger</li>
+        <li>Roquefort</li>
+        <li>Pollo</li>
+        <li>Jamón y Queso</li>
+        <li>Choclo</li>
+        <li>Cebolla y Queso</li>
+        <li>Verdura y Queso</li>
+        <li>Caprese</li>
+        <li>Picante y Jamón</li>
+      </ul>
+    </div>
+
+    <!-- CAFETERIA -->
+    <div class="menu__panel" id="cafeteria" role="tabpanel">
+      <h3 class="menu__category">Cafés e Infusiones</h3>
+      <ul class="menu__list">
+        <li><span>Expreso</span><span class="menu__price">$2.700</span></li>
+        <li><span>Americano</span><span class="menu__price">$2.900</span></li>
+        <li><span>Ristretto</span><span class="menu__price">$2.000</span></li>
+        <li><span>Doble</span><span class="menu__price">$3.600</span></li>
+        <li><span>Café con leche</span><span class="menu__price">$3.200</span></li>
+        <li><span>Capuccino</span><span class="menu__price">$5.000</span></li>
+        <li><span>Submarino</span><span class="menu__price">$5.500</span></li>
+        <li><span>Leche</span><span class="menu__price">$1.000</span></li>
+        <li><span>Extra crema</span><span class="menu__price">$1.500</span></li>
+        <li><span>Té</span><span class="menu__price">$2.300</span></li>
+        <li><span>Té con 2 medialunas</span><span class="menu__price">$3.000</span></li>
+      </ul>
+
+      <h3 class="menu__category">Especiales</h3>
+      <ul class="menu__list">
+        <li><span>Capuccino "Sánchez"</span><span class="menu__price">$7.000</span></li>
+        <li><span>Capuccino Italiano</span><span class="menu__price">$7.000</span></li>
+      </ul>
+
+      <h3 class="menu__category">Panadería</h3>
+      <ul class="menu__list">
+        <li><span>Medialunas / Facturas</span><span class="menu__price">$900</span></li>
+        <li><span>Medialunas rellenas jamón y queso</span><span class="menu__price">$2.300</span></li>
+      </ul>
+
+      <h3 class="menu__category">Tortas y Dulces</h3>
+      <ul class="menu__list">
+        <li><span>Brownie de Manzana</span><span class="menu__price">$7.500</span></li>
+        <li><span>Brownie de Chocolate</span><span class="menu__price">$7.500</span></li>
+        <li><span>Chocotorta</span><span class="menu__price">$7.500</span></li>
+        <li><span>Cheesecake</span><span class="menu__price">$7.500</span></li>
+        <li><span>Tiramisú</span><span class="menu__price">$7.500</span></li>
+      </ul>
+
+      <h3 class="menu__category">Tostados</h3>
+      <ul class="menu__list">
+        <li><span>Tostado mixto triple</span><span class="menu__price">$7.500</span></li>
+        <li><span>Italiano en miga</span><span class="menu__price">$10.000</span></li>
+        <li><span>Olímpico en miga</span><span class="menu__price">$10.000</span></li>
+        <li><span>Jamón crudo y queso</span><span class="menu__price">$15.000</span></li>
+      </ul>
+
+      <h3 class="menu__category">Promos Cafetería</h3>
+      <ul class="menu__list">
+        <li><span>Armá tu Tazón <em>— café con leche + acompañamiento</em></span><span class="menu__price">desde $7.000</span></li>
+        <li><span>Café con leche + 3 medialunas</span><span class="menu__price">$4.900</span></li>
+        <li><span>Americano + medialunas jamón y queso</span><span class="menu__price">$5.100</span></li>
+        <li><span>Licuado + torta</span><span class="menu__price">$11.500</span></li>
+        <li><span>Café con leche + tostadas, queso y jugo</span><span class="menu__price">$5.100</span></li>
+      </ul>
+
+      <p class="menu__soon">Próximamente: croissants rellenos, muffins, waffles, bagels y ciabattas.</p>
+    </div>
+
+    <!-- MENU DEL DIA -->
+    <div class="menu__panel" id="menudeldia" role="tabpanel">
+      <h3 class="menu__category">Menú del Día <span class="menu__category-note">$20.000</span></h3>
+      <p class="menu__note">Lunes a Viernes de 12 a 16 hs · solo efectivo</p>
+      <p class="menu__paragraph">Plato principal + bebida + café o postre. Rota por día (4 opciones + opción invierno).</p>
+      <ul class="menu__list">
+        <li><span>Opción Especial: Bife a Caballo + Papas</span><span class="menu__price">$21.000</span></li>
+      </ul>
+    </div>
+
+    <!-- PROMOS -->
+    <div class="menu__panel" id="promos" role="tabpanel">
+      <ul class="menu__list">
+        <li><span>Crispi para 2</span><span class="menu__price">$24.000</span></li>
+        <li><span>Crispi para 4</span><span class="menu__price">$34.000</span></li>
+        <li><span>Imperdible <em>— 2 pizzas chicas + bebida 1,75 L</em></span><span class="menu__price">$38.000</span></li>
+        <li><span>Hamburguesa completa + papas + bebida</span><span class="menu__price">$18.000</span></li>
+        <li><span>Reina Empanadas <em>— docena</em></span><span class="menu__price">$29.000</span></li>
+        <li><span>Super Lunes <em>— docena + 3 de regalo</em></span><span class="menu__price">$29.000</span></li>
+        <li><span>Dulce Tentación <em>— docena de medialunas</em></span><span class="menu__price">$8.300</span></li>
+      </ul>
+      <h3 class="menu__category">Happy Hour</h3>
+      <ul class="menu__list">
+        <li><span>20 a 22 hs <em>— 2x1 en tragos y chopps</em></span></li>
+        <li><span>Lun a Mié 18 a 19 hs</span><span class="menu__price">$6.300</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== DELIVERY ===== -->
+<section class="delivery" id="delivery">
+  <div class="container">
+    <p class="eyebrow">Pedí ahora</p>
+    <h2>Delivery y Pedidos</h2>
+    <p class="delivery__subtitle">Elegí tu medio favorito para hacer tu pedido</p>
+    <div class="delivery__grid">
+      <a class="delivery__card" href="https://wa.me/5491159273756?text=Hola!%20Vi%20su%20perfil%20en%20Instagram%20y%20quer%C3%ADa%20hacer%20una%20consulta%20o%20pedido." target="_blank" rel="noopener">
+        <span class="delivery__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.1 7c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.4 2 11.9c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.4 10-9.9C22 6.4 17.5 2 12 2zm0 18c-1.6 0-3.2-.4-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3C4 14.7 3.5 13.3 3.5 11.9 3.5 7.2 7.3 3.5 12 3.5c4.7 0 8.5 3.7 8.5 8.4 0 4.7-3.8 8.1-8.5 8.1z"/></svg>
+        </span>
+        <span class="delivery__label">WhatsApp</span>
+      </a>
+      <a class="delivery__card" href="https://mpago.li/29KUdv2" target="_blank" rel="noopener">
+        <span class="delivery__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.6 14.4c-.7.7-1.7 1.1-2.9 1.1-1.9 0-3.4-1-4-2.5h-.8v-1.3h.5c0-.1 0-.3 0-.4v-.4h-.5V11h.8c.5-1.6 2-2.6 3.9-2.6 1.1 0 2.1.4 2.8 1l-.9 1.3c-.5-.5-1.2-.7-1.9-.7-.9 0-1.7.4-2.1 1.1H14v1.3h-3.1c0 .1 0 .3 0 .4s0 .3 0 .4H14v1.3h-3.6c.4.8 1.2 1.2 2.2 1.2.8 0 1.5-.3 1.9-.8z"/></svg>
+        </span>
+        <span class="delivery__label">Mercado Pago<br>Delivery</span>
+      </a>
+      <a class="delivery__card" href="https://www.rappi.com.ar/restaurantes/246491-sanchez-y-sanchez" target="_blank" rel="noopener">
+        <span class="delivery__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M7 5a5 5 0 0 1 10 0h.6c1 0 1.9.8 2 1.8L21 20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2L4.4 6.8C4.5 5.8 5.4 5 6.4 5H7zm2 0h6a3 3 0 0 0-6 0zm0 4a1 1 0 1 0 2 0V7H9v2zm6 0a1 1 0 1 0 2 0V7h-2v2z"/></svg>
+        </span>
+        <span class="delivery__label">Rappi</span>
+      </a>
+      <a class="delivery__card" href="https://www.pedidosya.com.ar/restaurantes/buenos-aires/sanchez-sanchez-pizzeria-cafeteria-6809ea11-e8ea-4e61-ba31-1dc91a1868e1-menu?origin=shop_list" target="_blank" rel="noopener">
+        <span class="delivery__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 16.5V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2h3.5l3.5 3.9V16.5a1.5 1.5 0 0 1-1.5 1.5h-.6a2.5 2.5 0 1 1-4.9 0H9a2.5 2.5 0 1 1-4.9 0H3v-1.5h1zm2 2.3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 9v5.5h6.2l-2.5-2.8H12V9z"/></svg>
+        </span>
+        <span class="delivery__label">PedidosYa</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== UBICACION Y HORARIOS ===== -->
+<section class="contact" id="contacto">
+  <div class="container contact__grid">
+    <div class="contact__info">
+      <p class="eyebrow">Visitanos</p>
+      <h2>Ubicación y Horarios</h2>
+
+      <div class="contact__item">
+        <h3>Dirección</h3>
+        <p>Av. Rivadavia 3399, CABA (Almagro / Balvanera)</p>
+      </div>
+
+      <div class="contact__item">
+        <h3>Horarios</h3>
+        <p>Lunes a Viernes de 7:00 a 00:00</p>
+        <p>Sábados y Domingos de 8:00 a 1:00</p>
+      </div>
+
+      <div class="contact__item">
+        <h3>Teléfono</h3>
+        <p><a href="tel:+5491159273756">11 5927-3756</a></p>
+      </div>
+
+      <div class="contact__item">
+        <h3>Redes</h3>
+        <div class="contact__social">
+          <a href="https://instagram.com/sanchezysanchez_ok" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4 1 .4.4.7.8 1 1.4.2.4.3 1.1.4 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-1 1.4-.4.4-.8.7-1.4 1-.4.2-1.1.3-2.3.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.4-1-.4-.4-.7-.8-1-1.4-.2-.4-.3-1.1-.4-2.3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.3.2-.6.5-1 1-1.4.4-.4.8-.7 1.4-1 .4-.2 1.1-.3 2.3-.4 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4 .6c-.8.3-1.5.7-2.2 1.4C1.1 2.7.7 3.4.4 4.2.1 5 0 5.9 0 7.2 0 8.5 0 8.9 0 12s0 3.5.1 4.8c.1 1.3.2 2.2.5 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.4 3 .5C8.3 24 8.7 24 12 24s3.5 0 4.8-.1c1.3-.1 2.2-.2 3-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.4-1.7.5-3 .1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.3-.2-2.2-.5-3-.3-.8-.7-1.5-1.4-2.2C21.3 1.1 20.6.7 19.8.4 19 .1 18.1 0 16.8 0 15.5 0 15.1 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zM18.4 4a1.4 1.4 0 1 0 1.4 1.4A1.4 1.4 0 0 0 18.4 4z"/></svg>
+          </a>
+          <a href="#" class="contact__tiktok" aria-label="TikTok (próximamente)" title="Próximamente">
+            <svg viewBox="0 0 24 24"><path d="M16.6 5.8c-.9-.6-1.5-1.6-1.7-2.8h-3v13.3c0 1.4-1.1 2.5-2.5 2.5S6.9 17.7 6.9 16.3c0-1.4 1.1-2.5 2.5-2.5.3 0 .5 0 .8.1v-3c-.3 0-.5-.1-.8-.1-3.1 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5 5.5-2.5 5.5-5.5V9.1c1.2.9 2.6 1.4 4.1 1.4V7.5c-.9 0-1.7-.3-2.4-.7z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact__item">
+        <p class="contact__togo">Hacemos pedidos para llevar</p>
+      </div>
+    </div>
+
+    <div class="contact__map">
+      <iframe
+        src="https://www.google.com/maps?q=Av.+Rivadavia+3399,+CABA&output=embed"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa de Sánchez & Sánchez">
+      </iframe>
+      <a class="contact__map-link" href="https://maps.app.goo.gl/sHR2jj1Aox3E63NW9" target="_blank" rel="noopener">Abrir en Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <p class="footer__name">Sánchez <span>&amp;</span> Sánchez</p>
+      <p>Pizzería y Cafetería en Almagro</p>
+      <p class="footer__togo">Hacemos pedidos para llevar</p>
+    </div>
+    <div class="footer__info">
+      <p>Av. Rivadavia 3399, CABA</p>
+      <p><a href="tel:+5491159273756">11 5927-3756</a></p>
+      <p><a href="https://instagram.com/sanchezysanchez_ok" target="_blank" rel="noopener">@sanchezysanchez_ok</a></p>
+    </div>
+    <div class="footer__nav">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#menu">Carta</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#contacto">Ubicación</a>
+    </div>
+  </div>
+  <p class="footer__copy">&copy; <span id="year"></span> Sánchez &amp; Sánchez. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

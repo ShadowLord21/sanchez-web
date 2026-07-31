@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1C2B3A"/>
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#C9A24B" stroke-width="8"/>
+  <text x="50%" y="46%" text-anchor="middle" font-family="Georgia, serif" font-size="72" fill="#F7F2E9" font-weight="bold">
+    Sánchez &amp; Sánchez
+  </text>
+  <text x="50%" y="58%" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="30" fill="#C9A24B">
+    Pizzería y Cafetería en Almagro
+  </text>
+</svg>
