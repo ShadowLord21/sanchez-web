@@ -27,33 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } catch (err) { console.error('nav toggle init failed', err); }
 
-  // ----- Menu tabs -----
-  try {
-    const tabs = document.querySelectorAll('.menu__tab');
-    const panels = document.querySelectorAll('.menu__panel');
-
-    function activateTab(target) {
-      tabs.forEach(t => {
-        const isActive = t.dataset.target === target;
-        t.classList.toggle('is-active', isActive);
-        t.setAttribute('aria-selected', isActive);
-      });
-      panels.forEach(p => p.classList.toggle('is-active', p.id === target));
-    }
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => activateTab(tab.dataset.target));
-    });
-
-    // ----- Open #menu directly (for the QR) and keep the Carta tab in sync -----
-    function handleHash() {
-      if (window.location.hash === '#menu') {
-        activateTab('comidas');
-      }
-    }
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-  } catch (err) { console.error('menu tabs init failed', err); }
+  // ----- Menu jump-to tabs ("Ir a:") -----
+  // Las categorías de la Carta (Comidas, Pizzas, Empanadas, Menú del Día,
+  // Cafetería, Promos) ya no se ocultan/muestran: están todas visibles en
+  // un solo scroll continuo, así que .menu__tab son simples anclas <a> y
+  // el scroll suave nativo (scroll-behavior + scroll-padding-top en el CSS)
+  // ya resuelve el salto. No hace falta JS para esto.
 
   // ----- Footer year -----
   try {

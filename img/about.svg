@@ -1,8 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="750" viewBox="0 0 1000 750">
-  <rect width="1000" height="750" fill="#EFE6D3"/>
-  <rect x="0" y="0" width="1000" height="750" fill="none" stroke="#C9A24B" stroke-width="6"/>
-  <circle cx="500" cy="330" r="150" fill="#B24A2E" opacity="0.12"/>
-  <text x="50%" y="52%" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#1C2B3A" opacity="0.55">
-    REEMPLAZAR: foto del salón / local
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#EFE6D3"/>
+  <rect x="0" y="0" width="800" height="1000" fill="none" stroke="#C9A24B" stroke-width="6"/>
+  <circle cx="400" cy="460" r="180" fill="#B24A2E" opacity="0.12"/>
+  <text x="50%" y="48%" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#1C2B3A" opacity="0.55">
+    FOTO: salón / local
+  </text>
+  <text x="50%" y="53%" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#1C2B3A" opacity="0.4">
+    (formato vertical)
   </text>
 </svg>

@@ -69,13 +69,32 @@ Aprovechá al máximo las skills instaladas **"UI-UX-PRO-MAX"** y la de **front-
 
 ## 6. Patrón de la Carta (el corazón del rediseño)
 
-- **Cada producto = una tarjeta** con: nombre, precio, descripción y (cuando haya) foto.
-- Al **hacer clic en una tarjeta**, se abre una **vista ampliada (modal/overlay)** con la foto grande, la descripción completa y el precio, para que la persona se enfoque. Debe cerrarse fácil (X o clic afuera) y andar perfecto en celular.
+**Tarjeta de producto — estilo "Featured Items" de Loro (referencia clave):**
+- Mostrar los productos en una **grilla de tarjetas**: 3 por fila en desktop, 2 en tablet, 1 en mobile. Espaciado generoso.
+- Anatomía de cada tarjeta:
+  - **Foto grande arriba**, ocupando todo el ancho de la tarjeta, esquinas superiores redondeadas (relación aprox. 4:3).
+  - **Cuerpo blanco** debajo (esquinas inferiores redondeadas, sombra suave), sobre el fondo crema de la sección.
+  - **Nombre** del producto en negrita.
+  - **Descripción** en 1-2 líneas, en color de acento, **recortada con "…"** si es larga.
+  - **Precio** abajo a la izquierda.
+  - **Botón circular "+"** abajo a la derecha.
+- **Interacción:** al tocar el "+" (o cualquier parte de la tarjeta) se abre una **vista ampliada (modal/overlay)** con la **foto grande, la descripción completa y el precio**. IMPORTANTE: NO es un carrito de compra (no vendemos online); el "+" es "ver más". El modal se cierra fácil (X o clic afuera) y anda perfecto en celular.
+- Además de las tarjetas, intercalá **fotos verticales grandes con leyenda** entre secciones (ver punto siguiente), para el efecto "muy visual" de Loro.
 - **Fotos intercaladas al estilo Loro:** entre las secciones (y dentro de las más largas) insertar **fotos verticales grandes con leyenda en itálica**, no solo dentro de las tarjetas. La página tiene que sentirse muy visual.
 - Sellos **"Nuevo"** en los productos nuevos (bagels, waffles, croissants rellenos, muffins, lemon pie, volcán de chocolate, etc.).
 - Mantener el contenido/precios exactamente como están hoy en el proyecto.
 
 ---
+
+## 6.c Componentes extra tipo Loro (sumar)
+
+- **Destacados (carrusel arriba del menú):** una fila/carrusel horizontal de **fotos verticales grandes** con leyenda en itálica y sello **"Nuevo"** cuando corresponda, tipo la sección "Featured" de Loro. Acá van los **productos estrella, novedades y promos** (ej.: pizzas top, empanadas, torres a futuro, combos de desayuno, lemon pie/volcán nuevos). Debe scrollear con el dedo en mobile.
+- **Pestañas de categoría (sticky):** arriba del menú, pestañas para cambiar de grupo tipo Loro (Food/Drink). Para nosotros: **Comidas · Pizzas · Empanadas · Cafetería · Menú del Día · Promos**. Que queden fijas al scrollear y salten con scroll suave. Debajo, opcionalmente, la barra secundaria "Ir a:" para sub-secciones.
+- **Bloque "Cómo pedir":** 3 pasos simples y visuales, tipo el "How to Loro". Ejemplo:
+  1. Escaneá el QR o mirá la carta acá.
+  2. Elegí lo tuyo (comida, pizza, café).
+  3. Pedí en el mostrador o por delivery (Rappi / Mercado Pago / PedidosYa / WhatsApp).
+  Con iconos simples y el mismo estilo cálido.
 
 ## 7. Menú del Día (dentro de la carta)
 

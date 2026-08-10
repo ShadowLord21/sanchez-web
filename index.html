@@ -67,10 +67,8 @@
     </button>
     <nav class="nav__links" id="navLinks">
       <a href="#nosotros">Nosotros</a>
+      <a href="#como-pedir">Cómo pedir</a>
       <a href="#menu">Carta</a>
-      <a href="#menudeldia">Menú del Día</a>
-      <a href="#cafeteria">Cafetería</a>
-      <a href="#promos">Promos</a>
       <a href="#delivery">Delivery</a>
       <a href="#contacto">Ubicación</a>
     </nav>
@@ -84,6 +82,7 @@
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <p class="hero__eyebrow">Almagro · CABA</p>
+    <span class="hero__rule" aria-hidden="true"></span>
     <h1 class="hero__title">Sánchez <span>&amp;</span> Sánchez</h1>
     <p class="hero__subtitle">Pizzería y Cafetería en Almagro · desde hace más de 20 años</p>
     <div class="hero__actions">
@@ -96,6 +95,28 @@
   </a>
 </section>
 
+<!-- ===== COMO PEDIR ===== -->
+<section class="howto" id="como-pedir">
+  <div class="container">
+    <p class="eyebrow">Es fácil</p>
+    <h2 class="howto__title">Cómo pedir</h2>
+    <div class="howto__steps reveal-stagger">
+      <div class="howto__step">
+        <span class="howto__number">1</span>
+        <p class="howto__text">Escaneá el QR o entrá a la web</p>
+      </div>
+      <div class="howto__step">
+        <span class="howto__number">2</span>
+        <p class="howto__text">Mirá la carta y elegí</p>
+      </div>
+      <div class="howto__step">
+        <span class="howto__number">3</span>
+        <p class="howto__text">Pedí en el mostrador, por WhatsApp o delivery</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== SOBRE NOSOTROS ===== -->
 <section class="about" id="nosotros">
   <div class="container about__grid reveal">
@@ -105,10 +126,13 @@
       <p>Hace más de dos décadas abrimos las puertas de Sánchez &amp; Sánchez en Av. Rivadavia, y desde entonces somos parte del barrio. Nuestras pizzas a la piedra, las empanadas caseras y la cocina de siempre nos convirtieron en un clásico para familias, vecinos y de paso.</p>
       <p>A la hora del café, la cafetería suma un rincón cálido para desayunar, merendar o hacer una pausa con medialunas recién hechas, tortas caseras y tostados de siempre. Un lugar de barrio, para todos los días.</p>
     </div>
-    <div class="about__image">
-      <!-- REEMPLAZAR: img/about.svg por foto real del local o del salón (ej. img/about.jpg) -->
-      <img src="img/about.svg" alt="Salón de Sánchez & Sánchez" loading="lazy">
-    </div>
+    <figure class="about__image">
+      <div class="about__image-frame">
+        <!-- REEMPLAZAR: img/about.svg por foto real del local o del salón, formato vertical (ej. img/about.jpg) -->
+        <img src="img/about.svg" alt="Salón de Sánchez & Sánchez" loading="lazy">
+      </div>
+      <figcaption>Nuestro salón, en Av. Rivadavia</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -118,15 +142,20 @@
     <p class="eyebrow eyebrow--light">La carta</p>
     <h2 class="menu__title">Nuestra Carta</h2>
 
-    <div class="menu__tabs" id="menuTabs" role="tablist">
-      <button class="menu__tab is-active" role="tab" data-target="comidas" aria-selected="true">Comidas</button>
-      <button class="menu__tab" role="tab" data-target="pizzas" aria-selected="false">Pizzas</button>
-      <button class="menu__tab" role="tab" data-target="empanadas" aria-selected="false">Empanadas</button>
-    </div>
+    <p class="menu__jumpto-label">Ir a:</p>
+    <nav class="menu__tabs" id="menuTabs" aria-label="Categorías de la carta">
+      <a class="menu__tab" href="#comidas">Comidas</a>
+      <a class="menu__tab" href="#pizzas">Pizzas</a>
+      <a class="menu__tab" href="#empanadas">Empanadas</a>
+      <a class="menu__tab" href="#menudeldia">Menú del Día</a>
+      <a class="menu__tab" href="#cafeteria">Cafetería</a>
+      <a class="menu__tab" href="#promos">Promos</a>
+    </nav>
 
     <!-- COMIDAS -->
-    <div class="menu__panel is-active" id="comidas" role="tabpanel">
-      <h3 class="menu__category">Minutas + Guarnición</h3>
+    <div class="menu__panel" id="comidas">
+      <h3 class="menu__section-title">Comidas</h3>
+      <h4 class="menu__category">Minutas + Guarnición</h4>
       <p class="menu__note">A elección: provenzal, ajillo, verdeo u oreganato</p>
       <!-- REEMPLAZAR: img/placeholder-comida.svg por fotos reales de cada plato -->
       <div class="menu__grid">
@@ -167,7 +196,7 @@
         </button>
       </div>
 
-      <h3 class="menu__category">Ensaladas</h3>
+      <h4 class="menu__category">Ensaladas</h4>
       <div class="menu__grid">
         <button type="button" class="menu__card" data-name="Caesar" data-price="$17.000" data-desc="Pollo, lechuga, croutons, parmesano, aderezo caesar" data-img="img/placeholder-comida.svg">
           <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
@@ -201,7 +230,7 @@
         </button>
       </div>
 
-      <h3 class="menu__category">Tartas <span class="menu__category-note">$11.500 c/u</span></h3>
+      <h4 class="menu__category">Tartas <span class="menu__category-note">$11.500 c/u</span></h4>
       <div class="menu__grid">
         <button type="button" class="menu__card" data-name="Jamón y Queso" data-price="$11.500" data-img="img/placeholder-comida.svg">
           <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
@@ -225,7 +254,7 @@
         </button>
       </div>
 
-      <h3 class="menu__category">Lomito al Pan</h3>
+      <h4 class="menu__category">Lomito al Pan</h4>
       <p class="menu__note">Chivito uruguayo, con papas fritas</p>
       <div class="menu__grid">
         <button type="button" class="menu__card" data-name="Clásico" data-price="$26.000" data-img="img/placeholder-comida.svg">
@@ -250,7 +279,7 @@
         </button>
       </div>
 
-      <h3 class="menu__category">Lomito al Plato</h3>
+      <h4 class="menu__category">Lomito al Plato</h4>
       <p class="menu__note">Con papas fritas</p>
       <div class="menu__grid">
         <button type="button" class="menu__card" data-name="Natural" data-price="$25.000" data-img="img/placeholder-comida.svg">
@@ -271,9 +300,17 @@
       </div>
     </div>
 
+    <!-- Foto intercalada -->
+    <figure class="menu__feature">
+      <div class="menu__feature-img" style="background-image:url('img/placeholder-vertical-pizza.svg')"></div>
+      <!-- REEMPLAZAR: img/placeholder-vertical-pizza.svg por foto real vertical de una pizza saliendo del horno -->
+      <figcaption>Pizza a la piedra, recién salida del horno</figcaption>
+    </figure>
+
     <!-- PIZZAS -->
-    <div class="menu__panel" id="pizzas" role="tabpanel">
-      <h3 class="menu__category">Las de Siempre <span class="menu__category-note">Chica / Grande</span></h3>
+    <div class="menu__panel" id="pizzas">
+      <h3 class="menu__section-title">Pizzas</h3>
+      <h4 class="menu__category">Las de Siempre <span class="menu__category-note">Chica / Grande</span></h4>
       <!-- REEMPLAZAR: img/placeholder-pizza.svg por fotos reales de cada pizza -->
       <div class="menu__grid">
         <button type="button" class="menu__card" data-name="Mozzarella" data-price="$20.000 / $24.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
@@ -333,7 +370,7 @@
         </button>
       </div>
 
-      <h3 class="menu__category">Las de Hoy <span class="menu__category-note">Chica / Grande</span></h3>
+      <h4 class="menu__category">Las de Hoy <span class="menu__category-note">Chica / Grande</span></h4>
       <div class="menu__grid">
         <button type="button" class="menu__card" data-name="Rústica" data-price="$24.500 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
           <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
@@ -392,7 +429,7 @@
         </button>
       </div>
 
-      <h3 class="menu__category">Porciones</h3>
+      <h4 class="menu__category">Porciones</h4>
       <div class="menu__grid">
         <button type="button" class="menu__card" data-name="Mozzarella" data-price="$3.300" data-img="img/placeholder-pizza.svg">
           <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
@@ -427,9 +464,16 @@
       </div>
     </div>
 
+    <!-- Foto intercalada -->
+    <figure class="menu__feature">
+      <div class="menu__feature-img" style="background-image:url('img/placeholder-vertical-empanadas.svg')"></div>
+      <!-- REEMPLAZAR: img/placeholder-vertical-empanadas.svg por foto real vertical de las empanadas caseras -->
+      <figcaption>Empanadas caseras, una clásica del barrio</figcaption>
+    </figure>
+
     <!-- EMPANADAS -->
-    <div class="menu__panel" id="empanadas" role="tabpanel">
-      <h3 class="menu__category">Empanadas <span class="menu__category-note">$3.000 c/u</span></h3>
+    <div class="menu__panel" id="empanadas">
+      <h3 class="menu__section-title">Empanadas <span class="menu__category-note">$3.000 c/u</span></h3>
       <!-- REEMPLAZAR: img/placeholder-empanada.svg por foto real de las empanadas -->
       <div class="menu__grid">
         <button type="button" class="menu__card" data-name="Carne" data-price="$3.000" data-img="img/placeholder-empanada.svg">
@@ -490,15 +534,18 @@
       </div>
     </div>
 
-  </div>
-</section>
+    <!-- Foto intercalada -->
+    <figure class="menu__feature">
+      <div class="menu__feature-img" style="background-image:url('img/placeholder-vertical-mesa.svg')"></div>
+      <!-- REEMPLAZAR: img/placeholder-vertical-mesa.svg por foto real vertical de una mesa servida -->
+      <figcaption>El plato del mediodía, listo para servir</figcaption>
+    </figure>
 
-<!-- ===== MENU DEL DIA ===== -->
-<section class="menudeldia" id="menudeldia">
-  <div class="container">
-    <p class="eyebrow">Lunes a viernes · 12 a 16 hs</p>
-    <h2>Menú del Día</h2>
-    <p class="menudeldia__price">$20.000 <span>Plato principal + bebida + café o postre</span></p>
+    <!-- MENU DEL DIA -->
+    <div class="menu__panel" id="menudeldia">
+      <h3 class="menu__section-title">Menú del Día</h3>
+      <p class="menu__note">Lunes a viernes · 12 a 16 hs</p>
+      <p class="menudeldia__price">$20.000 <span>Plato principal + bebida + café o postre</span></p>
 
     <p class="menudeldia__weekend-notice" id="weekendNotice" hidden>El menú del día está disponible de lunes a viernes. Podés igual mirar la propuesta de cada día con los botones de abajo.</p>
 
@@ -567,16 +614,19 @@
     </div>
 
     <p class="menudeldia__conditions">Lunes a Viernes de 12 a 16 hs · Solo efectivo</p>
-  </div>
-</section>
+    </div>
 
-<!-- ===== CAFETERIA ===== -->
-<section class="menu" id="cafeteria">
-  <div class="container">
-    <p class="eyebrow eyebrow--light">Para desayunar o hacer una pausa</p>
-    <h2 class="menu__title">Cafetería</h2>
+    <!-- Foto intercalada -->
+    <figure class="menu__feature">
+      <div class="menu__feature-img" style="background-image:url('img/placeholder-vertical-cafe.svg')"></div>
+      <!-- REEMPLAZAR: img/placeholder-vertical-cafe.svg por foto real vertical de la barra de café -->
+      <figcaption>La barra, lista para el desayuno</figcaption>
+    </figure>
 
-    <h3 class="menu__category">Cafés e Infusiones</h3>
+    <!-- CAFETERIA -->
+    <div class="menu__panel" id="cafeteria">
+      <h3 class="menu__section-title">Cafetería</h3>
+      <h4 class="menu__category">Cafés e Infusiones</h4>
     <!-- REEMPLAZAR: img/placeholder-cafe.svg por fotos reales de cada bebida -->
     <div class="menu__grid">
       <button type="button" class="menu__card" data-name="Expreso" data-price="$2.700" data-img="img/placeholder-cafe.svg">
@@ -636,7 +686,7 @@
       </button>
     </div>
 
-    <h3 class="menu__category">Especiales</h3>
+    <h4 class="menu__category">Especiales</h4>
     <div class="menu__grid">
       <button type="button" class="menu__card" data-name="Capuccino &quot;Sánchez&quot;" data-price="$7.000" data-img="img/placeholder-cafe.svg">
         <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
@@ -650,7 +700,7 @@
       </button>
     </div>
 
-    <h3 class="menu__category">Panadería</h3>
+    <h4 class="menu__category">Panadería</h4>
     <!-- REEMPLAZAR: img/placeholder-panaderia.svg por fotos reales -->
     <div class="menu__grid">
       <button type="button" class="menu__card" data-name="Medialunas / Facturas" data-price="$900" data-img="img/placeholder-panaderia.svg">
@@ -665,7 +715,7 @@
       </button>
     </div>
 
-    <h3 class="menu__category">Tortas y Dulces</h3>
+    <h4 class="menu__category">Tortas y Dulces</h4>
     <!-- REEMPLAZAR: img/placeholder-postre.svg por fotos reales de cada torta -->
     <div class="menu__grid">
       <button type="button" class="menu__card" data-name="Brownie de Manzana" data-price="$7.500" data-img="img/placeholder-postre.svg">
@@ -695,7 +745,7 @@
       </button>
     </div>
 
-    <h3 class="menu__category">Tostados</h3>
+    <h4 class="menu__category">Tostados</h4>
     <div class="menu__grid">
       <button type="button" class="menu__card" data-name="Tostado mixto triple" data-price="$7.500" data-img="img/placeholder-panaderia.svg">
         <span class="menu__card-img" style="background-image:url('img/placeholder-panaderia.svg')"></span>
@@ -719,7 +769,7 @@
       </button>
     </div>
 
-    <h3 class="menu__category">Promos Cafetería</h3>
+    <h4 class="menu__category">Promos Cafetería</h4>
     <div class="menu__grid">
       <button type="button" class="menu__card" data-name="Armá tu Tazón" data-price="desde $7.000" data-desc="Café con leche + acompañamiento" data-img="img/placeholder-cafe.svg">
         <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
@@ -749,16 +799,13 @@
     </div>
 
     <p class="menu__soon">Próximamente: croissants rellenos, muffins, waffles, bagels y ciabattas.</p>
-  </div>
-</section>
+    </div>
 
-<!-- ===== PROMOCIONES ===== -->
-<section class="promos" id="promos">
-  <div class="container">
-    <p class="eyebrow eyebrow--light">Promos vigentes</p>
-    <h2 class="promos__title">Promociones</h2>
+    <!-- PROMOS -->
+    <div class="menu__panel menu__panel--promos" id="promos">
+      <h3 class="menu__section-title">Promociones</h3>
 
-    <div class="promos__grid reveal-stagger">
+      <div class="promos__grid reveal-stagger">
       <div class="promo-card">
         <p class="promo-card__name">Crispi para 2</p>
         <p class="promo-card__price">$24.000</p>
@@ -794,7 +841,7 @@
     </div>
 
     <div class="promos__happyhour">
-      <h3>Happy Hour</h3>
+      <h4 class="menu__category">Happy Hour</h4>
       <ul class="promos__happyhour-list">
         <li>
           <span class="promos__happyhour-name">20 a 22 hs</span>
@@ -806,6 +853,8 @@
         </li>
       </ul>
     </div>
+    </div>
+
   </div>
 </section>
 
@@ -923,10 +972,8 @@
     </div>
     <div class="footer__nav">
       <a href="#nosotros">Nosotros</a>
+      <a href="#como-pedir">Cómo pedir</a>
       <a href="#menu">Carta</a>
-      <a href="#menudeldia">Menú del Día</a>
-      <a href="#cafeteria">Cafetería</a>
-      <a href="#promos">Promos</a>
       <a href="#delivery">Delivery</a>
       <a href="#contacto">Ubicación</a>
     </div>
