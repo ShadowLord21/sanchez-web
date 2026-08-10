@@ -68,6 +68,9 @@
     <nav class="nav__links" id="navLinks">
       <a href="#nosotros">Nosotros</a>
       <a href="#menu">Carta</a>
+      <a href="#menudeldia">Menú del Día</a>
+      <a href="#cafeteria">Cafetería</a>
+      <a href="#promos">Promos</a>
       <a href="#delivery">Delivery</a>
       <a href="#contacto">Ubicación</a>
     </nav>
@@ -95,7 +98,7 @@
 
 <!-- ===== SOBRE NOSOTROS ===== -->
 <section class="about" id="nosotros">
-  <div class="container about__grid">
+  <div class="container about__grid reveal">
     <div class="about__text">
       <p class="eyebrow">Nuestra historia</p>
       <h2>Más de 20 años en el corazón de Almagro</h2>
@@ -119,208 +122,690 @@
       <button class="menu__tab is-active" role="tab" data-target="comidas" aria-selected="true">Comidas</button>
       <button class="menu__tab" role="tab" data-target="pizzas" aria-selected="false">Pizzas</button>
       <button class="menu__tab" role="tab" data-target="empanadas" aria-selected="false">Empanadas</button>
-      <button class="menu__tab" role="tab" data-target="cafeteria" aria-selected="false">Cafetería</button>
-      <button class="menu__tab" role="tab" data-target="menudeldia" aria-selected="false">Menú del Día</button>
-      <button class="menu__tab" role="tab" data-target="promos" aria-selected="false">Promos</button>
     </div>
 
     <!-- COMIDAS -->
     <div class="menu__panel is-active" id="comidas" role="tabpanel">
       <h3 class="menu__category">Minutas + Guarnición</h3>
       <p class="menu__note">A elección: provenzal, ajillo, verdeo u oreganato</p>
-      <ul class="menu__list">
-        <li><span>Milanesa</span><span class="menu__price">$21.000</span></li>
-        <li><span>Milanesa Napolitana</span><span class="menu__price">$23.500</span></li>
-        <li><span>Suprema</span><span class="menu__price">$18.500</span></li>
-        <li><span>Suprema Napolitana</span><span class="menu__price">$22.000</span></li>
-        <li><span>Pollo Deshuesado</span><span class="menu__price">$17.000</span></li>
-        <li><span>Pollo Argentino</span><span class="menu__price">$19.000</span></li>
-        <li><span>Pollo a la Mostaza</span><span class="menu__price">$21.500</span></li>
-      </ul>
+      <!-- REEMPLAZAR: img/placeholder-comida.svg por fotos reales de cada plato -->
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Milanesa" data-price="$21.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Milanesa</span></span>
+          <span class="menu__card-price">$21.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Milanesa Napolitana" data-price="$23.500" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Milanesa Napolitana</span></span>
+          <span class="menu__card-price">$23.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Suprema" data-price="$18.500" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Suprema</span></span>
+          <span class="menu__card-price">$18.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Suprema Napolitana" data-price="$22.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Suprema Napolitana</span></span>
+          <span class="menu__card-price">$22.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Pollo Deshuesado" data-price="$17.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Pollo Deshuesado</span></span>
+          <span class="menu__card-price">$17.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Pollo Argentino" data-price="$19.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Pollo Argentino</span></span>
+          <span class="menu__card-price">$19.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Pollo a la Mostaza" data-price="$21.500" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Pollo a la Mostaza</span></span>
+          <span class="menu__card-price">$21.500</span>
+        </button>
+      </div>
 
       <h3 class="menu__category">Ensaladas</h3>
-      <ul class="menu__list">
-        <li><span>Caesar <em>— pollo, lechuga, croutons, parmesano, aderezo caesar</em></span><span class="menu__price">$17.000</span></li>
-        <li><span>Brie <em>— rúcula, queso brie, tomates secos, panceta crocante</em></span><span class="menu__price">$19.500</span></li>
-        <li><span>Lucero <em>— pollo, rúcula, tomates secos, huevo, cebolla colorada</em></span><span class="menu__price">$18.000</span></li>
-        <li><span>Lucero con Atún</span><span class="menu__price">$19.500</span></li>
-        <li><span>Amelia <em>— atún, lechuga, zanahoria, huevo, arroz, cebolla colorada</em></span><span class="menu__price">$19.500</span></li>
-        <li><span>Caprese <em>— mozzarella, tomate, albahaca, aceitunas</em></span><span class="menu__price">$18.000</span></li>
-      </ul>
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Caesar" data-price="$17.000" data-desc="Pollo, lechuga, croutons, parmesano, aderezo caesar" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Caesar</span><span class="menu__card-desc">Pollo, lechuga, croutons, parmesano, aderezo caesar</span></span>
+          <span class="menu__card-price">$17.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Brie" data-price="$19.500" data-desc="Rúcula, queso brie, tomates secos, panceta crocante" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Brie</span><span class="menu__card-desc">Rúcula, queso brie, tomates secos, panceta crocante</span></span>
+          <span class="menu__card-price">$19.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Lucero" data-price="$18.000" data-desc="Pollo, rúcula, tomates secos, huevo, cebolla colorada" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Lucero</span><span class="menu__card-desc">Pollo, rúcula, tomates secos, huevo, cebolla colorada</span></span>
+          <span class="menu__card-price">$18.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Lucero con Atún" data-price="$19.500" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Lucero con Atún</span></span>
+          <span class="menu__card-price">$19.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Amelia" data-price="$19.500" data-desc="Atún, lechuga, zanahoria, huevo, arroz, cebolla colorada" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Amelia</span><span class="menu__card-desc">Atún, lechuga, zanahoria, huevo, arroz, cebolla colorada</span></span>
+          <span class="menu__card-price">$19.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Caprese" data-price="$18.000" data-desc="Mozzarella, tomate, albahaca, aceitunas" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Caprese</span><span class="menu__card-desc">Mozzarella, tomate, albahaca, aceitunas</span></span>
+          <span class="menu__card-price">$18.000</span>
+        </button>
+      </div>
 
       <h3 class="menu__category">Tartas <span class="menu__category-note">$11.500 c/u</span></h3>
-      <ul class="menu__list menu__list--inline">
-        <li>Jamón y Queso</li>
-        <li>Calabaza y Mozzarella</li>
-        <li>Pascualina</li>
-        <li>Vegetales y Pollo</li>
-      </ul>
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Jamón y Queso" data-price="$11.500" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Jamón y Queso</span></span>
+          <span class="menu__card-price">$11.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Calabaza y Mozzarella" data-price="$11.500" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Calabaza y Mozzarella</span></span>
+          <span class="menu__card-price">$11.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Pascualina" data-price="$11.500" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Pascualina</span></span>
+          <span class="menu__card-price">$11.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Vegetales y Pollo" data-price="$11.500" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Vegetales y Pollo</span></span>
+          <span class="menu__card-price">$11.500</span>
+        </button>
+      </div>
 
       <h3 class="menu__category">Lomito al Pan</h3>
       <p class="menu__note">Chivito uruguayo, con papas fritas</p>
-      <ul class="menu__list">
-        <li><span>Clásico</span><span class="menu__price">$26.000</span></li>
-        <li><span>Natural</span><span class="menu__price">$26.000</span></li>
-        <li><span>Canadiense</span><span class="menu__price">$27.000</span></li>
-        <li><span>De la Casa</span><span class="menu__price">$27.000</span></li>
-      </ul>
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Clásico" data-price="$26.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Clásico</span></span>
+          <span class="menu__card-price">$26.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Natural" data-price="$26.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Natural</span></span>
+          <span class="menu__card-price">$26.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Canadiense" data-price="$27.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Canadiense</span></span>
+          <span class="menu__card-price">$27.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="De la Casa" data-price="$27.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">De la Casa</span></span>
+          <span class="menu__card-price">$27.000</span>
+        </button>
+      </div>
 
       <h3 class="menu__category">Lomito al Plato</h3>
       <p class="menu__note">Con papas fritas</p>
-      <ul class="menu__list">
-        <li><span>Natural</span><span class="menu__price">$25.000</span></li>
-        <li><span>De la Casa para 1</span><span class="menu__price">$26.000</span></li>
-        <li><span>De la Casa para 2</span><span class="menu__price">$32.000</span></li>
-      </ul>
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Natural" data-price="$25.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Natural</span></span>
+          <span class="menu__card-price">$25.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="De la Casa para 1" data-price="$26.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">De la Casa para 1</span></span>
+          <span class="menu__card-price">$26.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="De la Casa para 2" data-price="$32.000" data-img="img/placeholder-comida.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-comida.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">De la Casa para 2</span></span>
+          <span class="menu__card-price">$32.000</span>
+        </button>
+      </div>
     </div>
 
     <!-- PIZZAS -->
     <div class="menu__panel" id="pizzas" role="tabpanel">
       <h3 class="menu__category">Las de Siempre <span class="menu__category-note">Chica / Grande</span></h3>
-      <ul class="menu__list">
-        <li><span>Mozzarella</span><span class="menu__price">$20.000 / $24.000</span></li>
-        <li><span>Jamón</span><span class="menu__price">$27.000 / $31.000</span></li>
-        <li><span>Morrón</span><span class="menu__price">$23.000 / $30.000</span></li>
-        <li><span>Jamón y Morrón</span><span class="menu__price">$24.500 / $33.000</span></li>
-        <li><span>Napolitana</span><span class="menu__price">$25.000 / $33.000</span></li>
-        <li><span>Provolone</span><span class="menu__price">$24.000 / $33.000</span></li>
-        <li><span>Fugazzeta</span><span class="menu__price">$24.000 / $33.000</span></li>
-        <li><span>Fugazzeta Rellena Gourmet</span><span class="menu__price">$34.000 / $43.000</span></li>
-        <li><span>Fugazza</span><span class="menu__price">$18.000 / $22.000</span></li>
-        <li><span>Cuatro Quesos</span><span class="menu__price">$25.000 / $34.500</span></li>
-        <li><span>Queso Brie</span><span class="menu__price">$27.000 / $33.000</span></li>
-      </ul>
+      <!-- REEMPLAZAR: img/placeholder-pizza.svg por fotos reales de cada pizza -->
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Mozzarella" data-price="$20.000 / $24.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Mozzarella</span></span>
+          <span class="menu__card-price">$20.000 / $24.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Jamón" data-price="$27.000 / $31.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Jamón</span></span>
+          <span class="menu__card-price">$27.000 / $31.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Morrón" data-price="$23.000 / $30.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Morrón</span></span>
+          <span class="menu__card-price">$23.000 / $30.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Jamón y Morrón" data-price="$24.500 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Jamón y Morrón</span></span>
+          <span class="menu__card-price">$24.500 / $33.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Napolitana" data-price="$25.000 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Napolitana</span></span>
+          <span class="menu__card-price">$25.000 / $33.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Provolone" data-price="$24.000 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Provolone</span></span>
+          <span class="menu__card-price">$24.000 / $33.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Fugazzeta" data-price="$24.000 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Fugazzeta</span></span>
+          <span class="menu__card-price">$24.000 / $33.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Fugazzeta Rellena Gourmet" data-price="$34.000 / $43.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Fugazzeta Rellena Gourmet</span></span>
+          <span class="menu__card-price">$34.000 / $43.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Fugazza" data-price="$18.000 / $22.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Fugazza</span></span>
+          <span class="menu__card-price">$18.000 / $22.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Cuatro Quesos" data-price="$25.000 / $34.500" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Cuatro Quesos</span></span>
+          <span class="menu__card-price">$25.000 / $34.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Queso Brie" data-price="$27.000 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Queso Brie</span></span>
+          <span class="menu__card-price">$27.000 / $33.000</span>
+        </button>
+      </div>
 
       <h3 class="menu__category">Las de Hoy <span class="menu__category-note">Chica / Grande</span></h3>
-      <ul class="menu__list">
-        <li><span>Rústica</span><span class="menu__price">$24.500 / $33.000</span></li>
-        <li><span>Caprese</span><span class="menu__price">$26.500 / $32.000</span></li>
-        <li><span>Parma</span><span class="menu__price">$26.500 / $29.500</span></li>
-        <li><span>Especial "Sánchez"</span><span class="menu__price">$28.000 / $34.000</span></li>
-        <li><span>Espinaca con Salsa Blanca</span><span class="menu__price">$26.500 / $30.500</span></li>
-        <li><span>Queso Azul Argentino</span><span class="menu__price">$26.500 / $30.000</span></li>
-        <li><span>Carbonara</span><span class="menu__price">$28.000 / $30.500</span></li>
-        <li><span>Vegetariana</span><span class="menu__price">$25.000 / $29.000</span></li>
-        <li><span>Papas a Caballo</span><span class="menu__price">$27.500 / $33.000</span></li>
-        <li><span>Peperoni</span><span class="menu__price">$25.000 / $33.000</span></li>
-        <li><span>Calabresa</span><span class="menu__price">$26.000 / $33.000</span></li>
-      </ul>
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Rústica" data-price="$24.500 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Rústica</span></span>
+          <span class="menu__card-price">$24.500 / $33.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Caprese" data-price="$26.500 / $32.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Caprese</span></span>
+          <span class="menu__card-price">$26.500 / $32.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Parma" data-price="$26.500 / $29.500" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Parma</span></span>
+          <span class="menu__card-price">$26.500 / $29.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Especial &quot;Sánchez&quot;" data-price="$28.000 / $34.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Especial "Sánchez"</span></span>
+          <span class="menu__card-price">$28.000 / $34.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Espinaca con Salsa Blanca" data-price="$26.500 / $30.500" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Espinaca con Salsa Blanca</span></span>
+          <span class="menu__card-price">$26.500 / $30.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Queso Azul Argentino" data-price="$26.500 / $30.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Queso Azul Argentino</span></span>
+          <span class="menu__card-price">$26.500 / $30.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Carbonara" data-price="$28.000 / $30.500" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Carbonara</span></span>
+          <span class="menu__card-price">$28.000 / $30.500</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Vegetariana" data-price="$25.000 / $29.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Vegetariana</span></span>
+          <span class="menu__card-price">$25.000 / $29.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Papas a Caballo" data-price="$27.500 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Papas a Caballo</span></span>
+          <span class="menu__card-price">$27.500 / $33.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Peperoni" data-price="$25.000 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Peperoni</span></span>
+          <span class="menu__card-price">$25.000 / $33.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Calabresa" data-price="$26.000 / $33.000" data-desc="Chica / Grande" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Calabresa</span></span>
+          <span class="menu__card-price">$26.000 / $33.000</span>
+        </button>
+      </div>
 
       <h3 class="menu__category">Porciones</h3>
-      <ul class="menu__list">
-        <li><span>Mozzarella</span><span class="menu__price">$3.300</span></li>
-        <li><span>Napolitana</span><span class="menu__price">$3.700</span></li>
-        <li><span>Jamón y Morrón</span><span class="menu__price">$4.100</span></li>
-        <li><span>Fugazzeta</span><span class="menu__price">$4.800</span></li>
-        <li><span>Faina</span><span class="menu__price">$1.200</span></li>
-        <li><span>Faina Rellena</span><span class="menu__price">$1.500</span></li>
-      </ul>
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Mozzarella" data-price="$3.300" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Mozzarella</span></span>
+          <span class="menu__card-price">$3.300</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Napolitana" data-price="$3.700" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Napolitana</span></span>
+          <span class="menu__card-price">$3.700</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Jamón y Morrón" data-price="$4.100" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Jamón y Morrón</span></span>
+          <span class="menu__card-price">$4.100</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Fugazzeta" data-price="$4.800" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Fugazzeta</span></span>
+          <span class="menu__card-price">$4.800</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Faina" data-price="$1.200" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Faina</span></span>
+          <span class="menu__card-price">$1.200</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Faina Rellena" data-price="$1.500" data-img="img/placeholder-pizza.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-pizza.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Faina Rellena</span></span>
+          <span class="menu__card-price">$1.500</span>
+        </button>
+      </div>
     </div>
 
     <!-- EMPANADAS -->
     <div class="menu__panel" id="empanadas" role="tabpanel">
       <h3 class="menu__category">Empanadas <span class="menu__category-note">$3.000 c/u</span></h3>
-      <ul class="menu__list menu__list--inline">
-        <li>Carne</li>
-        <li>Carne Picante</li>
-        <li>Carne Cheeseburger</li>
-        <li>Roquefort</li>
-        <li>Pollo</li>
-        <li>Jamón y Queso</li>
-        <li>Choclo</li>
-        <li>Cebolla y Queso</li>
-        <li>Verdura y Queso</li>
-        <li>Caprese</li>
-        <li>Picante y Jamón</li>
-      </ul>
+      <!-- REEMPLAZAR: img/placeholder-empanada.svg por foto real de las empanadas -->
+      <div class="menu__grid">
+        <button type="button" class="menu__card" data-name="Carne" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Carne</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Carne Picante" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Carne Picante</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Carne Cheeseburger" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Carne Cheeseburger</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Roquefort" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Roquefort</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Pollo" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Pollo</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Jamón y Queso" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Jamón y Queso</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Choclo" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Choclo</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Cebolla y Queso" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Cebolla y Queso</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Verdura y Queso" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Verdura y Queso</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Caprese" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Caprese</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+        <button type="button" class="menu__card" data-name="Picante y Jamón" data-price="$3.000" data-img="img/placeholder-empanada.svg">
+          <span class="menu__card-img" style="background-image:url('img/placeholder-empanada.svg')"></span>
+          <span class="menu__card-body"><span class="menu__card-name">Picante y Jamón</span></span>
+          <span class="menu__card-price">$3.000</span>
+        </button>
+      </div>
     </div>
 
-    <!-- CAFETERIA -->
-    <div class="menu__panel" id="cafeteria" role="tabpanel">
-      <h3 class="menu__category">Cafés e Infusiones</h3>
-      <ul class="menu__list">
-        <li><span>Expreso</span><span class="menu__price">$2.700</span></li>
-        <li><span>Americano</span><span class="menu__price">$2.900</span></li>
-        <li><span>Ristretto</span><span class="menu__price">$2.000</span></li>
-        <li><span>Doble</span><span class="menu__price">$3.600</span></li>
-        <li><span>Café con leche</span><span class="menu__price">$3.200</span></li>
-        <li><span>Capuccino</span><span class="menu__price">$5.000</span></li>
-        <li><span>Submarino</span><span class="menu__price">$5.500</span></li>
-        <li><span>Leche</span><span class="menu__price">$1.000</span></li>
-        <li><span>Extra crema</span><span class="menu__price">$1.500</span></li>
-        <li><span>Té</span><span class="menu__price">$2.300</span></li>
-        <li><span>Té con 2 medialunas</span><span class="menu__price">$3.000</span></li>
-      </ul>
+  </div>
+</section>
 
-      <h3 class="menu__category">Especiales</h3>
-      <ul class="menu__list">
-        <li><span>Capuccino "Sánchez"</span><span class="menu__price">$7.000</span></li>
-        <li><span>Capuccino Italiano</span><span class="menu__price">$7.000</span></li>
-      </ul>
+<!-- ===== MENU DEL DIA ===== -->
+<section class="menudeldia" id="menudeldia">
+  <div class="container">
+    <p class="eyebrow">Lunes a viernes · 12 a 16 hs</p>
+    <h2>Menú del Día</h2>
+    <p class="menudeldia__price">$20.000 <span>Plato principal + bebida + café o postre</span></p>
 
-      <h3 class="menu__category">Panadería</h3>
-      <ul class="menu__list">
-        <li><span>Medialunas / Facturas</span><span class="menu__price">$900</span></li>
-        <li><span>Medialunas rellenas jamón y queso</span><span class="menu__price">$2.300</span></li>
-      </ul>
+    <p class="menudeldia__weekend-notice" id="weekendNotice" hidden>El menú del día está disponible de lunes a viernes. Podés igual mirar la propuesta de cada día con los botones de abajo.</p>
 
-      <h3 class="menu__category">Tortas y Dulces</h3>
-      <ul class="menu__list">
-        <li><span>Brownie de Manzana</span><span class="menu__price">$7.500</span></li>
-        <li><span>Brownie de Chocolate</span><span class="menu__price">$7.500</span></li>
-        <li><span>Chocotorta</span><span class="menu__price">$7.500</span></li>
-        <li><span>Cheesecake</span><span class="menu__price">$7.500</span></li>
-        <li><span>Tiramisú</span><span class="menu__price">$7.500</span></li>
-      </ul>
-
-      <h3 class="menu__category">Tostados</h3>
-      <ul class="menu__list">
-        <li><span>Tostado mixto triple</span><span class="menu__price">$7.500</span></li>
-        <li><span>Italiano en miga</span><span class="menu__price">$10.000</span></li>
-        <li><span>Olímpico en miga</span><span class="menu__price">$10.000</span></li>
-        <li><span>Jamón crudo y queso</span><span class="menu__price">$15.000</span></li>
-      </ul>
-
-      <h3 class="menu__category">Promos Cafetería</h3>
-      <ul class="menu__list">
-        <li><span>Armá tu Tazón <em>— café con leche + acompañamiento</em></span><span class="menu__price">desde $7.000</span></li>
-        <li><span>Café con leche + 3 medialunas</span><span class="menu__price">$4.900</span></li>
-        <li><span>Americano + medialunas jamón y queso</span><span class="menu__price">$5.100</span></li>
-        <li><span>Licuado + torta</span><span class="menu__price">$11.500</span></li>
-        <li><span>Café con leche + tostadas, queso y jugo</span><span class="menu__price">$5.100</span></li>
-      </ul>
-
-      <p class="menu__soon">Próximamente: croissants rellenos, muffins, waffles, bagels y ciabattas.</p>
+    <div class="menudeldia__days" id="menuDiaDays" role="tablist">
+      <button type="button" class="menudeldia__day" role="tab" data-day="1">Lunes</button>
+      <button type="button" class="menudeldia__day" role="tab" data-day="2">Martes</button>
+      <button type="button" class="menudeldia__day" role="tab" data-day="3">Miércoles</button>
+      <button type="button" class="menudeldia__day" role="tab" data-day="4">Jueves</button>
+      <button type="button" class="menudeldia__day" role="tab" data-day="5">Viernes</button>
     </div>
 
-    <!-- MENU DEL DIA -->
-    <div class="menu__panel" id="menudeldia" role="tabpanel">
-      <h3 class="menu__category">Menú del Día <span class="menu__category-note">$20.000</span></h3>
-      <p class="menu__note">Lunes a Viernes de 12 a 16 hs · solo efectivo</p>
-      <p class="menu__paragraph">Plato principal + bebida + café o postre. Rota por día (4 opciones + opción invierno).</p>
-      <ul class="menu__list">
-        <li><span>Opción Especial: Bife a Caballo + Papas</span><span class="menu__price">$21.000</span></li>
-      </ul>
+    <div class="menudeldia__panels">
+      <div class="menudeldia__panel" id="diaLunes" data-day-panel="1" role="tabpanel">
+        <ul class="menudeldia__list">
+          <li><span class="menudeldia__opt">Opción 1</span>Pollo a la Mostaza con papas</li>
+          <li><span class="menudeldia__opt">Opción 2</span>Filet de Merluza a la Romana con fritas</li>
+          <li><span class="menudeldia__opt">Opción 3</span>Tartaleta de Vegetales y Pollo</li>
+          <li><span class="menudeldia__opt">Opción 4</span>Churrasquito de cerdo c/ morrón asado, huevo y papas</li>
+        </ul>
+      </div>
+      <div class="menudeldia__panel" id="diaMartes" data-day-panel="2" role="tabpanel">
+        <ul class="menudeldia__list">
+          <li><span class="menudeldia__opt">Opción 1</span>Milanesa de Cerdo con Puré</li>
+          <li><span class="menudeldia__opt">Opción 2</span>Milanesa de Soja Napolitana c/ Calabaza</li>
+          <li><span class="menudeldia__opt">Opción 3</span>Shogun de Pollo con Timbal de Arroz y Vegetales</li>
+          <li><span class="menudeldia__opt">Opción 4</span>Ensalada Caesar</li>
+        </ul>
+      </div>
+      <div class="menudeldia__panel" id="diaMiercoles" data-day-panel="3" role="tabpanel">
+        <ul class="menudeldia__list">
+          <li><span class="menudeldia__opt">Opción 1</span>Filet de Merluza a la Milanesa c/ Puré Mixto</li>
+          <li><span class="menudeldia__opt">Opción 2</span>Milanesa de Pollo Napolitana c/ Papas</li>
+          <li><span class="menudeldia__opt">Opción 3</span>Ensalada Caprese</li>
+          <li><span class="menudeldia__opt">Opción 4</span>Tarta de Verduras</li>
+        </ul>
+      </div>
+      <div class="menudeldia__panel" id="diaJueves" data-day-panel="4" role="tabpanel">
+        <ul class="menudeldia__list">
+          <li><span class="menudeldia__opt">Opción 1</span>Churrasquito de Cerdo al Verdeo c/ Papas</li>
+          <li><span class="menudeldia__opt">Opción 2</span>Calzone Relleno de Muzza, Jamón y Morrón</li>
+          <li><span class="menudeldia__opt">Opción 3</span>Tartaleta de Jamón y Queso</li>
+          <li><span class="menudeldia__opt">Opción 4</span>Ensalada de Atún</li>
+        </ul>
+      </div>
+      <div class="menudeldia__panel" id="diaViernes" data-day-panel="5" role="tabpanel">
+        <ul class="menudeldia__list">
+          <li><span class="menudeldia__opt">Opción 1</span>Merluza a la Plancha al Verdeo con Puré</li>
+          <li><span class="menudeldia__opt">Opción 2</span>Omelette Mixto con Mix de Verdes</li>
+          <li><span class="menudeldia__opt">Opción 3</span>Salpicón de Ave</li>
+          <li><span class="menudeldia__opt">Opción 4</span>Pollo a la Plancha c/ Ensalada de Remolacha, Huevo y Zanahoria</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- PROMOS -->
-    <div class="menu__panel" id="promos" role="tabpanel">
-      <ul class="menu__list">
-        <li><span>Crispi para 2</span><span class="menu__price">$24.000</span></li>
-        <li><span>Crispi para 4</span><span class="menu__price">$34.000</span></li>
-        <li><span>Imperdible <em>— 2 pizzas chicas + bebida 1,75 L</em></span><span class="menu__price">$38.000</span></li>
-        <li><span>Hamburguesa completa + papas + bebida</span><span class="menu__price">$18.000</span></li>
-        <li><span>Reina Empanadas <em>— docena</em></span><span class="menu__price">$29.000</span></li>
-        <li><span>Super Lunes <em>— docena + 3 de regalo</em></span><span class="menu__price">$29.000</span></li>
-        <li><span>Dulce Tentación <em>— docena de medialunas</em></span><span class="menu__price">$8.300</span></li>
-      </ul>
-      <h3 class="menu__category">Happy Hour</h3>
-      <ul class="menu__list">
-        <li><span>20 a 22 hs <em>— 2x1 en tragos y chopps</em></span></li>
-        <li><span>Lun a Mié 18 a 19 hs</span><span class="menu__price">$6.300</span></li>
-      </ul>
+    <div class="menudeldia__extra">
+      <div class="menudeldia__extra-card menudeldia__extra-card--invierno">
+        <p class="menudeldia__extra-label">Opción Invierno</p>
+        <p>Guiso de Lentejas · Pastel de Papa</p>
+      </div>
+      <div class="menudeldia__extra-card menudeldia__extra-card--especial">
+        <p class="menudeldia__extra-label">Opción Especial</p>
+        <p class="menudeldia__extra-name">Bife a Caballo + Papas Fritas</p>
+        <p class="menudeldia__extra-price">$21.000</p>
+        <p class="menudeldia__extra-note">No incluye bebida ni postre</p>
+      </div>
     </div>
 
+    <p class="menudeldia__conditions">Lunes a Viernes de 12 a 16 hs · Solo efectivo</p>
+  </div>
+</section>
+
+<!-- ===== CAFETERIA ===== -->
+<section class="menu" id="cafeteria">
+  <div class="container">
+    <p class="eyebrow eyebrow--light">Para desayunar o hacer una pausa</p>
+    <h2 class="menu__title">Cafetería</h2>
+
+    <h3 class="menu__category">Cafés e Infusiones</h3>
+    <!-- REEMPLAZAR: img/placeholder-cafe.svg por fotos reales de cada bebida -->
+    <div class="menu__grid">
+      <button type="button" class="menu__card" data-name="Expreso" data-price="$2.700" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Expreso</span></span>
+        <span class="menu__card-price">$2.700</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Americano" data-price="$2.900" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Americano</span></span>
+        <span class="menu__card-price">$2.900</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Ristretto" data-price="$2.000" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Ristretto</span></span>
+        <span class="menu__card-price">$2.000</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Doble" data-price="$3.600" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Doble</span></span>
+        <span class="menu__card-price">$3.600</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Café con leche" data-price="$3.200" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Café con leche</span></span>
+        <span class="menu__card-price">$3.200</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Capuccino" data-price="$5.000" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Capuccino</span></span>
+        <span class="menu__card-price">$5.000</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Submarino" data-price="$5.500" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Submarino</span></span>
+        <span class="menu__card-price">$5.500</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Leche" data-price="$1.000" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Leche</span></span>
+        <span class="menu__card-price">$1.000</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Extra crema" data-price="$1.500" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Extra crema</span></span>
+        <span class="menu__card-price">$1.500</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Té" data-price="$2.300" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Té</span></span>
+        <span class="menu__card-price">$2.300</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Té con 2 medialunas" data-price="$3.000" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Té con 2 medialunas</span></span>
+        <span class="menu__card-price">$3.000</span>
+      </button>
+    </div>
+
+    <h3 class="menu__category">Especiales</h3>
+    <div class="menu__grid">
+      <button type="button" class="menu__card" data-name="Capuccino &quot;Sánchez&quot;" data-price="$7.000" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Capuccino "Sánchez"</span></span>
+        <span class="menu__card-price">$7.000</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Capuccino Italiano" data-price="$7.000" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Capuccino Italiano</span></span>
+        <span class="menu__card-price">$7.000</span>
+      </button>
+    </div>
+
+    <h3 class="menu__category">Panadería</h3>
+    <!-- REEMPLAZAR: img/placeholder-panaderia.svg por fotos reales -->
+    <div class="menu__grid">
+      <button type="button" class="menu__card" data-name="Medialunas / Facturas" data-price="$900" data-img="img/placeholder-panaderia.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-panaderia.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Medialunas / Facturas</span></span>
+        <span class="menu__card-price">$900</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Medialunas rellenas jamón y queso" data-price="$2.300" data-img="img/placeholder-panaderia.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-panaderia.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Medialunas rellenas jamón y queso</span></span>
+        <span class="menu__card-price">$2.300</span>
+      </button>
+    </div>
+
+    <h3 class="menu__category">Tortas y Dulces</h3>
+    <!-- REEMPLAZAR: img/placeholder-postre.svg por fotos reales de cada torta -->
+    <div class="menu__grid">
+      <button type="button" class="menu__card" data-name="Brownie de Manzana" data-price="$7.500" data-img="img/placeholder-postre.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-postre.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Brownie de Manzana</span></span>
+        <span class="menu__card-price">$7.500</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Brownie de Chocolate" data-price="$7.500" data-img="img/placeholder-postre.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-postre.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Brownie de Chocolate</span></span>
+        <span class="menu__card-price">$7.500</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Chocotorta" data-price="$7.500" data-img="img/placeholder-postre.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-postre.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Chocotorta</span></span>
+        <span class="menu__card-price">$7.500</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Cheesecake" data-price="$7.500" data-img="img/placeholder-postre.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-postre.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Cheesecake</span></span>
+        <span class="menu__card-price">$7.500</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Tiramisú" data-price="$7.500" data-img="img/placeholder-postre.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-postre.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Tiramisú</span></span>
+        <span class="menu__card-price">$7.500</span>
+      </button>
+    </div>
+
+    <h3 class="menu__category">Tostados</h3>
+    <div class="menu__grid">
+      <button type="button" class="menu__card" data-name="Tostado mixto triple" data-price="$7.500" data-img="img/placeholder-panaderia.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-panaderia.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Tostado mixto triple</span></span>
+        <span class="menu__card-price">$7.500</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Italiano en miga" data-price="$10.000" data-img="img/placeholder-panaderia.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-panaderia.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Italiano en miga</span></span>
+        <span class="menu__card-price">$10.000</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Olímpico en miga" data-price="$10.000" data-img="img/placeholder-panaderia.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-panaderia.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Olímpico en miga</span></span>
+        <span class="menu__card-price">$10.000</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Jamón crudo y queso" data-price="$15.000" data-img="img/placeholder-panaderia.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-panaderia.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Jamón crudo y queso</span></span>
+        <span class="menu__card-price">$15.000</span>
+      </button>
+    </div>
+
+    <h3 class="menu__category">Promos Cafetería</h3>
+    <div class="menu__grid">
+      <button type="button" class="menu__card" data-name="Armá tu Tazón" data-price="desde $7.000" data-desc="Café con leche + acompañamiento" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Armá tu Tazón</span><span class="menu__card-desc">Café con leche + acompañamiento</span></span>
+        <span class="menu__card-price">desde $7.000</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Café con leche + 3 medialunas" data-price="$4.900" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Café con leche + 3 medialunas</span></span>
+        <span class="menu__card-price">$4.900</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Americano + medialunas jamón y queso" data-price="$5.100" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Americano + medialunas jamón y queso</span></span>
+        <span class="menu__card-price">$5.100</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Licuado + torta" data-price="$11.500" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Licuado + torta</span></span>
+        <span class="menu__card-price">$11.500</span>
+      </button>
+      <button type="button" class="menu__card" data-name="Café con leche + tostadas, queso y jugo" data-price="$5.100" data-img="img/placeholder-cafe.svg">
+        <span class="menu__card-img" style="background-image:url('img/placeholder-cafe.svg')"></span>
+        <span class="menu__card-body"><span class="menu__card-name">Café con leche + tostadas, queso y jugo</span></span>
+        <span class="menu__card-price">$5.100</span>
+      </button>
+    </div>
+
+    <p class="menu__soon">Próximamente: croissants rellenos, muffins, waffles, bagels y ciabattas.</p>
+  </div>
+</section>
+
+<!-- ===== PROMOCIONES ===== -->
+<section class="promos" id="promos">
+  <div class="container">
+    <p class="eyebrow eyebrow--light">Promos vigentes</p>
+    <h2 class="promos__title">Promociones</h2>
+
+    <div class="promos__grid reveal-stagger">
+      <div class="promo-card">
+        <p class="promo-card__name">Crispi para 2</p>
+        <p class="promo-card__price">$24.000</p>
+      </div>
+      <div class="promo-card">
+        <p class="promo-card__name">Crispi para 4</p>
+        <p class="promo-card__price">$34.000</p>
+      </div>
+      <div class="promo-card">
+        <p class="promo-card__name">Imperdible</p>
+        <p class="promo-card__desc">2 pizzas chicas + bebida 1,75 L</p>
+        <p class="promo-card__price">$38.000</p>
+      </div>
+      <div class="promo-card">
+        <p class="promo-card__name">Hamburguesa completa + papas + bebida</p>
+        <p class="promo-card__price">$18.000</p>
+      </div>
+      <div class="promo-card">
+        <p class="promo-card__name">Reina Empanadas</p>
+        <p class="promo-card__desc">Docena</p>
+        <p class="promo-card__price">$29.000</p>
+      </div>
+      <div class="promo-card">
+        <p class="promo-card__name">Super Lunes</p>
+        <p class="promo-card__desc">Docena + 3 de regalo</p>
+        <p class="promo-card__price">$29.000</p>
+      </div>
+      <div class="promo-card">
+        <p class="promo-card__name">Dulce Tentación</p>
+        <p class="promo-card__desc">Docena de medialunas</p>
+        <p class="promo-card__price">$8.300</p>
+      </div>
+    </div>
+
+    <div class="promos__happyhour">
+      <h3>Happy Hour</h3>
+      <ul class="promos__happyhour-list">
+        <li>
+          <span class="promos__happyhour-name">20 a 22 hs</span>
+          <span class="promos__happyhour-note">2x1 en tragos y chopps</span>
+        </li>
+        <li>
+          <span class="promos__happyhour-name">Lun a Mié 18 a 19 hs</span>
+          <span class="promo-card__price">$6.300</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -330,7 +815,7 @@
     <p class="eyebrow">Pedí ahora</p>
     <h2>Delivery y Pedidos</h2>
     <p class="delivery__subtitle">Elegí tu medio favorito para hacer tu pedido</p>
-    <div class="delivery__grid">
+    <div class="delivery__grid reveal-stagger">
       <a class="delivery__card" href="https://wa.me/5491159273756?text=Hola!%20Vi%20su%20perfil%20en%20Instagram%20y%20quer%C3%ADa%20hacer%20una%20consulta%20o%20pedido." target="_blank" rel="noopener">
         <span class="delivery__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.1 7c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.4 2 11.9c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.4 10-9.9C22 6.4 17.5 2 12 2zm0 18c-1.6 0-3.2-.4-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3C4 14.7 3.5 13.3 3.5 11.9 3.5 7.2 7.3 3.5 12 3.5c4.7 0 8.5 3.7 8.5 8.4 0 4.7-3.8 8.1-8.5 8.1z"/></svg>
@@ -362,28 +847,40 @@
 <!-- ===== UBICACION Y HORARIOS ===== -->
 <section class="contact" id="contacto">
   <div class="container contact__grid">
-    <div class="contact__info">
+    <div class="contact__info reveal">
       <p class="eyebrow">Visitanos</p>
       <h2>Ubicación y Horarios</h2>
 
       <div class="contact__item">
-        <h3>Dirección</h3>
+        <div class="contact__item-head">
+          <span class="contact__item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg></span>
+          <h3>Dirección</h3>
+        </div>
         <p>Av. Rivadavia 3399, CABA (Almagro / Balvanera)</p>
       </div>
 
       <div class="contact__item">
-        <h3>Horarios</h3>
+        <div class="contact__item-head">
+          <span class="contact__item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm0-2a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/><path d="M12.75 7h-1.5v5.6l4.7 2.8.8-1.3-4-2.4V7z"/></svg></span>
+          <h3>Horarios</h3>
+        </div>
         <p>Lunes a Viernes de 7:00 a 00:00</p>
         <p>Sábados y Domingos de 8:00 a 1:00</p>
       </div>
 
       <div class="contact__item">
-        <h3>Teléfono</h3>
+        <div class="contact__item-head">
+          <span class="contact__item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
+          <h3>Teléfono</h3>
+        </div>
         <p><a href="tel:+5491159273756">11 5927-3756</a></p>
       </div>
 
       <div class="contact__item">
-        <h3>Redes</h3>
+        <div class="contact__item-head">
+          <span class="contact__item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 16.1c-.8 0-1.5.3-2 .8l-6.1-3.6c.1-.3.1-.6.1-.9s0-.6-.1-.9L15.9 8c.6.5 1.3.8 2.1.8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .3 0 .6.1.9L9 10.4c-.6-.5-1.3-.8-2.1-.8-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2.1-.8l6.1 3.6c-.1.3-.1.5-.1.8 0 1.6 1.3 3 3 3s3-1.3 3-3-1.3-2.9-3-2.9z"/></svg></span>
+          <h3>Redes</h3>
+        </div>
         <div class="contact__social">
           <a href="https://instagram.com/sanchezysanchez_ok" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4 1 .4.4.7.8 1 1.4.2.4.3 1.1.4 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-1 1.4-.4.4-.8.7-1.4 1-.4.2-1.1.3-2.3.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.4-1-.4-.4-.7-.8-1-1.4-.2-.4-.3-1.1-.4-2.3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.3.2-.6.5-1 1-1.4.4-.4.8-.7 1.4-1 .4-.2 1.1-.3 2.3-.4 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4 .6c-.8.3-1.5.7-2.2 1.4C1.1 2.7.7 3.4.4 4.2.1 5 0 5.9 0 7.2 0 8.5 0 8.9 0 12s0 3.5.1 4.8c.1 1.3.2 2.2.5 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.4 3 .5C8.3 24 8.7 24 12 24s3.5 0 4.8-.1c1.3-.1 2.2-.2 3-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.4-1.7.5-3 .1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.3-.2-2.2-.5-3-.3-.8-.7-1.5-1.4-2.2C21.3 1.1 20.6.7 19.8.4 19 .1 18.1 0 16.8 0 15.5 0 15.1 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zM18.4 4a1.4 1.4 0 1 0 1.4 1.4A1.4 1.4 0 0 0 18.4 4z"/></svg>
@@ -399,7 +896,7 @@
       </div>
     </div>
 
-    <div class="contact__map">
+    <div class="contact__map reveal">
       <iframe
         src="https://www.google.com/maps?q=Av.+Rivadavia+3399,+CABA&output=embed"
         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -427,12 +924,29 @@
     <div class="footer__nav">
       <a href="#nosotros">Nosotros</a>
       <a href="#menu">Carta</a>
+      <a href="#menudeldia">Menú del Día</a>
+      <a href="#cafeteria">Cafetería</a>
+      <a href="#promos">Promos</a>
       <a href="#delivery">Delivery</a>
       <a href="#contacto">Ubicación</a>
     </div>
   </div>
   <p class="footer__copy">&copy; <span id="year"></span> Sánchez &amp; Sánchez. Todos los derechos reservados.</p>
 </footer>
+
+<!-- ===== MODAL DE PRODUCTO (compartido por Carta y Cafetería) ===== -->
+<div class="product-modal" id="productModal" aria-hidden="true">
+  <button type="button" class="product-modal__backdrop" data-close aria-label="Cerrar"></button>
+  <div class="product-modal__panel" role="dialog" aria-modal="true" aria-labelledby="productModalName">
+    <button type="button" class="product-modal__close" data-close aria-label="Cerrar">&times;</button>
+    <div class="product-modal__img" id="productModalImg"></div>
+    <div class="product-modal__body">
+      <h3 id="productModalName" class="product-modal__name"></h3>
+      <p class="product-modal__price" id="productModalPrice"></p>
+      <p class="product-modal__desc" id="productModalDesc"></p>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

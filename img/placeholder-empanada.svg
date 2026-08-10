@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#EFE6D3"/>
+  <rect x="0" y="0" width="800" height="600" fill="none" stroke="#C9A24B" stroke-width="5"/>
+  <path d="M310 200 Q400 150 490 200 Q520 260 490 320 Q400 370 310 320 Q280 260 310 200 Z" fill="#B24A2E" opacity="0.14"/>
+  <path d="M310 200 Q400 150 490 200 Q520 260 490 320 Q400 370 310 320 Q280 260 310 200 Z" fill="none" stroke="#B24A2E" stroke-width="4" opacity="0.4"/>
+  <text x="50%" y="52%" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#1C2B3A" opacity="0.55">
+    REEMPLAZAR: foto de la empanada
+  </text>
+</svg>
