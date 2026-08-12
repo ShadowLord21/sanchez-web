@@ -88,7 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } catch (err) { console.error('nav scroll-spy init failed', err); }
 
-  // ----- Product modal (Carta / Cafetería cards) -----
+  // ----- Product modal (Destacados / Carta / Cafetería cards) -----
+  // El botón "+" es visual ("ver más"), no un carrito: un solo listener
+  // en toda la tarjeta cubre el click en cualquier parte, incluido el "+".
   try {
     const modal = document.getElementById('productModal');
     const modalImg = document.getElementById('productModalImg');
