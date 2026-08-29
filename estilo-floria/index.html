@@ -114,9 +114,10 @@ body {
   padding: 100px 2rem 2rem;
   display: flex; flex-direction: column; gap: 0.5rem;
   transform: translateY(-100%); opacity: 0;
+  pointer-events: none;
   transition: transform 0.5s var(--ease-out), opacity 0.4s;
 }
-.nav__menu.is-open { transform: translateY(0); opacity: 1; }
+.nav__menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
 body.nav-open { overflow: hidden; }
 .nav__menu a {
   font-family: var(--font-display);
@@ -132,7 +133,7 @@ body.nav-open { overflow: hidden; }
   .nav__menu {
     position: static; background: none; padding: 0;
     flex-direction: row; gap: 2.5rem;
-    transform: none; opacity: 1;
+    transform: none; opacity: 1; pointer-events: auto;
   }
   .nav__menu a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; padding: 0; border: none; }
   .nav__menu a:hover { padding-left: 0; }
