@@ -56,7 +56,7 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  padding-bottom: 72px;
+  padding-bottom: 76px;
   min-width: 320px;
 }
 @media (min-width: 768px) { body { padding-bottom: 0; } }
@@ -196,6 +196,7 @@ body.nav-open { overflow: hidden; }
   background: var(--surface);
   overflow: hidden;
   transition: box-shadow 0.3s;
+  scroll-margin-top: 80px;
 }
 
 .cafe-accordion__section:hover {
@@ -393,7 +394,7 @@ body.nav-open { overflow: hidden; }
 .menu-feature figcaption { text-align: center; font-size: 0.875rem; color: var(--fg-muted); margin-top: 1rem; font-style: italic; }
 
 /* DELIVERY */
-.delivery { padding: 6rem 0; background: var(--fg); color: var(--fg-light); }
+.delivery { padding: 6rem 0; background: var(--fg); color: var(--fg-light); scroll-margin-top: 80px; }
 .delivery__header { text-align: center; margin-bottom: 3rem; }
 .delivery__eyebrow { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
 .delivery__title { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.25rem); }
@@ -416,7 +417,7 @@ body.nav-open { overflow: hidden; }
 .delivery__card-label { font-size: 0.8125rem; font-weight: 600; text-align: center; }
 
 /* CONTACT */
-.contact { padding: 4rem 0; }
+.contact { padding: 4rem 0; scroll-margin-top: 80px; }
 .contact__grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 @media (min-width: 768px) { .contact__grid { grid-template-columns: 1fr 1.5fr; } }
 .contact__info h2 { font-family: var(--font-display); font-size: 1.75rem; margin-bottom: 1.5rem; }
@@ -1138,7 +1139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sliderArrows.forEach(btn => {
     btn.addEventListener('click', () => {
-      newTrack.classList.add('is-paused');
+      newTrack.style.animation = 'none';
       const dir = parseInt(btn.dataset.dir, 10);
       sliderOffset += dir * itemWidth;
       const maxOffset = (newTrack.children.length / 2) * itemWidth;

@@ -56,7 +56,7 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  padding-bottom: 72px;
+  padding-bottom: 76px;
 }
 @media (min-width: 768px) { body { padding-bottom: 0; } }
 
@@ -160,7 +160,7 @@ body.nav-open { overflow: hidden; }
 .promo-slider__arrow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* MENU SECTION */
-.menu-section { padding: 3rem 0; }
+.menu-section { padding: 3rem 0; scroll-margin-top: 150px; }
 .menu-section__title {
   font-family: var(--font-display); font-size: 1.75rem; margin-bottom: 0.5rem;
   padding-bottom: 1rem; border-bottom: 2px solid var(--accent);
@@ -347,6 +347,7 @@ body.nav-open { overflow: hidden; }
   </div>
 </section>
 
+<div>
 <nav class="menu-tabs">
   <div class="container">
     <div class="menu-tabs__list">
@@ -502,6 +503,7 @@ body.nav-open { overflow: hidden; }
 
 
 </main>
+</div>
 
 <section class="delivery" id="delivery">
   <div class="container">
@@ -652,10 +654,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Promo slider manual arrows
   const track = document.getElementById('promoTrack');
+  let promoOffset = 0;
+  const promoItemWidth = 216; // 200px + 1rem de gap
   document.querySelectorAll('.promo-slider__arrow').forEach(btn => {
     btn.addEventListener('click', () => {
-      const dir = parseInt(btn.dataset.dir);
-      track.scrollBy({ left: dir * 220, behavior: 'smooth' });
+      track.style.animation = 'none';
+      const dir = parseInt(btn.dataset.dir, 10);
+      promoOffset += dir * promoItemWidth;
+      const maxOffset = (track.children.length / 2) * promoItemWidth;
+      if (promoOffset < 0) promoOffset = 0;
+      if (promoOffset > maxOffset) promoOffset = maxOffset;
+      track.style.transform = `translateX(-${promoOffset}px)`;
     });
   });
 });
