@@ -9,7 +9,7 @@
 <meta property="og:type" content="restaurant.restaurant">
 <meta property="og:title" content="Sánchez & Sánchez — Pizzería y Cafetería en Almagro">
 <meta property="og:description" content="Pizzería y Cafetería en Almagro (CABA) · Más de 20 años en el barrio. Carta completa, delivery y ubicación.">
-<meta property="og:image" content="/assets/img/og-cover.svg">
+<meta property="og:image" content="/assets/img/meta/og-cover.svg">
 <meta property="og:locale" content="es_AR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Sánchez & Sánchez",
-  "image": "/img/og-cover.svg",
+  "image": "/assets/img/meta/og-cover.svg",
   "servesCuisine": ["Pizza", "Cafetería", "Comida argentina"],
   "priceRange": "$$",
   "telephone": "+5491159273756",
@@ -109,29 +109,42 @@ body {
 .nav__toggle.is-open .nav__toggle-lines span:nth-child(2) { opacity: 0; }
 .nav__toggle.is-open .nav__toggle-lines span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 .nav__menu {
-  position: fixed; inset: 0;
+  position: absolute;
+  top: 100%; left: 0; right: 0;
   background: var(--bg);
-  padding: 100px 2rem 2rem;
-  display: flex; flex-direction: column; gap: 0.5rem;
-  transform: translateY(-100%); opacity: 0;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  padding: 0.25rem clamp(1.25rem, 4vw, 3rem) 0.75rem;
+  display: flex; flex-direction: column;
+  transform: translateY(-8px); opacity: 0;
   pointer-events: none;
-  transition: transform 0.5s var(--ease-out), opacity 0.4s;
+  transition: transform 0.3s var(--ease-out), opacity 0.25s;
 }
 .nav__menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+.nav__backdrop {
+  position: fixed; inset: 0; z-index: 900;
+  background: rgba(26, 24, 22, 0.45);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+}
+.nav__backdrop.is-open { opacity: 1; pointer-events: auto; }
 body.nav-open { overflow: hidden; }
 .nav__menu a {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-family: var(--font-body);
+  font-size: 1.125rem; font-weight: 600;
   color: var(--fg); text-decoration: none;
-  padding: 0.75rem 0; border-bottom: 1px solid var(--border);
-  transition: color 0.2s, padding-left 0.3s var(--ease-out);
+  padding: 0.875rem 0.25rem; border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
 }
-.nav__menu a:hover { color: var(--accent); padding-left: 1rem; }
+.nav__menu a:last-child { border-bottom: none; }
+.nav__menu a:hover { color: var(--accent); }
 
 @media (min-width: 900px) {
   .nav__toggle { display: none; }
+  .nav__backdrop { display: none; }
   .nav__menu {
     position: static; background: none; padding: 0;
+    border-bottom: none; box-shadow: none;
     flex-direction: row; gap: 2.5rem;
     transform: none; opacity: 1; pointer-events: auto;
   }
@@ -178,8 +191,7 @@ body.nav-open { overflow: hidden; }
   transition: transform 0.5s var(--ease-out);
 }
 .hero__img:hover { transform: scale(1.02); }
-.hero__img--2 { grid-column: 4 / 7; grid-row: 1 / 5; }
-.hero__img--3 { grid-column: 1 / 4; grid-row: 1 / 5; }
+.hero__img--full { grid-column: 1 / 7; grid-row: 1 / 5; }
 .hero__img img, .hero__img video { width: 100%; height: 100%; object-fit: cover; }
 .hero__img-tag {
   position: absolute; bottom: 1rem; left: 1rem;
@@ -242,10 +254,7 @@ body.nav-open { overflow: hidden; }
 /* MENU DEL DIA */
 .menudia { padding: 6rem 0; background: var(--bg-warm); scroll-margin-top: 90px; }
 .menudia__card { display: grid; grid-template-columns: 1fr; background: var(--surface); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04); }
-@media (min-width: 900px) { .menudia__card { grid-template-columns: 1fr 1.3fr; } }
-.menudia__image { aspect-ratio: 4/3; overflow: hidden; }
-.menudia__image img { width: 100%; height: 100%; object-fit: cover; }
-.menudia__content { padding: clamp(2rem, 5vw, 3rem); }
+.menudia__content { padding: clamp(2rem, 5vw, 3rem); max-width: 640px; margin: 0 auto; }
 .menudia__eyebrow { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
 .menudia__title { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.25rem); margin-bottom: 0.5rem; }
 .menudia__price { font-family: var(--font-display); font-size: 2.25rem; color: var(--accent); margin-bottom: 0.25rem; }
@@ -414,6 +423,7 @@ body.nav-open { overflow: hidden; }
     </nav>
   </div>
 </header>
+<div class="nav__backdrop" id="navBackdrop"></div>
 
 <section class="hero" id="top">
   <div class="container">
@@ -433,12 +443,9 @@ body.nav-open { overflow: hidden; }
         </div>
       </div>
       <div class="hero__images">
-        <div class="hero__img hero__img--2">
-          <img src="../assets/fotos/Pizza-Fugazzeta.jpg" alt="Pizza artesanal">
+        <div class="hero__img hero__img--full">
+          <img src="../assets/img/home/exterior-local.jpeg" alt="Frente del local Sánchez & Sánchez">
           <span class="hero__img-tag">+20 años</span>
-        </div>
-        <div class="hero__img hero__img--3">
-          <img src="../assets/fotos/Interior-del-Local.jpg" alt="Interior del local">
         </div>
       </div>
     </div>
@@ -465,10 +472,10 @@ body.nav-open { overflow: hidden; }
     <div class="about__grid">
       <div class="about__images">
         <div class="about__img-main">
-          <img src="../assets/fotos/Interior-del-Local.jpg" alt="Interior del local">
+          <img src="../assets/img/home/exterior-local.jpeg" alt="Frente del local Sánchez & Sánchez">
         </div>
         <div class="about__img-float">
-          <img src="../assets/fotos/Empanadas.jpg" alt="Empanadas caseras">
+          <img src="../assets/img/home/equipo-sanchez.jpeg" alt="El equipo de Sánchez & Sánchez">
         </div>
       </div>
       <div class="about__content">
@@ -564,9 +571,6 @@ body.nav-open { overflow: hidden; }
 <section class="menudia reveal" id="menudeldia">
   <div class="container">
     <div class="menudia__card">
-      <div class="menudia__image">
-        <img src="../assets/fotos/Pizza-Fugazzeta.jpg" alt="Pizza fugazzeta">
-      </div>
       <div class="menudia__content">
         <p class="menudia__eyebrow">Lunes a Viernes · 12 a 16 hs</p>
         <h2 class="menudia__title">Menú del Día</h2>
@@ -753,19 +757,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Nav toggle con bloqueo de scroll
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('navMenu');
-  toggle?.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('is-open');
-    toggle.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', isOpen);
-    document.body.classList.toggle('nav-open', isOpen);
-  });
-  menu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('is-open');
-      toggle.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('nav-open');
-    });
+  const backdrop = document.getElementById('navBackdrop');
+
+  const setNav = (open) => {
+    menu.classList.toggle('is-open', open);
+    toggle.classList.toggle('is-open', open);
+    backdrop?.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('nav-open', open);
+  };
+
+  toggle?.addEventListener('click', () => setNav(!menu.classList.contains('is-open')));
+  backdrop?.addEventListener('click', () => setNav(false));
+  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setNav(false)));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) setNav(false);
   });
 
   // Nav scroll

@@ -1,0 +1,823 @@
+[
+  {
+    "id": "TC001",
+    "title": "Abrir WhatsApp de pedido desde delivery",
+    "description": "Verifies that a visitor can open the WhatsApp order channel from the delivery area and reach the external chat in a new tab.",
+    "category": "Enlaces de delivery y pedido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the delivery section"
+      },
+      {
+        "type": "action",
+        "description": "Click the WhatsApp order card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a new browser tab opens for the WhatsApp chat"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Open mobile navigation from the Home page",
+    "description": "This verifies that a mobile visitor can open the full-screen navigation overlay from the Home page and see the available destinations.",
+    "category": "Navegación hamburguesa móvil",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hamburger menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the navigation overlay is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Use mobile navigation to reach the Carta page",
+    "description": "This verifies that a mobile visitor can open the navigation overlay from the Home page and navigate successfully to the Carta page.",
+    "category": "Navegación hamburguesa móvil",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hamburger menu"
+      },
+      {
+        "type": "action",
+        "description": "Tap the destination link for the carta page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Carta page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the navigation overlay is closed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Reach contact details from the home page",
+    "description": "Verify the home page contact area shows the location, phone, social links, and embedded map needed to get in touch or find the store.",
+    "category": "Contacto, ubicación y mapa embebido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the contact details are visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the embedded map is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Use mobile navigation to reach the Cafetería page",
+    "description": "This verifies that a mobile visitor can open the navigation overlay from the Home page and navigate successfully to the Cafetería page.",
+    "category": "Navegación hamburguesa móvil",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hamburger menu"
+      },
+      {
+        "type": "action",
+        "description": "Tap the destination link for the cafetería page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Cafetería page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the navigation overlay is closed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Close mobile navigation without leaving the page",
+    "description": "This verifies that a mobile visitor can dismiss the navigation overlay from the Home page without navigating away.",
+    "category": "Navegación hamburguesa móvil",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hamburger menu"
+      },
+      {
+        "type": "action",
+        "description": "Click the hamburger menu again"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the navigation overlay is closed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Home page remains displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Abrir Mercado Pago desde delivery",
+    "description": "Verifies that a visitor can open Mercado Pago from the delivery area and reach the external payment platform in a new tab.",
+    "category": "Enlaces de delivery y pedido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the delivery section"
+      },
+      {
+        "type": "action",
+        "description": "Click the Mercado Pago card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a new browser tab opens for the payment platform"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Open the contact phone action from the home page",
+    "description": "Verify the home page phone action is available from the contact section so a visitor can start a call on mobile.",
+    "category": "Contacto, ubicación y mapa embebido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Click the phone link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the phone action is available"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Auto-select the current weekday in the menu del día",
+    "description": "This verifies that the Home page automatically highlights today and shows the matching weekday menu when the user opens the menu del día section.",
+    "category": "Selector de menú del día",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero button for menú del día"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify today's weekday is selected in the menu selector"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the matching daily menu is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Abrir Rappi desde delivery",
+    "description": "Verifies that a visitor can open the Rappi delivery channel from the delivery area and reach the external platform in a new tab.",
+    "category": "Enlaces de delivery y pedido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the delivery section"
+      },
+      {
+        "type": "action",
+        "description": "Click the Rappi card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a new browser tab opens for the delivery platform"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Show the weekend notice in the menu del día",
+    "description": "This verifies that the Home page shows the weekend message when the menu del día is viewed on a weekend.",
+    "category": "Selector de menú del día",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero button for menú del día"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a weekend notice is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Abrir PedidosYa desde delivery",
+    "description": "Verifies that a visitor can open the PedidosYa delivery channel from the delivery area and reach the external platform in a new tab.",
+    "category": "Enlaces de delivery y pedido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the delivery section"
+      },
+      {
+        "type": "action",
+        "description": "Click the PedidosYa card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a new browser tab opens for the delivery platform"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Use the hero CTA to open the Carta page",
+    "description": "This verifies that the Home hero provides a direct path to the Carta page for a user who wants to order quickly.",
+    "category": "Acciones rápidas del hero",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero button for the carta"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Carta page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Switch the menu del día to a different weekday",
+    "description": "This verifies that a returning user can change the menu del día to another weekday and see the displayed dishes update accordingly.",
+    "category": "Selector de menú del día",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero button for menú del día"
+      },
+      {
+        "type": "action",
+        "description": "Select a different weekday in the menu selector"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected weekday changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the menu list updates to the selected day"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Cambiar entre categorías fijas de la carta",
+    "description": "Verifies that a visitor can use the fixed category tabs in the pizza menu to jump to different sections and see the corresponding content.",
+    "category": "Carta digital con pestañas fijas y desplazamiento sincronizado",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/carta/"
+      },
+      {
+        "type": "action",
+        "description": "Click the category tab for pizzas"
+      },
+      {
+        "type": "action",
+        "description": "Click the category tab for comidas"
+      },
+      {
+        "type": "action",
+        "description": "Click the category tab for empanadas"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the corresponding menu sections are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Use the hero CTA to open the Cafetería page",
+    "description": "This verifies that the Home hero provides a direct path to the Cafetería page for a user who wants to browse coffee options quickly.",
+    "category": "Acciones rápidas del hero",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero button for cafetería"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Cafetería page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "See promos expanded by default",
+    "description": "Verify the cafeteria menu opens with the promos section expanded and its items visible.",
+    "category": "Acordeón de categorías de cafetería",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/cafeteria/"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the promos section items are visible by default"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify other categories are initially collapsed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC018",
+    "title": "Open a social profile from the home page",
+    "description": "Verify the home page social links are available from the contact section and open the expected external destination.",
+    "category": "Contacto, ubicación y mapa embebido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Click a social profile link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the social profile destination is opened in a new tab"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC019",
+    "title": "Usar la barra móvil fija para pedir rápido",
+    "description": "Verifies that a mobile visitor can use the sticky bar to jump to the menu or start a WhatsApp order from the Home page.",
+    "category": "Enlaces de delivery y pedido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Set the browser to a mobile viewport"
+      },
+      {
+        "type": "action",
+        "description": "Click the sticky bar menu shortcut"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the menu section is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the sticky bar WhatsApp shortcut"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a new browser tab opens for the WhatsApp chat"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC020",
+    "title": "Jump to the delivery section from the Home hero",
+    "description": "This verifies that the Home hero can bring the user directly to the delivery section for quick ordering access.",
+    "category": "Acciones rápidas del hero",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero button for delivery"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the delivery section is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC021",
+    "title": "Jump to the menu del día from the Home hero",
+    "description": "This verifies that the Home hero can bring the user directly to the menu del día section for fast daily consultation.",
+    "category": "Acciones rápidas del hero",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero button for menú del día"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the menu del día section is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC022",
+    "title": "Use the map to locate the store",
+    "description": "Verify the embedded map is usable from the contact section so a visitor can view the location in Google Maps.",
+    "category": "Contacto, ubicación y mapa embebido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Interact with the embedded map"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the location view is displayed inside the map"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC023",
+    "title": "Abrir la carta desde el hero de la Home",
+    "description": "Verifies that a visitor can use the Home hero to reach the pizza menu quickly.",
+    "category": "Enlaces de delivery y pedido",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the hero link to view the pizza menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the pizza menu page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC024",
+    "title": "Mantener la pestaña activa al desplazarse por la carta",
+    "description": "Verifies that scrolling through the pizza menu updates the active category tab to match the section in view.",
+    "category": "Carta digital con pestañas fijas y desplazamiento sincronizado",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/carta/"
+      },
+      {
+        "type": "action",
+        "description": "Scroll through the menu sections"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the active category tab updates with the visible section"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC025",
+    "title": "Abrir y cerrar el detalle de un producto",
+    "description": "Verifies that a visitor can open a product card in the pizza menu and close the detail modal to return to the grid.",
+    "category": "Tarjetas de producto y modal de detalle",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/carta/"
+      },
+      {
+        "type": "action",
+        "description": "Click a product card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product detail modal is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the modal close control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product grid is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC026",
+    "title": "Expand and collapse a cafeteria category",
+    "description": "Verify a cafeteria category can be opened and then closed again from the accordion.",
+    "category": "Acordeón de categorías de cafetería",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/cafeteria/"
+      },
+      {
+        "type": "action",
+        "description": "Click a collapsed cafeteria category header"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the category items are visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the same category header again"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the category items are hidden"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC027",
+    "title": "Ver precios chica y grande en una pizza",
+    "description": "Verifies that opening a pizza product shows the detail modal with both size prices when applicable.",
+    "category": "Tarjetas de producto y modal de detalle",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/carta/"
+      },
+      {
+        "type": "action",
+        "description": "Click a pizza product card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product detail modal shows size-based pricing"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC028",
+    "title": "Browse cafeteria novedades with the next control",
+    "description": "Verify the new products carousel advances to the next item when the forward control is used.",
+    "category": "Carrusel de productos nuevos de cafetería",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/cafeteria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the forward carousel control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the next featured product is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC029",
+    "title": "Browse cafeteria novedades with the previous control",
+    "description": "Verify the new products carousel moves back to the previous item when the back control is used.",
+    "category": "Carrusel de productos nuevos de cafetería",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/cafeteria/"
+      },
+      {
+        "type": "action",
+        "description": "Click the forward carousel control"
+      },
+      {
+        "type": "action",
+        "description": "Click the back carousel control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the previous featured product is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC030",
+    "title": "Cerrar el modal con el teclado",
+    "description": "Verifies that a visitor can dismiss the product detail modal with Escape and return to the pizza grid.",
+    "category": "Tarjetas de producto y modal de detalle",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/carta/"
+      },
+      {
+        "type": "action",
+        "description": "Click a product card"
+      },
+      {
+        "type": "action",
+        "description": "Press Escape"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product grid is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC031",
+    "title": "Toggle a cafeteria category with the keyboard",
+    "description": "Verify a focused cafeteria category header can be opened and closed using keyboard interaction.",
+    "category": "Acordeón de categorías de cafetería",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/cafeteria/"
+      },
+      {
+        "type": "action",
+        "description": "Focus a collapsed cafeteria category header"
+      },
+      {
+        "type": "action",
+        "description": "Press Enter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the category items are visible"
+      },
+      {
+        "type": "action",
+        "description": "Press Space"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the category items are hidden"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC032",
+    "title": "Browse cafeteria novedades by dragging",
+    "description": "Verify the new products carousel can be manually browsed by dragging sideways.",
+    "category": "Carrusel de productos nuevos de cafetería",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/cafeteria/"
+      },
+      {
+        "type": "action",
+        "description": "Drag the carousel sideways"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a different featured product is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC033",
+    "title": "Ver un producto sin foto en la carta",
+    "description": "Verifies that products without an image still render correctly in the pizza menu and open a readable detail view.",
+    "category": "Tarjetas de producto y modal de detalle",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /estilo-floria/carta/"
+      },
+      {
+        "type": "action",
+        "description": "Click a product card without a photo"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product detail modal is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product detail view remains readable without an image"
+      }
+    ],
+    "priority": "Low"
+  }
+]

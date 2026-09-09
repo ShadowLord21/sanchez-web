@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
-  <rect width="800" height="1000" fill="#EFE6D3"/>
-  <rect x="0" y="0" width="800" height="1000" fill="none" stroke="#C9A24B" stroke-width="6"/>
-  <circle cx="400" cy="430" r="170" fill="#C9A24B" opacity="0.16"/>
-  <circle cx="400" cy="430" r="170" fill="none" stroke="#B24A2E" stroke-width="4" opacity="0.4"/>
-  <text x="50%" y="46%" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#1C2B3A" opacity="0.55">FOTO: pizza al horno</text>
-  <text x="50%" y="50%" text-anchor="middle" font-family="Georgia, serif" font-size="19" fill="#1C2B3A" opacity="0.4">(vertical)</text>
-</svg>

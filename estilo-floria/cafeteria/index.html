@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cafetería — Sánchez & Sánchez">
 <meta property="og:description" content="Cafés, especiales, panadería, tortas y tostados.">
-<meta property="og:image" content="/assets/img/og-cover.svg">
+<meta property="og:image" content="/assets/img/meta/og-cover.svg">
 <meta property="og:locale" content="es_AR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,22 +82,37 @@ body {
 .nav__toggle.is-open .nav__toggle-lines span:nth-child(2) { opacity: 0; }
 .nav__toggle.is-open .nav__toggle-lines span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 .nav__menu {
-  position: fixed; inset: 0; background: var(--bg); padding: 80px 2rem 2rem;
-  display: flex; flex-direction: column; gap: 0.5rem;
-  transform: translateY(-100%); opacity: 0; pointer-events: none;
-  transition: transform 0.5s var(--ease-out), opacity 0.4s;
+  position: absolute; top: 100%; left: 0; right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  padding: 0.25rem clamp(1.25rem, 4vw, 2rem) 0.75rem;
+  display: flex; flex-direction: column;
+  transform: translateY(-8px); opacity: 0; pointer-events: none;
+  transition: transform 0.3s var(--ease-out), opacity 0.25s;
 }
 .nav__menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+.nav__backdrop {
+  position: fixed; inset: 0; z-index: 900;
+  background: rgba(26, 24, 22, 0.45);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+}
+.nav__backdrop.is-open { opacity: 1; pointer-events: auto; }
 body.nav-open { overflow: hidden; }
 .nav__menu a {
-  font-family: var(--font-display); font-size: 1.75rem; color: var(--fg); text-decoration: none;
-  padding: 0.75rem 0; border-bottom: 1px solid var(--border); transition: color 0.2s;
+  font-family: var(--font-body); font-size: 1.125rem; font-weight: 600;
+  color: var(--fg); text-decoration: none;
+  padding: 0.875rem 0.25rem; border-bottom: 1px solid var(--border); transition: color 0.2s;
 }
+.nav__menu a:last-child { border-bottom: none; }
 .nav__menu a:hover { color: var(--accent); }
 @media (min-width: 900px) {
   .nav__toggle { display: none; }
+  .nav__backdrop { display: none; }
   .nav__menu {
-    position: static; background: none; padding: 0; flex-direction: row; gap: 2rem; transform: none; opacity: 1; pointer-events: auto;
+    position: static; background: none; padding: 0; border-bottom: none; box-shadow: none;
+    flex-direction: row; gap: 2rem; transform: none; opacity: 1; pointer-events: auto;
   }
   .nav__menu a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; padding: 0; border: none; }
 }
@@ -165,11 +180,11 @@ body.nav-open { overflow: hidden; }
 .new-slider__arrow:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .new-slider__track {
   display: flex; gap: 1rem;
-  animation: autoSlide 25s linear infinite;
+  cursor: grab; touch-action: pan-y; user-select: none; will-change: transform;
 }
-@keyframes autoSlide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-.new-slider__track:hover, .new-slider__track.is-paused { animation-play-state: paused; }
+.new-slider__track.is-dragging { cursor: grabbing; }
 .new-slider__item { flex-shrink: 0; width: 180px; text-align: center; }
+.new-slider__item img { -webkit-user-drag: none; user-select: none; pointer-events: none; }
 .new-slider__item-img {
   aspect-ratio: 3/4; border-radius: var(--radius-lg); overflow: hidden;
   background: var(--bg-warm); margin-bottom: 0.75rem;
@@ -555,6 +570,7 @@ body.nav-open { overflow: hidden; }
     </nav>
   </div>
 </header>
+<div class="nav__backdrop" id="navBackdrop"></div>
 
 <section class="menu-header">
   <div class="container">
@@ -574,29 +590,76 @@ body.nav-open { overflow: hidden; }
     </div>
   </div>
   <div class="new-slider__track" id="newTrack">
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Vitrina-de-Panaderia.jpg" alt="Bagels"></div><figcaption>Bagels <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Cafe-con-Medialunas.jpg" alt="Waffles"></div><figcaption>Waffles <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Vitrina-de-Panaderia.jpg" alt="Croissants rellenos"></div><figcaption>Croissants rellenos <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Cafe-con-Medialunas.jpg" alt="Muffins"></div><figcaption>Muffins <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Vitrina-de-Panaderia.jpg" alt="Lemon Pie"></div><figcaption>Lemon Pie <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Cafe-con-Medialunas.jpg" alt="Volcán de Chocolate"></div><figcaption>Volcán de Chocolate <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Vitrina-de-Panaderia.jpg" alt="Bagels"></div><figcaption>Bagels <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Cafe-con-Medialunas.jpg" alt="Waffles"></div><figcaption>Waffles <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Vitrina-de-Panaderia.jpg" alt="Croissants rellenos"></div><figcaption>Croissants rellenos <span>Próximamente</span></figcaption></figure>
-    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/fotos/Cafe-con-Medialunas.jpg" alt="Muffins"></div><figcaption>Muffins <span>Próximamente</span></figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/bagels.jpg" alt="Bagels"></div><figcaption>Bagels</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/waffle.jpeg" alt="Waffles"></div><figcaption>Waffles</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/croissant.jpeg" alt="Croissants rellenos"></div><figcaption>Croissants rellenos</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/muffins.jpeg" alt="Muffins"></div><figcaption>Muffins</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/tortas.jpeg" alt="Tortas"></div><figcaption>Tortas</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/volcan-chocolate.jpeg" alt="Volcán de Chocolate"></div><figcaption>Volcán de Chocolate</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/bagels.jpg" alt="Bagels"></div><figcaption>Bagels</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/waffle.jpeg" alt="Waffles"></div><figcaption>Waffles</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/croissant.jpeg" alt="Croissants rellenos"></div><figcaption>Croissants rellenos</figcaption></figure>
+    <figure class="new-slider__item"><div class="new-slider__item-img"><img src="../../assets/img/cafeteria-nuevos/muffins.jpeg" alt="Muffins"></div><figcaption>Muffins</figcaption></figure>
   </div>
 </div>
-
-<figure class="menu-feature" data-od-id="hero-feature-image">
-  <div class="menu-feature__img"><img src="../../assets/fotos/Vitrina-de-Panaderia.jpg" alt="Vitrina de panadería con facturas y medialunas"></div>
-  <figcaption>Nuestra vitrina, siempre fresca</figcaption>
-</figure>
 
 <div class="cafe-accordion">
   <h2 class="cafe-accordion__title">Nuestra Cafetería</h2>
 
+<!-- PROMOS -->
+<div class="cafe-accordion__section is-open" id="promos" data-od-id="section-promos">
+  <div class="cafe-accordion__header" aria-label="Expandir o colapsar sección de Promos — Todo el Día">
+    <h3 class="cafe-accordion__header-title">Promos — Todo el Día</h3>
+    <span class="cafe-accordion__header-icon" aria-hidden="true">+</span>
+  </div>
+  <div class="cafe-accordion__content">
+    <div class="cafe-accordion__body">
+      <p class="cafe-accordion__subtitle">Combos de desayuno — elegí tu acompañamiento</p>
+
+      <div class="cafe-accordion__promo-card">
+        <div class="cafe-accordion__promo-title">Clásico — café con leche</div>
+        <div class="cafe-accordion__promo-desc">Acompañalo con: 2 tostones, huevo y palta · tostado de j&q · croissant de jamón y queso</div>
+        <div class="cafe-accordion__promo-price">$8.000</div>
+      </div>
+
+      <div class="cafe-accordion__promo-card">
+        <div class="cafe-accordion__promo-title">Premium — tazón</div>
+        <div class="cafe-accordion__promo-desc">Acompañalo con: bagel a elección · waffle</div>
+        <div class="cafe-accordion__promo-price">$10.000</div>
+      </div>
+
+      <ul class="cafe-accordion__list" style="margin-top: 1.5rem;">
+        <li class="cafe-accordion__item">
+          <div class="cafe-accordion__item-left">
+            <div class="cafe-accordion__item-name">Café c/leche + 3 medialunas</div>
+          </div>
+          <span class="cafe-accordion__item-price">$5.200</span>
+        </li>
+        <li class="cafe-accordion__item">
+          <div class="cafe-accordion__item-left">
+            <div class="cafe-accordion__item-name">Americano + medialunas j&q</div>
+          </div>
+          <span class="cafe-accordion__item-price">$6.000</span>
+        </li>
+        <li class="cafe-accordion__item">
+          <div class="cafe-accordion__item-left">
+            <div class="cafe-accordion__item-name">Licuado o café c/leche + torta</div>
+          </div>
+          <span class="cafe-accordion__item-price">$11.500</span>
+        </li>
+        <li class="cafe-accordion__item">
+          <div class="cafe-accordion__item-left">
+            <div class="cafe-accordion__item-name">C/leche + tostaditas, queso, mermelada y jugo</div>
+          </div>
+          <span class="cafe-accordion__item-price">$5.400</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <!-- Acordeón: CAFÉS E INFUSIONES -->
-<div class="cafe-accordion__section is-open" id="cafes" data-od-id="section-cafes">
+<div class="cafe-accordion__section" id="cafes" data-od-id="section-cafes">
   <div class="cafe-accordion__header" aria-label="Expandir o colapsar sección de Cafés e Infusiones">
     <h3 class="cafe-accordion__header-title">Cafés e Infusiones</h3>
     <span class="cafe-accordion__header-icon" aria-hidden="true">+</span>
@@ -961,58 +1024,6 @@ body.nav-open { overflow: hidden; }
   </div>
 </div>
 
-<!-- PROMOS -->
-<div class="cafe-accordion__section" id="promos" data-od-id="section-promos">
-  <div class="cafe-accordion__header" aria-label="Expandir o colapsar sección de Promos — Todo el Día">
-    <h3 class="cafe-accordion__header-title">Promos — Todo el Día</h3>
-    <span class="cafe-accordion__header-icon" aria-hidden="true">+</span>
-  </div>
-  <div class="cafe-accordion__content">
-    <div class="cafe-accordion__body">
-      <p class="cafe-accordion__subtitle">Combos de desayuno — elegí tu acompañamiento</p>
-
-      <div class="cafe-accordion__promo-card">
-        <div class="cafe-accordion__promo-title">Clásico — café con leche</div>
-        <div class="cafe-accordion__promo-desc">Acompañalo con: 2 tostones, huevo y palta · tostado de j&q · croissant de jamón y queso</div>
-        <div class="cafe-accordion__promo-price">$8.000</div>
-      </div>
-
-      <div class="cafe-accordion__promo-card">
-        <div class="cafe-accordion__promo-title">Premium — tazón</div>
-        <div class="cafe-accordion__promo-desc">Acompañalo con: bagel a elección · waffle</div>
-        <div class="cafe-accordion__promo-price">$10.000</div>
-      </div>
-
-      <ul class="cafe-accordion__list" style="margin-top: 1.5rem;">
-        <li class="cafe-accordion__item">
-          <div class="cafe-accordion__item-left">
-            <div class="cafe-accordion__item-name">Café c/leche + 3 medialunas</div>
-          </div>
-          <span class="cafe-accordion__item-price">$5.200</span>
-        </li>
-        <li class="cafe-accordion__item">
-          <div class="cafe-accordion__item-left">
-            <div class="cafe-accordion__item-name">Americano + medialunas j&q</div>
-          </div>
-          <span class="cafe-accordion__item-price">$6.000</span>
-        </li>
-        <li class="cafe-accordion__item">
-          <div class="cafe-accordion__item-left">
-            <div class="cafe-accordion__item-name">Licuado o café c/leche + torta</div>
-          </div>
-          <span class="cafe-accordion__item-price">$11.500</span>
-        </li>
-        <li class="cafe-accordion__item">
-          <div class="cafe-accordion__item-left">
-            <div class="cafe-accordion__item-name">C/leche + tostaditas, queso, mermelada y jugo</div>
-          </div>
-          <span class="cafe-accordion__item-price">$5.400</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 </div>
 
 </main>
@@ -1076,21 +1087,23 @@ body.nav-open { overflow: hidden; }
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('navMenu');
+  const backdrop = document.getElementById('navBackdrop');
 
   // Nav toggle con bloqueo de scroll
-  toggle?.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('is-open');
-    toggle.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', isOpen);
-    document.body.classList.toggle('nav-open', isOpen);
-  });
+  const setNav = (open) => {
+    menu.classList.toggle('is-open', open);
+    toggle.classList.toggle('is-open', open);
+    backdrop?.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('nav-open', open);
+  };
 
-  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    menu.classList.remove('is-open');
-    toggle.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
-  }));
+  toggle?.addEventListener('click', () => setNav(!menu.classList.contains('is-open')));
+  backdrop?.addEventListener('click', () => setNav(false));
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNav(false)));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) setNav(false);
+  });
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1132,23 +1145,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Slider de productos nuevos con controles manuales
+  // Slider de productos nuevos: scroll continuo + flechas + arrastre con el dedo/mouse (loop infinito real)
   const newTrack = document.getElementById('newTrack');
   const sliderArrows = document.querySelectorAll('.new-slider__arrow');
-  let sliderOffset = 0;
   const itemWidth = 196; // 180px + 16px gap
+  const sliderLoopWidth = (newTrack.children.length / 2) * itemWidth; // ancho de una vuelta completa
+  const sliderSpeed = 140; // px por segundo
+  let sliderOffset = 0;
+  let sliderDragging = false;
+  let sliderHovering = false;
+  let sliderDragStartX = 0;
+  let sliderDragStartOffset = 0;
+  let sliderLastTime = null;
+
+  const wrapSlider = (val, max) => ((val % max) + max) % max;
+
+  const applySliderOffset = () => {
+    sliderOffset = wrapSlider(sliderOffset, sliderLoopWidth);
+    newTrack.style.transform = `translateX(-${sliderOffset}px)`;
+  };
+
+  const sliderTick = (time) => {
+    if (sliderLastTime === null) sliderLastTime = time;
+    const dt = (time - sliderLastTime) / 1000;
+    sliderLastTime = time;
+    if (!sliderDragging && !sliderHovering) {
+      sliderOffset += sliderSpeed * dt;
+      applySliderOffset();
+    }
+    requestAnimationFrame(sliderTick);
+  };
+  requestAnimationFrame(sliderTick);
 
   sliderArrows.forEach(btn => {
     btn.addEventListener('click', () => {
-      newTrack.style.animation = 'none';
       const dir = parseInt(btn.dataset.dir, 10);
       sliderOffset += dir * itemWidth;
-      const maxOffset = (newTrack.children.length / 2) * itemWidth;
-      if (sliderOffset < 0) sliderOffset = 0;
-      if (sliderOffset > maxOffset) sliderOffset = maxOffset;
-      newTrack.style.transform = `translateX(-${sliderOffset}px)`;
+      applySliderOffset();
     });
   });
+
+  newTrack.addEventListener('mouseenter', () => { sliderHovering = true; });
+  newTrack.addEventListener('mouseleave', () => { sliderHovering = false; });
+
+  newTrack.addEventListener('pointerdown', e => {
+    sliderDragging = true;
+    sliderDragStartX = e.clientX;
+    sliderDragStartOffset = sliderOffset;
+    newTrack.classList.add('is-dragging');
+    newTrack.setPointerCapture(e.pointerId);
+  });
+  newTrack.addEventListener('pointermove', e => {
+    if (!sliderDragging) return;
+    e.preventDefault();
+    sliderOffset = sliderDragStartOffset - (e.clientX - sliderDragStartX);
+    applySliderOffset();
+  });
+  const endSliderDrag = () => { sliderDragging = false; newTrack.classList.remove('is-dragging'); };
+  newTrack.addEventListener('pointerup', endSliderDrag);
+  newTrack.addEventListener('pointercancel', endSliderDrag);
 
 });
 </script>

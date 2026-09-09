@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#EFE6D3"/>
-  <rect x="0" y="0" width="800" height="600" fill="none" stroke="#C9A24B" stroke-width="5"/>
-  <path d="M320 290c0-45 36-90 80-90s80 45 80 90-36 40-80 40-80 5-80-40z" fill="#C9A24B" opacity="0.16"/>
-  <path d="M320 290c0-45 36-90 80-90s80 45 80 90-36 40-80 40-80 5-80-40z" fill="none" stroke="#B24A2E" stroke-width="4" opacity="0.4"/>
-  <text x="50%" y="60%" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#1C2B3A" opacity="0.55">
-    REEMPLAZAR: foto del producto
-  </text>
-</svg>
