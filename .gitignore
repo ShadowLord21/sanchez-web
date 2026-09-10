@@ -1,2 +1,25 @@
-testsprite_tests/tmp/
-testsprite_tests/tmp/config.json
+# Dependencias
+node_modules/
+
+# Entorno y credenciales
+.env
+.env.*
+*.pem
+*.key
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups y temporales
+*.bak
+*.tmp
+*.orig
+*~
+
+# Salidas de herramientas de test (no se publican)
+docs/testsprite_tests/tmp/
+
+# Tooling local de Claude Code (no es parte del sitio)
+.claude/

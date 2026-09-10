@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Nada interno se publica (el deploy solo sube la web), pero por las dudas:
+Disallow: /docs/
+Disallow: /testsprite_tests/
+
+Sitemap: https://sanchez-sanchez.com.ar/sitemap.xml
