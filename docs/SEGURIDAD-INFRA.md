@@ -39,31 +39,103 @@ Verificado: `http://sanchez-sanchez.com.ar/` responde **200 OK en vez de redirig
 
 ---
 
-## 2 — Cabeceras de seguridad (Cloudflare Transform Rules)
+## 2 — Cabeceras de seguridad (Cloudflare)
 
-GitHub Pages no permite setear headers, así que van en Cloudflare.
+### ¿Qué es esto, en criollo?
 
-**Ruta:** Cloudflare → **Rules** → **Transform Rules** → **Modify Response Header** → *Create rule*
+Cuando alguien entra a tu sitio, el servidor manda **dos cosas**: la página que se ve, y un
+conjunto de "instrucciones invisibles" para el navegador que se llaman **cabeceras** (headers).
+Esas instrucciones dicen cosas como *"a este sitio entrá siempre por HTTPS"* o *"no permitas
+que otra web me meta adentro de un marco para estafar a mis clientes"*.
 
-- **Nombre:** `Security headers`
-- **If:** `Hostname equals sanchez-sanchez.com.ar` (o "All incoming requests")
-- **Then → Set static:** agregá una entrada por cada fila:
+Hoy tu sitio **no manda ninguna** de esas instrucciones. Eso es lo que vamos a arreglar acá.
 
-| Header | Valor |
-|---|---|
-| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains` |
-| `X-Content-Type-Options` | `nosniff` |
-| `Referrer-Policy` | `strict-origin-when-cross-origin` |
-| `X-Frame-Options` | `SAMEORIGIN` |
-| `Permissions-Policy` | `camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()` |
-| `Cross-Origin-Opener-Policy` | `same-origin` |
-| `X-DNS-Prefetch-Control` | `off` |
+GitHub Pages no deja configurarlas (es un hosting muy simple). Pero como tu dominio pasa por
+**Cloudflare**, Cloudflare puede agregarlas al vuelo: la página sale de GitHub, pasa por
+Cloudflare, Cloudflare le agrega las instrucciones, y recién ahí llega al visitante.
+
+Eso se configura con lo que Cloudflare llama una **regla de transformación de respuesta**.
+Es una sola regla que dice: *"a todo lo que salga de este dominio, agregale estas 7 cabeceras"*.
+Se hace una vez y queda andando para siempre.
+
+---
+
+### Paso a paso
+
+**1.** Entrá a https://dash.cloudflare.com e iniciá sesión.
+
+**2.** En la pantalla principal te aparece la lista de tus dominios. Hacé clic en
+**`sanchez-sanchez.com.ar`**.
+
+> Importante: la regla se configura **dentro del dominio**, no en la pantalla general de la cuenta.
+
+**3.** En el menú de la izquierda buscá **Rules** (Reglas). Hacé clic.
+
+**4.** Ahí adentro vas a ver una de estas dos cosas, según la versión del panel:
+
+- **Opción A:** un submenú que dice **Transform Rules** → entrá y elegí la pestaña
+  **Modify Response Header** (Modificar cabecera de respuesta).
+- **Opción B (panel nuevo):** una pantalla **Overview** con un botón **Create rule** →
+  al hacer clic te deja elegir el tipo, y elegís **Response Header Transform Rule**.
+
+En ambos casos terminás en el mismo formulario. Si no encontrás ninguna, usá el buscador
+de arriba del panel y escribí "Transform".
+
+**5.** Hacé clic en **Create rule** (Crear regla).
+
+**6.** En **Rule name** (nombre de la regla) poné: `Cabeceras de seguridad`
+
+**7.** Te va a preguntar a qué peticiones aplicar la regla. Elegí la opción
+**All incoming requests** (todas las peticiones entrantes).
+
+> Si tu panel no ofrece esa opción y te obliga a armar un filtro, poné:
+> Field = `Hostname`, Operator = `equals`, Value = `sanchez-sanchez.com.ar`
+
+**8.** Abajo está la parte de **Then** (entonces) / **Response Header Modifications**.
+Ahí vas a cargar las 7 cabeceras, **una por una**. Para cada una:
+
+- Hacé clic en **+ Add header** / **Set new header** (agregar cabecera)
+- En el desplegable de acción elegí **Set static** (valor fijo)
+- En **Header name** escribí el nombre de la columna izquierda de la tabla
+- En **Value** pegá exactamente el texto de la columna derecha
+- Repetí para la siguiente
+
+| # | Header name | Value | Para qué sirve |
+|---|---|---|---|
+| 1 | `Strict-Transport-Security` | `max-age=31536000; includeSubDomains` | Obliga al navegador a usar siempre HTTPS durante un año |
+| 2 | `X-Content-Type-Options` | `nosniff` | Evita que el navegador "adivine" tipos de archivo y ejecute algo que no debe |
+| 3 | `Referrer-Policy` | `strict-origin-when-cross-origin` | No filtra a otros sitios la URL exacta desde la que vino el visitante |
+| 4 | `X-Frame-Options` | `SAMEORIGIN` | Impide que otra web meta tu sitio en un marco para hacerse pasar por vos |
+| 5 | `Permissions-Policy` | `camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()` | Bloquea cámara, micrófono, ubicación, etc. Tu sitio no los usa |
+| 6 | `Cross-Origin-Opener-Policy` | `same-origin` | Aísla tu pestaña de otras ventanas que quieran manipularla |
+| 7 | `X-DNS-Prefetch-Control` | `off` | Evita consultas DNS anticipadas innecesarias |
+
+**9.** Hacé clic en **Deploy** (o **Save and Deploy**). Listo, ya está activo — no hace falta
+tocar nada en GitHub ni volver a subir el sitio.
+
+---
+
+### Cómo saber si funcionó
+
+Esperá 1 o 2 minutos y entrá a:
+
+**https://securityheaders.com/?q=sanchez-sanchez.com.ar**
+
+Antes de este paso te daba **F**. Después de cargar las 7 cabeceras tiene que darte **A**.
+
+Si te sigue dando F:
+- Verificá que el dominio en Cloudflare tenga la nubecita **naranja** (proxied) y no gris.
+  Con la nube gris, el tráfico no pasa por Cloudflare y la regla nunca se aplica.
+- Revisá que la regla figure como **Enabled** / activa en la lista de reglas.
 
 ### Sobre `preload` en HSTS
-**No lo agregues todavía.** `preload` es prácticamente irreversible (queda embebido en los
-navegadores). Recomendación: dejá `max-age=31536000; includeSubDomains` funcionando 2-3 meses,
-confirmá que ningún subdominio necesite HTTP, y recién ahí sumá `; preload` y registralo en
-https://hstspreload.org
+
+Vas a ver que la cabecera 1 admite agregarle `; preload` al final. **No lo hagas todavía.**
+
+`preload` mete tu dominio en una lista que viene *precargada dentro de los navegadores*.
+Es prácticamente irreversible: si algún día necesitás que algo funcione por HTTP, sacarlo de
+esa lista tarda meses. Dejá la cabecera como está 2 o 3 meses, confirmá que todo anda bien,
+y recién ahí evaluá sumar `; preload` y registrar el dominio en https://hstspreload.org
 
 ---
 
