@@ -24,18 +24,48 @@ El workflow (`.github/workflows/deploy.yml`) ya está en el repo y publica **sol
 
 ---
 
-## 1 — HTTPS forzado (ALTA prioridad, hoy está mal)
-
-Verificado: `http://sanchez-sanchez.com.ar/` responde **200 OK en vez de redirigir a HTTPS**.
-
-**GitHub:**
-1. Settings → Pages → tildar **Enforce HTTPS**
+## 1 — HTTPS forzado
 
 **Cloudflare:**
-1. SSL/TLS → **Overview** → poner el modo en **Full (Strict)**
+1. SSL/TLS → **Edge Certificates** → activar **Always Use HTTPS**
+2. En la misma pantalla → activar **Minimum TLS Version: 1.2**
+3. SSL/TLS → **Overview** → poner el modo en **Full**
    (Si está en "Flexible", el tramo Cloudflare↔GitHub va sin cifrar — cambialo sí o sí.)
-2. SSL/TLS → **Edge Certificates** → activar **Always Use HTTPS**
-3. En la misma pantalla → activar **Minimum TLS Version: 1.2**
+
+> ### ⛔ NO pongas "Full (Strict)" sin leer esto
+>
+> **Full (Strict)** exige que el origen (GitHub Pages) tenga un certificado válido para
+> `sanchez-sanchez.com.ar`. Y acá está la trampa:
+>
+> **GitHub Pages no puede emitir ese certificado mientras el dominio esté proxeado por
+> Cloudflare** (nube naranja). GitHub valida el dominio resolviéndolo y espera ver sus propios
+> servidores (`185.199.108-111.153`); ve las IPs de Cloudflare y nunca emite el certificado.
+>
+> Síntomas de haberlo activado igual:
+> - En GitHub → Settings → Pages, **Enforce HTTPS aparece en gris** ("unavailable... a
+>   certificate has not yet been issued")
+> - El sitio devuelve **error 526** de Cloudflare — o sea, **se cae**
+>
+> (Nos pasó exactamente esto el 17/09/2026.)
+
+### Las dos configuraciones válidas
+
+**Opción A — Proxy activo + SSL "Full"** *(recomendada por simplicidad)*
+- Los visitantes ven HTTPS válido: el certificado lo aporta Cloudflare
+- El tramo Cloudflare↔GitHub va cifrado, pero sin validar el certificado del origen
+- **Enforce HTTPS de GitHub queda "unavailable" para siempre, y está bien**: la redirección
+  la hace "Always Use HTTPS" de Cloudflare
+- Conservás WAF, Bot Fight Mode y caché
+
+**Opción B — Llegar a "Full (Strict)"** *(más seguro, más pasos)*
+1. Cloudflare → **DNS** → clic en la **nube naranja** del registro para dejarla **gris** (DNS only)
+2. Esperá a que GitHub emita el certificado (15 min a 1 h). Sabés que está listo cuando en
+   Settings → Pages podés **tildar Enforce HTTPS**
+3. Tildá **Enforce HTTPS**
+4. Volvé la nube a **naranja**
+5. Recién ahí poné **Full (Strict)**
+
+Durante el paso 1-2 el sitio funciona, pero sin WAF y con la IP de origen expuesta.
 
 ---
 
