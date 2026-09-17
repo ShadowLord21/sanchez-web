@@ -169,33 +169,109 @@ y recién ahí evaluá sumar `; preload` y registrar el dominio en https://hstsp
 
 ---
 
-## 3 — CSP: rollout en dos etapas
+## 3 — CSP (Content-Security-Policy)
 
-En el código **ya quedó una CSP estricta por `<meta>`**, con hashes SHA-256 de cada bloque
-inline. Verificada en navegador real: **0 recursos bloqueados** en las 4 páginas.
+### ¿Qué es esto, en criollo?
 
-Lo que el `<meta>` **no** puede hacer (limitación del estándar):
-- `frame-ancestors` → por eso arriba pusimos `X-Frame-Options`
-- modo **Report-Only** → no existe vía meta
-- reporting endpoint
+La CSP es una **lista blanca**: le dice al navegador *"en esta página, solo cargá cosas de
+estos lugares y nada más"*. Si mañana alguien logra inyectar un script malicioso en tu sitio,
+el navegador se niega a ejecutarlo porque no está en la lista.
 
-Por eso conviene además la versión header, con el rollout que pediste:
+Es la protección más fuerte contra XSS, y también la más delicada: si la lista queda mal
+armada, **bloqueás cosas tuyas** y el sitio se rompe (se ve sin estilos, el menú no abre, etc.).
 
-### Etapa 1 — Report-Only (2 a 4 semanas)
-En la misma Transform Rule agregá:
+### Lo que ya está hecho
 
-| Header | Valor |
-|---|---|
-| `Content-Security-Policy-Report-Only` | *(pegar el contenido del `<meta>` de `index.html`, agregando `frame-ancestors 'self';`)* |
+En el código **ya hay una CSP estricta**, puesta como etiqueta `<meta>` dentro de cada página.
+La verifiqué en un navegador real sobre las 4 páginas ejercitando menú, acordeón, modal y
+slider: **0 recursos bloqueados**. O sea que la protección ya está funcionando para tus visitantes.
 
-El valor exacto lo sacás de `index.html`, atributo `content` del `<meta http-equiv="Content-Security-Policy">`.
+### Entonces, ¿por qué hacer algo más?
 
-Durante ese período revisá si algo se rompe. **Ojo:** si tocás el HTML/CSS/JS inline, los hashes
-cambian y hay que regenerarlos (ver `docs/SEGURIDAD-REPORTE.md`, sección "Mantenimiento").
+Por dos motivos:
 
-### Etapa 2 — Enforcement
-Si en 2-4 semanas no hubo reportes, renombrá el header a `Content-Security-Policy`
-y borrá el `-Report-Only`.
+1. **securityheaders.com no la ve.** Ese sitio solo mira cabeceras HTTP, no lee el HTML. Por eso
+   te va a seguir marcando "Content-Security-Policy" en rojo aunque esté funcionando.
+2. **Hay dos cosas que el `<meta>` no puede hacer** (es una limitación del estándar, no un error):
+   - `frame-ancestors` (anti-clickjacking) — por eso en el punto 2 pusimos `X-Frame-Options`
+   - el modo **Report-Only**, que es el que permite probar sin romper nada
+
+Poniéndola también como cabecera en Cloudflare cubrís esos dos huecos.
+
+---
+
+### El valor exacto a pegar
+
+Está en el archivo **`docs/csp-header.txt`** del repo. Abrilo, copiá la línea larga
+(la que empieza con `default-src 'self';`) y esa es la que va en Cloudflare.
+
+> ⚠️ **No copies el `<meta>` de `index.html`.** Cada página tiene hashes distintos, y una
+> cabecera HTTP se aplica a **todas** por igual. El archivo `csp-header.txt` tiene la
+> combinación de las 4 páginas — es el único valor que funciona para todas.
+
+---
+
+### Etapa 1 — Probar sin romper nada (2 a 4 semanas)
+
+En modo **Report-Only** el navegador **no bloquea nada**: solo anota en la consola lo que
+*habría* bloqueado. Es una prueba sin riesgo.
+
+**1.** Cloudflare → tu dominio → **Rules** → la regla `Cabeceras de seguridad` que creaste en el
+punto 2 → **Edit**
+
+**2.** Agregá una cabecera más (igual que las otras 7):
+- **Header name:** `Content-Security-Policy-Report-Only`
+- **Value:** la línea larga de `docs/csp-header.txt`
+
+**3.** **Deploy**
+
+**4.** Durante las semanas siguientes, cada tanto abrí el sitio en la compu, apretá **F12**
+(abre las herramientas de desarrollador), andá a la pestaña **Console** y navegá un poco:
+entrá a Carta, abrí una tarjeta de producto, abrí el menú, mirá Cafetería.
+
+- **Si no aparece nada en rojo** → todo bien, podés pasar a la etapa 2
+- **Si aparece algo tipo** `Refused to load ... because it violates the following Content
+  Security Policy directive` → anotá el mensaje completo y mandámelo. Significa que hay algo
+  legítimo que la lista no contempla, y hay que ajustarla antes de activarla en serio.
+
+### Etapa 2 — Activarla de verdad
+
+Cuando pasaron 2-4 semanas sin mensajes rojos:
+
+**1.** Volvé a editar la misma regla en Cloudflare
+
+**2.** En esa cabecera, cambiá **solo el nombre**:
+- de `Content-Security-Policy-Report-Only`
+- a `Content-Security-Policy`
+
+(el valor queda igual)
+
+**3.** **Deploy**
+
+**4.** Verificá en https://securityheaders.com/?q=https://sanchez-sanchez.com.ar/ — ahí sí
+tendría que desaparecer el rojo y darte **A+**.
+
+> **Si algo se rompe después de activarla:** volvé a ponerle `-Report-Only` al nombre del
+> header y hacé Deploy. El sitio vuelve a la normalidad en segundos, porque el `<meta>` del
+> código sigue protegiendo igual.
+
+---
+
+### ⚠️ Mantenimiento: cada vez que se toque el código
+
+La CSP usa **huellas digitales (hashes)** de los bloques de estilos y scripts que están dentro
+del HTML. Si se cambia aunque sea un espacio en esos bloques, la huella deja de coincidir y
+**el navegador bloquea ese bloque** (el sitio se vería roto).
+
+Por eso, después de cualquier edición de estilos o scripts hay que correr:
+
+```bash
+python3 docs/scripts/regen_csp.py
+```
+
+Eso recalcula todo y reescribe tanto los `<meta>` de las páginas como `docs/csp-header.txt`.
+Si ya tenés la cabecera cargada en Cloudflare, **acordate de pegar el valor nuevo ahí también**,
+porque si no van a quedar desincronizados.
 
 ---
 
