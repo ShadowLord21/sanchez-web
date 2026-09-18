@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-F/JCDXOI3ifF5sM15VdQxqfR1tOKm+2Uz9Rm0QPOwEM='; style-src 'self' 'sha256-wYo3jrmPwrmn+xj+lUuUG19njHIFADIjIkec1RIn8Ic='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-F/JCDXOI3ifF5sM15VdQxqfR1tOKm+2Uz9Rm0QPOwEM='; style-src 'self' 'sha256-8+yql3CQ9RilYKn3Q5RAvukeB+tw6jJfk/JXYFDncmk='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <title>Nuestra Carta — Sánchez & Sánchez</title>
 <meta name="description" content="La carta completa de Sánchez & Sánchez: comidas, pizzas y empanadas con precios. Pizzería y cafetería en Almagro, CABA.">
 
@@ -222,14 +222,6 @@ body.nav-open { overflow: hidden; }
 .product-card__price { font-weight: 700; font-size: 1.05rem; color: var(--accent); margin-top: auto; padding-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
 .product-card__price-size { font-size: 0.6875rem; font-weight: 600; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-right: 0.3em; }
 
-/* FEATURE IMAGE */
-.menu-feature { margin: 3rem 0; }
-.menu-feature__img {
-  aspect-ratio: 16/9; border-radius: var(--radius-xl); overflow: hidden;
-  background: var(--bg-warm);
-}
-.menu-feature__img img { width: 100%; height: 100%; object-fit: cover; }
-.menu-feature figcaption { text-align: center; font-size: 0.875rem; color: var(--fg-muted); margin-top: 1rem; font-style: italic; }
 
 /* PROMOS SECTION */
 .promos-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
@@ -392,6 +384,7 @@ body.nav-open { overflow: hidden; }
 .pcimg-empanadas-cebolla-queso { background-image: url('../assets/img/empanadas/cebolla-queso.jpg'); }
 .pcimg-empanadas-verdura { background-image: url('../assets/img/empanadas/verdura.jpg'); }
 .pcimg-empanadas-caprese { background-image: url('../assets/img/empanadas/caprese.jpg'); }
+.pcimg-porciones-jamon-morron { background-image: url('../assets/img/porciones/jamon-morron.jpeg'); }
 </style>
 </head>
 <body>
@@ -544,17 +537,12 @@ body.nav-open { overflow: hidden; }
   <div class="product-grid">
     <button type="button" class="product-card" data-name="Mozzarella" data-price="$3.300" data-img="../assets/img/porciones/mozzarella.jpeg"><span class="product-card__img pcimg-porciones-mozzarella"></span><span class="product-card__body"><span class="product-card__name">Mozzarella</span><span class="product-card__price">$3.300</span></span></button>
     <button type="button" class="product-card" data-name="Napolitana" data-price="$3.700" data-img="../assets/img/porciones/napolitana.jpeg"><span class="product-card__img pcimg-porciones-napolitana"></span><span class="product-card__body"><span class="product-card__name">Napolitana</span><span class="product-card__price">$3.700</span></span></button>
-    <button type="button" class="product-card" data-name="Jamón y Morrón" data-price="$4.100" data-img="../assets/img/pizzas/jamon-morron.jpeg"><span class="product-card__img pcimg-pizzas-jamon-morron"></span><span class="product-card__body"><span class="product-card__name">Jamón y Morrón</span><span class="product-card__price">$4.100</span></span></button>
+    <button type="button" class="product-card" data-name="Jamón y Morrón" data-price="$4.100" data-img="../assets/img/porciones/jamon-morron.jpeg"><span class="product-card__img pcimg-porciones-jamon-morron"></span><span class="product-card__body"><span class="product-card__name">Jamón y Morrón</span><span class="product-card__price">$4.100</span></span></button>
     <button type="button" class="product-card" data-name="Fugazzeta" data-price="$4.800" data-img="../assets/img/porciones/fugazzeta.jpeg"><span class="product-card__img pcimg-porciones-fugazzeta"></span><span class="product-card__body"><span class="product-card__name">Fugazzeta</span><span class="product-card__price">$4.800</span></span></button>
     <button type="button" class="product-card" data-name="Faina" data-price="$1.200" data-img="../assets/img/porciones/faina.jpeg"><span class="product-card__img pcimg-porciones-faina"></span><span class="product-card__body"><span class="product-card__name">Faina</span><span class="product-card__price">$1.200</span></span></button>
     <button type="button" class="product-card" data-name="Faina Rellena" data-price="$1.500" data-img="../assets/img/porciones/faina-rellena.jpeg"><span class="product-card__img pcimg-porciones-faina-rellena"></span><span class="product-card__body"><span class="product-card__name">Faina Rellena</span><span class="product-card__price">$1.500</span></span></button>
   </div>
 </section>
-
-<figure class="menu-feature">
-  <div class="menu-feature__img"><img src="../assets/img/placeholders/placeholder-empanada.svg" alt="Empanadas caseras"></div>
-  <figcaption>Empanadas caseras, una clásica del barrio</figcaption>
-</figure>
 
 <section class="menu-section" id="empanadas">
   <h2 class="menu-section__title">Empanadas <span class="menu-section__category-note">$3.000 c/u</span></h2>
