@@ -1,100 +1,73 @@
 # Prompts para Google Stitch — rediseño visual de Sánchez & Sánchez
 
-**Cómo usar este archivo:** Stitch trabaja mejor de a una pantalla por vez. Pegá primero el
-**Bloque A** (contexto y estilo) y generá la Home. Después, para cada pantalla siguiente,
-volvé a pegar el Bloque A seguido del bloque de esa pantalla, así mantiene la coherencia.
+**Enfoque:** estos prompts le dan a Stitch el **contenido y las funciones** que cada pantalla
+tiene que cubrir, sin dictarle el diseño. La resolución visual (layout, jerarquía, paleta,
+tipografía, componentes) queda a su criterio.
 
-Al final está la sección **"Restricciones técnicas"** — esa NO se la mandes a Stitch, es para
-cuando haya que integrar el diseño al código.
+**Cómo usar:** Stitch trabaja de a una pantalla. Pegá el **Contexto** y después el bloque de
+la pantalla que quieras generar. Para las pantallas siguientes, volvé a pegar el Contexto
+primero así mantiene coherencia.
+
+Al final hay una sección de **restricciones técnicas** que **no** va para Stitch.
 
 ---
 
-## BLOQUE A — Contexto y estilo (pegar siempre primero)
+## CONTEXTO (pegar antes de cada pantalla)
 
 ```
-Diseñá el sitio web de "Sánchez & Sánchez", una pizzería y cafetería de barrio en
-Av. Rivadavia 3399, Almagro, Ciudad de Buenos Aires, Argentina. Lleva más de 20 años
-en el mismo lugar y es un clásico del barrio: familias, vecinos y gente de paso.
+Diseñá el sitio de "Sánchez & Sánchez", pizzería y cafetería de barrio en Av. Rivadavia 3399,
+Almagro, Ciudad de Buenos Aires. Hace más de 20 años en el mismo lugar; es un clásico del
+barrio para familias, vecinos y gente de paso.
 
-AUDIENCIA Y PRIORIDAD
-La enorme mayoría entra desde el celular, buscando tres cosas: ver la carta con precios,
-pedir delivery, o saber dónde queda y hasta qué hora abre. Diseñá mobile-first (360-430 px
-de ancho) y recién después la versión de escritorio. Cada decisión tiene que favorecer
-"encontrar rápido lo que busco", no el lucimiento visual.
+Diseñalo mobile-first: casi todo el tráfico entra desde el celular. La versión de escritorio
+importa, pero la decisión de diseño siempre se resuelve a favor del celular.
 
-PERSONALIDAD
-Cálido, de barrio, con oficio. Nada corporativo ni minimalista frío. Que transmita comida
-casera y tradición, pero con una ejecución moderna y prolija. Las fotos de los platos son
-el corazón del sitio: tienen que respirar y verse apetitosas.
+Quien entra busca una de tres cosas, casi siempre apurado:
+ver la carta con precios, pedir delivery, o saber dónde queda y hasta qué hora abre.
 
-IDIOMA
-Todo en español rioplatense (voseo). Usá "Carta", "Pedí ahora", "Visitanos", "Menú del Día".
+Tono: cálido, de barrio, con oficio y tradición, pero con una ejecución actual y prolija.
+Las fotos de los platos son el activo más fuerte del sitio y conviene que tengan protagonismo.
+Son fotos reales, de comida, con tonos cálidos sobre madera o fondos oscuros.
 
-PALETA ACTUAL (podés proponer una evolución, pero mantené la familia cálida)
-- Fondo crema: #FEFCF9
-- Fondo alternativo: #F8F4EE
-- Texto principal: #1A1816
-- Texto secundario: #6F6B66
-- Acento terracota (precios, botones, detalles): #BF4A2B
-- Bordes sutiles: #E9E4DC
-- Verde (datos de "para llevar"): #3D6B4F
+Todo el texto en español rioplatense (voseo): "Carta", "Pedí ahora", "Visitanos".
 
-TIPOGRAFÍA ACTUAL
-- Títulos: DM Serif Display (serif, con carácter)
-- Texto y UI: DM Sans
-Podés proponer otra combinación serif + sans, pero mantené el contraste entre un título
-con personalidad y un cuerpo muy legible.
-
-ELEMENTOS PRESENTES EN LAS TRES PANTALLAS
-1. Barra superior fija con el nombre "Sánchez & Sánchez" a la izquierda y, en celular,
-   un botón hamburguesa a la derecha que despliega el menú (Nosotros, Carta, Cafetería,
-   Delivery, Ubicación). En escritorio esos links van en fila dentro de la barra.
-2. Sección "Delivery y Pedidos": cuatro tarjetas cuadradas con los logos de WhatsApp,
-   Mercado Pago, Rappi y PedidosYa. Es la principal acción de conversión del sitio.
-3. Sección "Visitanos": dirección, horarios (Lun a Vie 7:00-00:00, Sáb y Dom 8:00-01:00),
-   teléfono 11 5927-3756, Instagram, TikTok y un mapa embebido.
-4. Pie de página.
-5. Solo en celular: una barra fija abajo con dos botones de acceso rápido
-   ("Ver carta" y "Pedir por WhatsApp").
+Tenés libertad total para definir paleta, tipografías, retícula, estilo de componentes y
+cómo resolver cada sección. Lo que sigue es el contenido que tiene que estar y lo que el
+usuario tiene que poder hacer, no una indicación de cómo debe verse.
 ```
 
 ---
 
-## PANTALLA 1 — Home
+## PANTALLA 1 — Inicio
 
 ```
-Diseñá la pantalla de inicio con estas secciones, en este orden:
+INFORMACIÓN QUE TIENE QUE TRANSMITIR
+- Qué es el lugar y dónde queda: pizzería y cafetería en Almagro, CABA.
+- Que lleva más de 20 años en el barrio: es su principal argumento de confianza.
+- Su historia: más de dos décadas en Av. Rivadavia; pizzas a la piedra, empanadas caseras
+  y cocina de siempre; y un rincón de cafetería para desayunar o merendar con medialunas
+  recién hechas, tortas caseras y tostados.
+- Prueba social: cuatro reseñas reales de Google, todas de 5 estrellas, de clientes del
+  barrio. Mencionan la atención, las medialunas, el café, las pizzas a la piedra y un combo
+  llamado "La Escaloneta".
+- El Menú del Día: $20.000, incluye plato principal + bebida + café o postre.
+  Disponible de lunes a viernes de 12 a 16 hs, solo efectivo. Hay cuatro platos distintos
+  por cada día de la semana. Además hay una opción de invierno (guiso de lentejas o pastel
+  de papa) y una opción especial de bife a caballo con papas fritas a $21.000.
+- Que hacen pedidos para llevar.
 
-1. HERO
-   Título grande "Sánchez & Sánchez", bajada: "Pizzería y Cafetería en el corazón de
-   Almagro, con el sabor de siempre desde hace más de 20 años." Una foto grande del
-   frente del local de noche (cartel rojo iluminado). Un distintivo chico que diga
-   "Almagro · CABA" y otro que diga "+20 años".
-   Cuatro botones de acción: "Ver la Carta", "Cafetería", "Menú del Día", "Delivery".
+ACCIONES QUE EL USUARIO TIENE QUE PODER HACER
+- Ir a la carta de la pizzería y a la de la cafetería.
+- Ver qué hay de menú del día para cada día de lunes a viernes (debería arrancar mostrando
+  el día actual).
+- Pedir por WhatsApp, Mercado Pago, Rappi o PedidosYa.
+- Ver la dirección, los horarios y cómo llegar (hay un mapa embebido).
+- Llamar por teléfono e ir a las redes.
 
-2. CINTA ANIMADA
-   Una franja horizontal oscura con texto que se desplaza: "Pizza a la piedra ·
-   Empanadas caseras · Cafetería · Menú del día · Delivery".
-
-3. NUESTRA HISTORIA
-   Dos fotos (una grande del frente del local, una más chica superpuesta con el equipo)
-   y a su lado tres párrafos sobre los más de 20 años en Almagro, las pizzas a la piedra
-   y las empanadas caseras, y el rincón de cafetería.
-
-4. RESEÑAS DEL BARRIO
-   Cuatro testimonios reales de Google con 5 estrellas, nombre del autor y la etiqueta
-   "Local Guide". Sobre fondo oscuro. En celular tienen que ir apilados uno debajo del
-   otro, nunca superpuestos.
-
-5. MENÚ DEL DÍA
-   Precio destacado $20.000, texto "Plato principal + bebida + café o postre".
-   Cinco pestañas (Lunes a Viernes) que cambian la lista de 4 platos de ese día.
-   La del día actual aparece seleccionada sola. Dos tarjetas extra: "Opción Invierno"
-   y "Opción Especial" ($21.000). Aclaración: "Lunes a Viernes de 12 a 16 hs · Solo efectivo".
-
-6. DELIVERY Y PEDIDOS (ver Bloque A)
-7. VISITANOS (ver Bloque A)
-8. PIE DE PÁGINA
+DATOS DE CONTACTO
+Av. Rivadavia 3399, CABA (Almagro / Balvanera)
+Lunes a Viernes 7:00 a 00:00 · Sábados y Domingos 8:00 a 01:00
+Teléfono 11 5927-3756 · Instagram @sanchezysanchez_ok · TikTok @sanchezysanchez2006
 ```
 
 ---
@@ -102,48 +75,48 @@ Diseñá la pantalla de inicio con estas secciones, en este orden:
 ## PANTALLA 2 — Carta
 
 ```
-Diseñá la pantalla de la carta de la pizzería. Es la pantalla más importante y más larga
-del sitio: tiene 62 productos. El desafío de diseño es que se pueda recorrer sin perderse.
+Es la pantalla más larga y más importante del sitio: 62 productos. El problema de diseño
+central es que alguien pueda recorrerla desde el celular sin perderse ni cansarse.
 
-ESTRUCTURA
-1. Encabezado con fondo oscuro: arriba "La carta" en letra chica y el título "Nuestra Carta".
+CONTENIDO
+Tres grandes grupos, con sus subcategorías:
 
-2. Barra de categorías fija (sticky) justo debajo de la barra superior, que se queda
-   visible al scrollear: tres pestañas redondeadas "Comidas", "Pizzas", "Empanadas".
-   Al tocar una, lleva a esa sección; la pestaña de la sección que estás mirando se
-   resalta sola. En celular la barra scrollea horizontalmente.
+COMIDAS
+- Minutas con guarnición (7 productos, $17.000 a $23.500). Guarnición a elección:
+  provenzal, ajillo, verdeo u oreganato.
+- Ensaladas (6 productos, $17.000 a $19.500).
+- Tartas (4 productos, $11.500 cada una).
+- Lomito al pan (4 productos, $26.000 a $27.000). Chivito uruguayo, con papas fritas.
+- Lomito al plato (3 productos, $25.000 a $32.000). Con papas fritas.
 
-3. SECCIÓN COMIDAS, con estas subcategorías:
-   - "Minutas + Guarnición" (7 productos) — aclaración: "A elección: provenzal, ajillo,
-     verdeo u oreganato"
-   - "Ensaladas" (6)
-   - "Tartas" (4) — $11.500 c/u
-   - "Lomito al Pan" (4) — "Chivito uruguayo, con papas fritas"
-   - "Lomito al Plato" (3) — "Con papas fritas"
+PIZZAS
+- "Las de siempre" (11 productos).
+- "Las de hoy" (11 productos).
+- Porciones (6 productos, $1.200 a $4.800).
+Las pizzas enteras tienen DOS precios según el tamaño: chica y grande
+(por ejemplo, mozzarella $20.000 la chica y $24.000 la grande).
 
-4. SECCIÓN PIZZAS:
-   - "Las de Siempre" (11) — precios "Chica / Grande"
-   - "Las de Hoy" (11) — precios "Chica / Grande"
-   - "Porciones" (6) — precio único
+EMPANADAS
+- 10 variedades, todas a $3.000.
 
-5. SECCIÓN EMPANADAS (10) — $3.000 c/u
+CADA PRODUCTO TIENE
+- Nombre.
+- Precio (uno solo, o dos si es pizza entera).
+- Una descripción corta de ingredientes, en la mayoría de los casos.
+- Una foto, en la mayoría de los casos.
 
-TARJETA DE PRODUCTO (es el elemento que más se repite, cuidalo)
-Foto arriba (proporción 4:3, la foto llena todo el ancho), y debajo: nombre, una
-descripción corta de ingredientes, y el precio destacado en terracota.
-Algunos productos todavía no tienen foto: diseñá también la variante SIN foto, que no
-tiene que verse rota ni como un hueco, sino como una tarjeta de solo texto que convive
-bien con las otras en la misma grilla.
-Las pizzas tienen DOS precios (chica y grande): mostralos diferenciados y claros, con
-una etiqueta chiquita que diga qué es cada uno. Que no se lea como un solo precio raro.
-Grilla: 1 columna en celular, 2 en tablet, 3 en escritorio.
+DOS SITUACIONES A RESOLVER
+1. Nueve productos todavía no tienen foto. La solución no puede verse como un hueco roto
+   ni como un error: tiene que convivir bien con los que sí la tienen, en la misma grilla.
+2. El doble precio de las pizzas tiene que leerse con claridad, sin confundirse con un
+   precio único raro.
 
-VENTANA DE DETALLE (modal)
-Al tocar una tarjeta se abre una ventana con la foto más grande, el nombre, la
-descripción completa y el precio. Se cierra con una X, tocando el fondo oscurecido,
-o con la tecla Escape.
-
-6. DELIVERY Y PEDIDOS, VISITANOS y PIE (ver Bloque A)
+ACCIONES QUE EL USUARIO TIENE QUE PODER HACER
+- Saltar rápido entre comidas, pizzas y empanadas sin scrollear toda la página, y saber
+  en todo momento en qué parte de la carta está.
+- Ver un producto en detalle, con la foto más grande y la descripción completa.
+- Pedir por WhatsApp, Mercado Pago, Rappi o PedidosYa.
+- Ver dirección, horarios y ubicación.
 ```
 
 ---
@@ -151,36 +124,48 @@ o con la tecla Escape.
 ## PANTALLA 3 — Cafetería
 
 ```
-Diseñá la pantalla de la cafetería. A diferencia de la carta, acá los productos son
-muchos ítems de texto con precio (sin foto), así que se organizan en acordeones.
+A diferencia de la carta, acá son muchos ítems de texto con precio y sin foto, así que el
+problema es ordenar mucha información en poco espacio sin que se vuelva una lista infinita.
 
-1. Encabezado con fondo oscuro y una foto de café con medialunas de fondo atenuada.
-   Arriba "Para desayunar o hacer una pausa" y el título "Cafetería".
+CONTENIDO
+Ocho categorías con sus cantidades:
+- Promos de todo el día (4 ítems, $5.200 a $11.500). Incluye además dos combos de desayuno
+  destacados: uno clásico con café con leche a $8.000 y uno premium con tazón a $10.000,
+  cada uno con opciones de acompañamiento a elección.
+- Cafés e infusiones (11 ítems, $2.000 a $5.500), más dos extras (leche, crema).
+- Especiales de la casa (2 ítems, $7.000): capuccinos con preparaciones propias.
+- Licuados y bebidas (7 ítems, $2.500 a $9.000).
+- Tortas y dulces (6 ítems, $8.500 cada una).
+- Panadería y facturas (8 ítems, $1.000 a $6.000).
+- Waffles (1 ítem, $4.000).
+- Tostados y panes (8 ítems, $7.500 a $15.000).
 
-2. CARRUSEL "Productos nuevos"
-   Seis fotos verticales (proporción 3:4) que se desplazan solas de forma continua:
-   Bagels, Waffles, Croissants rellenos, Muffins, Tortas, Volcán de Chocolate.
-   Con flechas para moverlo a mano, y que también se pueda arrastrar con el dedo.
+Cada ítem tiene nombre y precio. Algunos llevan una aclaración breve
+(por ejemplo "choco, crema, canela" o "pomelo o naranja").
 
-3. "Nuestra Cafetería" — ocho secciones plegables (acordeón), en este orden:
-   - "Promos — Todo el Día" (4 ítems) — abierta por defecto, las otras cerradas
-   - "Cafés e Infusiones" (11)
-   - "Especiales de la Casa" (2)
-   - "Licuados y Bebidas" (7)
-   - "Tortas y Dulces" (6)
-   - "Panadería y Facturas" (8)
-   - "Waffles" (1)
-   - "Tostados y Panes" (8)
+ADEMÁS
+Hay seis productos nuevos para destacar, con foto vertical: bagels, waffles, croissants
+rellenos, muffins, tortas y volcán de chocolate.
 
-   Cada sección: encabezado con el nombre y un ícono + que rota a × al abrirse.
-   Adentro, una lista donde cada ítem tiene nombre a la izquierda, precio en terracota
-   a la derecha, y una línea de puntos uniéndolos (estilo carta de restaurante).
-   Algunos ítems llevan una aclaración chica en itálica debajo del nombre
-   (ej: "choco, crema, canela").
-   La sección de Promos además tiene dos tarjetas destacadas de combos de desayuno
-   ($8.000 y $10.000).
+ACCIONES QUE EL USUARIO TIENE QUE PODER HACER
+- Encontrar rápido la categoría que busca sin recorrer las ocho.
+- Ver los productos nuevos destacados.
+- Pedir por WhatsApp, Mercado Pago, Rappi o PedidosYa.
+- Ver dirección, horarios y ubicación.
+```
 
-4. DELIVERY Y PEDIDOS, VISITANOS y PIE (ver Bloque A)
+---
+
+## PRESENTE EN LAS TRES PANTALLAS
+
+```
+- Identidad del local y navegación entre inicio, carta, cafetería, delivery y ubicación.
+  En celular tiene que resolverse sin ocupar toda la pantalla y con una salida clara.
+- Bloque de delivery y pedidos con cuatro opciones: WhatsApp, Mercado Pago, Rappi y
+  PedidosYa. Es la principal acción de conversión del sitio y conviene que esté siempre
+  a mano desde el celular.
+- Bloque de ubicación y contacto: dirección, horarios, teléfono, redes y mapa.
+- Pie de página.
 ```
 
 ---
@@ -188,26 +173,25 @@ muchos ítems de texto con precio (sin foto), así que se organizan en acordeone
 ## PANTALLA 4 — Error 404 (opcional)
 
 ```
-Diseñá una página de error 404 simple y con la identidad del sitio: un mensaje breve
-("No encontramos esta página"), una explicación de una línea, y tres botones:
-"Ir al inicio", "Ver la carta" y "Cafetería".
+Una página para cuando el enlace no existe. Tiene que avisar que no se encontró la página,
+mantener la identidad del sitio, y ofrecer salidas: inicio, carta y cafetería.
 ```
 
 ---
 
-# Restricciones técnicas (NO mandar a Stitch — leer al integrar)
+# Restricciones técnicas — NO mandar a Stitch
 
-El sitio es **HTML + CSS + JavaScript puro**, sin framework ni build, publicado en GitHub
-Pages detrás de Cloudflare. Cuando llegue el diseño de Stitch, hay que adaptarlo a esto:
+Para cuando vuelva el diseño y haya que integrarlo. El sitio es **HTML + CSS + JavaScript
+puro**, sin framework ni build, en GitHub Pages detrás de Cloudflare.
 
 | Restricción | Por qué | Qué implica |
 |---|---|---|
-| **CSP estricta sin `unsafe-inline`** | Protección contra XSS, ya implementada y auditada | **No se pueden usar atributos `style=""` en el HTML.** Todo estilo va en el bloque `<style>` o en clases. Después de cada cambio hay que correr `python3 docs/scripts/regen_csp.py` |
-| **Fuentes self-hosteadas** | Privacidad y CSP: el sitio no hace ningún pedido a Google | Si Stitch propone una tipografía nueva, hay que descargar los `.woff2` a `assets/fonts/` y sumarla a `fonts.css`. No usar `<link>` a fonts.googleapis.com |
-| **Sin frameworks** | El sitio no tiene build ni dependencias | Si el diseño viene con Tailwind o React, hay que traducirlo a CSS plano |
-| **Imágenes optimizadas** | Se bajó de 107 MB a 7,4 MB | Fotos de producto a 900 px máx, JPEG calidad 82. Hay un script de referencia en el historial |
-| **Mobile-first probado** | El 90% del tráfico es celular | Se arreglaron bugs reales de hitbox y de menú. Conviene revalidar con el script `sec_verify.py` |
-| **Accesibilidad** | Ya está implementada | Mantener contraste 4.5:1, `aria-expanded` en acordeones y menú, foco visible, soporte de teclado y zonas táctiles de 44 px mínimo |
+| **CSP estricta sin `unsafe-inline`** | Protección anti-XSS ya auditada e implementada | **Nada de atributos `style=""` en el HTML.** Todo va en el `<style>` o en clases. Tras cada cambio: `python3 docs/scripts/regen_csp.py` |
+| **Fuentes self-hosteadas** | Privacidad: el sitio no hace ningún pedido a Google | Si Stitch propone otra tipografía, hay que bajar los `.woff2` a `assets/fonts/` y sumarlos a `fonts.css`. Nunca un `<link>` a fonts.googleapis.com |
+| **Sin frameworks** | No hay build ni dependencias | Si el diseño viene en Tailwind o React, se traduce a CSS plano |
+| **Imágenes optimizadas** | Se bajó de 107 MB a 7,4 MB | Fotos de producto a 900 px máx, JPEG calidad 82 |
+| **Accesibilidad** | Ya implementada | Contraste 4.5:1, `aria-expanded` donde corresponda, foco visible, teclado, zonas táctiles de 44 px |
+| **Mobile real probado** | Hubo bugs reales de hitbox y de menú | Revalidar con el script de verificación antes de publicar |
 
-**Contenido que NO hay que cambiar:** nombres de productos, precios, descripciones,
-teléfono, dirección, horarios y los enlaces de delivery. El refactor es visual.
+**No se cambia el contenido:** nombres de productos, precios, descripciones, teléfono,
+dirección, horarios y enlaces de delivery. El refactor es visual.
