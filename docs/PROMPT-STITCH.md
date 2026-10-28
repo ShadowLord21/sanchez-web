@@ -74,85 +74,104 @@ Teléfono 11 5927-3756 · Instagram @sanchezysanchez_ok · TikTok @sanchezysanch
 
 ## PANTALLA 2 — Carta
 
+> **Usá esta versión corta.** La carta real tiene 62 productos, pero pedirle todo a Stitch
+> hace que falle. Con esta muestra alcanza: los 6 productos elegidos cubren **todas** las
+> variantes de tarjeta que existen en el sitio. Una vez que el diseño guste, se replica
+> al resto en el código.
+
 ```
-Es la pantalla más larga y más importante del sitio: 62 productos. El problema de diseño
-central es que alguien pueda recorrerla desde el celular sin perderse ni cansarse.
+Diseñá la pantalla de la carta de la pizzería. Es la pantalla más larga del sitio y el
+desafío es que se pueda recorrer desde el celular sin perderse ni cansarse.
 
-CONTENIDO
-Tres grandes grupos, con sus subcategorías:
+La carta se divide en tres grandes grupos: Comidas, Pizzas y Empanadas. El usuario tiene
+que poder saltar entre ellos sin scrollear todo, y saber en qué parte está en cada momento.
 
-COMIDAS
-- Minutas con guarnición (7 productos, $17.000 a $23.500). Guarnición a elección:
-  provenzal, ajillo, verdeo u oreganato.
-- Ensaladas (6 productos, $17.000 a $19.500).
-- Tartas (4 productos, $11.500 cada una).
-- Lomito al pan (4 productos, $26.000 a $27.000). Chivito uruguayo, con papas fritas.
-- Lomito al plato (3 productos, $25.000 a $32.000). Con papas fritas.
+Mostrá estos productos de ejemplo, agrupados así:
 
-PIZZAS
-- "Las de siempre" (11 productos).
-- "Las de hoy" (11 productos).
-- Porciones (6 productos, $1.200 a $4.800).
-Las pizzas enteras tienen DOS precios según el tamaño: chica y grande
-(por ejemplo, mozzarella $20.000 la chica y $24.000 la grande).
+PIZZAS — Las de siempre
+- Mozzarella. Chica $20.000 / Grande $24.000. Con foto.
+- Fugazzeta. Chica $24.000 / Grande $33.000. Con foto.
+- Cuatro Quesos. Chica $25.000 / Grande $34.500. SIN foto.
+
+PIZZAS — Porciones
+- Napolitana. $3.700. Con foto.
 
 EMPANADAS
-- 10 variedades, todas a $3.000.
+- Carne. $3.000. "Carne cortada a cuchillo, cebolla y huevo". Con foto.
 
-CADA PRODUCTO TIENE
-- Nombre.
-- Precio (uno solo, o dos si es pizza entera).
-- Una descripción corta de ingredientes, en la mayoría de los casos.
-- Una foto, en la mayoría de los casos.
+COMIDAS — Minutas
+- Milanesa. $21.000. "Porción de milanesa con guarnición a elección". Con foto.
 
-DOS SITUACIONES A RESOLVER
-1. Nueve productos todavía no tienen foto. La solución no puede verse como un hueco roto
-   ni como un error: tiene que convivir bien con los que sí la tienen, en la misma grilla.
-2. El doble precio de las pizzas tiene que leerse con claridad, sin confundirse con un
-   precio único raro.
+TRES COSAS QUE TIENE QUE RESOLVER EL DISEÑO DE LA TARJETA
+1. Las pizzas enteras tienen DOS precios (chica y grande). Tienen que leerse con claridad,
+   sin confundirse con un precio único raro.
+2. Hay productos sin foto. Esa variante no puede verse como un hueco roto ni como un error:
+   tiene que convivir bien con las que sí tienen foto, en la misma grilla.
+3. Algunos productos tienen una descripción corta de ingredientes y otros no.
 
-ACCIONES QUE EL USUARIO TIENE QUE PODER HACER
-- Saltar rápido entre comidas, pizzas y empanadas sin scrollear toda la página, y saber
-  en todo momento en qué parte de la carta está.
-- Ver un producto en detalle, con la foto más grande y la descripción completa.
-- Pedir por WhatsApp, Mercado Pago, Rappi o PedidosYa.
-- Ver dirección, horarios y ubicación.
+Diseñá también la vista de detalle que se abre al tocar una tarjeta, con la foto más
+grande, el nombre, la descripción completa y el precio.
+
+Incluí además el bloque de delivery (WhatsApp, Mercado Pago, Rappi, PedidosYa) y el de
+ubicación con dirección, horarios y mapa.
 ```
+
+**Para replicar después** (no va en el prompt, es el inventario real):
+
+| Grupo | Subcategorías | Productos |
+|---|---|---|
+| Comidas | Minutas (7), Ensaladas (6), Tartas (4), Lomito al pan (4), Lomito al plato (3) | 24 |
+| Pizzas | Las de siempre (11), Las de hoy (11), Porciones (6) | 28 |
+| Empanadas | — | 10 |
+| | | **62** |
 
 ---
 
 ## PANTALLA 3 — Cafetería
 
+> **También reducida**, por el mismo motivo: son 47 ítems en 8 categorías. Con 3 categorías
+> de muestra alcanza para ver cómo resuelve la lista, el ítem con aclaración y el combo
+> destacado.
+
 ```
-A diferencia de la carta, acá son muchos ítems de texto con precio y sin foto, así que el
-problema es ordenar mucha información en poco espacio sin que se vuelva una lista infinita.
+Diseñá la pantalla de la cafetería. Acá no hay fotos de producto: son listas de ítems con
+precio. El problema es ordenar mucha información en poco espacio sin que se vuelva una
+lista infinita de scrollear.
 
-CONTENIDO
-Ocho categorías con sus cantidades:
-- Promos de todo el día (4 ítems, $5.200 a $11.500). Incluye además dos combos de desayuno
-  destacados: uno clásico con café con leche a $8.000 y uno premium con tazón a $10.000,
-  cada uno con opciones de acompañamiento a elección.
-- Cafés e infusiones (11 ítems, $2.000 a $5.500), más dos extras (leche, crema).
-- Especiales de la casa (2 ítems, $7.000): capuccinos con preparaciones propias.
-- Licuados y bebidas (7 ítems, $2.500 a $9.000).
-- Tortas y dulces (6 ítems, $8.500 cada una).
-- Panadería y facturas (8 ítems, $1.000 a $6.000).
-- Waffles (1 ítem, $4.000).
-- Tostados y panes (8 ítems, $7.500 a $15.000).
+En total son 8 categorías. Mostrá estas 3 como ejemplo, y dejá indicadas las otras 5
+(Licuados y Bebidas, Tortas y Dulces, Panadería y Facturas, Waffles, Tostados y Panes):
 
-Cada ítem tiene nombre y precio. Algunos llevan una aclaración breve
-(por ejemplo "choco, crema, canela" o "pomelo o naranja").
+PROMOS — TODO EL DÍA
+Dos combos destacados, que merecen más peso visual que el resto:
+- "Clásico — café con leche". $8.000. Acompañalo con: 2 tostones con huevo y palta,
+  tostado de jamón y queso, o croissant de jamón y queso.
+- "Premium — tazón". $10.000. Acompañalo con: bagel a elección o waffle.
+Y una lista común:
+- Café con leche + 3 medialunas. $5.200.
+- Licuado o café con leche + torta. $11.500.
 
-ADEMÁS
-Hay seis productos nuevos para destacar, con foto vertical: bagels, waffles, croissants
-rellenos, muffins, tortas y volcán de chocolate.
+CAFÉS E INFUSIONES
+- Café expreso. $3.000.
+- Café con leche. $3.500.
+- Capuccino. $5.500.
+- Té con 2 medialunas. $3.000.
 
-ACCIONES QUE EL USUARIO TIENE QUE PODER HACER
-- Encontrar rápido la categoría que busca sin recorrer las ocho.
-- Ver los productos nuevos destacados.
-- Pedir por WhatsApp, Mercado Pago, Rappi o PedidosYa.
-- Ver dirección, horarios y ubicación.
+ESPECIALES DE LA CASA
+- Capuccino "Sánchez". $7.000. Aclaración: "choco, crema, canela".
+- Capuccino Italiano. $7.000. Aclaración: "crema, choco rallado".
+
+El usuario tiene que poder encontrar rápido la categoría que busca sin recorrer las ocho.
+
+Sumá arriba una franja de productos nuevos destacados, con foto vertical: bagels, waffles,
+croissants rellenos, muffins, tortas y volcán de chocolate.
+
+Incluí también el bloque de delivery (WhatsApp, Mercado Pago, Rappi, PedidosYa) y el de
+ubicación con dirección, horarios y mapa.
 ```
+
+**Para replicar después** (inventario real): Promos (4 + 2 combos), Cafés e infusiones (11 + 2 extras),
+Especiales de la casa (2), Licuados y bebidas (7), Tortas y dulces (6), Panadería y facturas (8),
+Waffles (1), Tostados y panes (8). **Total 47 ítems.**
 
 ---
 
