@@ -80,41 +80,50 @@ Teléfono 11 5927-3756 · Instagram @sanchezysanchez_ok · TikTok @sanchezysanch
 > al resto en el código.
 
 ```
-Diseñá la pantalla de la carta de la pizzería. Es la pantalla más larga del sitio y el
-desafío es que se pueda recorrer desde el celular sin perderse ni cansarse.
+Diseñá la pantalla de la carta de la pizzería.
 
-La carta se divide en tres grandes grupos: Comidas, Pizzas y Empanadas. El usuario tiene
-que poder saltar entre ellos sin scrollear todo, y saber en qué parte está en cada momento.
+1) PROMOS — ARRIBA DE TODO, ES LO PRIMERO QUE SE VE
+Son la oferta más rentable del local y tienen que destacarse por encima del resto de la
+carta. Cada una es un combo: lo que incluye es tan importante como el precio.
 
-Mostrá estos productos de ejemplo, agrupados así:
+- Muzza grande + bebida grande — $26.000
+- 6 empanadas a elección + muzza grande + bebida grande — $35.000
+- Fugazzeta rellena + bebida grande + 4 porciones de faina — $44.000
+- 2 porciones de muzza + 2 faina + bebida chica — $10.500
+- Muzza grande + jamón y morrón grande + bebida grande — $40.000
 
-PIZZAS — Las de siempre
-- Mozzarella. Chica $20.000 / Grande $24.000. Con foto.
-- Fugazzeta. Chica $24.000 / Grande $33.000. Con foto.
-- Cuatro Quesos. Chica $25.000 / Grande $34.500. SIN foto.
+Y aparte, una promo de TAKE AWAY (solo para llevar), que conviene diferenciar visualmente
+de las anteriores porque es otra modalidad:
+- Muzza grande + 2 faina — $12.000
 
-PIZZAS — Porciones
-- Napolitana. $3.700. Con foto.
+2) EL RESTO DE LA CARTA
+Se divide en tres grupos: Comidas, Pizzas y Empanadas. En total son 62 productos, así que
+en celular NO pueden mostrarse todos de corrido: el usuario elige un grupo y ve solamente
+ese, cambiando de grupo sin recargar ni perder el lugar. Las tarjetas van de a dos por
+fila para que entren más productos por pantalla.
 
-EMPANADAS
-- Carne. $3.000. "Carne cortada a cuchillo, cebolla y huevo". Con foto.
+Productos de ejemplo:
+- Mozzarella (pizza entera). Chica $20.000 / Grande $24.000.
+- Napolitana (porción). $3.700.
+- Empanada de carne. $3.000. "Carne cortada a cuchillo, cebolla y huevo".
 
-COMIDAS — Minutas
-- Milanesa. $21.000. "Porción de milanesa con guarnición a elección". Con foto.
+Todos los productos tienen foto.
 
-TRES COSAS QUE TIENE QUE RESOLVER EL DISEÑO DE LA TARJETA
-1. Las pizzas enteras tienen DOS precios (chica y grande). Tienen que leerse con claridad,
-   sin confundirse con un precio único raro.
-2. Hay productos sin foto. Esa variante no puede verse como un hueco roto ni como un error:
-   tiene que convivir bien con las que sí tienen foto, en la misma grilla.
-3. Algunos productos tienen una descripción corta de ingredientes y otros no.
+DOS COSAS QUE TIENE QUE RESOLVER LA TARJETA
+- Las pizzas enteras tienen DOS precios (chica y grande). Tienen que leerse con claridad,
+  sin confundirse con un precio único raro.
+- Algunos productos tienen una descripción corta de ingredientes y otros no.
 
 Diseñá también la vista de detalle que se abre al tocar una tarjeta, con la foto más
 grande, el nombre, la descripción completa y el precio.
 
-Incluí además el bloque de delivery (WhatsApp, Mercado Pago, Rappi, PedidosYa) y el de
+3) Incluí el bloque de delivery (WhatsApp, Mercado Pago, Rappi, PedidosYa) y el de
 ubicación con dirección, horarios y mapa.
 ```
+
+> **Por qué el filtro por grupo:** medido en el sitio actual, la carta completa son
+> 31.091 px de alto, o sea **37 pantallas** de scroll en un celular. Con filtro por grupo
+> y dos columnas baja a **~5 pantallas**.
 
 **Para replicar después** (no va en el prompt, es el inventario real):
 
