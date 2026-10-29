@@ -83,18 +83,24 @@ Teléfono 11 5927-3756 · Instagram @sanchezysanchez_ok · TikTok @sanchezysanch
 Diseñá la pantalla de la carta de la pizzería.
 
 1) PROMOS — ARRIBA DE TODO, ES LO PRIMERO QUE SE VE
-Son la oferta más rentable del local y tienen que destacarse por encima del resto de la
-carta. Cada una es un combo: lo que incluye es tan importante como el precio.
+Son la oferta más rentable del local. Hay tres niveles y la jerarquía visual entre ellos
+importa. En los combos, lo que incluye es tan importante como el precio.
 
+PRINCIPALES (son las que más tienen que destacarse):
 - Muzza grande + bebida grande — $26.000
 - 6 empanadas a elección + muzza grande + bebida grande — $35.000
 - Fugazzeta rellena + bebida grande + 4 porciones de faina — $44.000
 - 2 porciones de muzza + 2 faina + bebida chica — $10.500
 - Muzza grande + jamón y morrón grande + bebida grande — $40.000
 
-Y aparte, una promo de TAKE AWAY (solo para llevar), que conviene diferenciar visualmente
-de las anteriores porque es otra modalidad:
+TAKE AWAY (solo para llevar). Conviene diferenciarla, es otra modalidad:
 - Muzza grande + 2 faina — $12.000
+
+PARA COMPARTIR (un escalón por debajo de las principales, pero visibles):
+- Crispi para 2 — $24.000
+- Crispi para 4 — $34.000
+- Imperdible — $38.000
+- Reina Empanadas — $29.000
 
 2) EL RESTO DE LA CARTA
 Se divide en tres grupos: Comidas, Pizzas y Empanadas. En total son 62 productos, así que
