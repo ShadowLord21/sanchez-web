@@ -311,6 +311,42 @@ y un campo de aclaraciones.
 
 ---
 
+## AJUSTES DE LAYOUT MÓVIL (pegar junto con cualquier pantalla)
+
+Salieron de ver la primera tanda regenerada en móvil: la cafetería quedó en 11.342 px,
+catorce pantallas de scroll, con los chips de categoría sin filtrar nada.
+
+```
+CINCO COSAS QUE EN CELULAR SE TIENEN QUE RESOLVER SÍ O SÍ:
+
+1. LOS FILTROS TIENEN QUE FILTRAR DE VERDAD. Si ponés chips o pestañas de categoría,
+   al elegir una se muestra SOLO esa. No alcanza con que el chip lleve al lugar: las
+   demás categorías no se renderizan. La página entera no debería pasar de unas cinco
+   pantallas de scroll.
+
+2. NUNCA APILES TARJETAS CON FOTO GRANDE A ANCHO COMPLETO. Una franja de seis productos
+   destacados no puede ocupar media página antes de que empiece la carta. Resolvela
+   como carrusel horizontal o con tarjetas chicas de a dos por fila.
+
+3. EL PRECIO NUNCA TOCA EL NOMBRE. En las listas de nombre a la izquierda y precio a la
+   derecha, dejá una separación mínima que se respete aunque el nombre sea largo. Hay
+   nombres de hasta 40 caracteres como "Canasta de Facturas Surtidas x 6" o "Vigilante
+   con Membrillo o Crema". El precio no se parte ni se achica: lo que se adapta es el
+   nombre.
+
+4. LA NAVEGACIÓN TIENE QUE EXISTIR EN CELULAR. Desde cualquier pantalla se tiene que
+   poder ir a inicio, carta de pizzería, carta de cafetería, delivery y ubicación.
+   Resolvelo sin tapar toda la pantalla y con una salida clara y visible.
+
+5. UNA SOLA ETIQUETA PARA PEDIR. Elegí un texto y un estilo de botón para sumar algo al
+   pedido, y usalo en todos lados. No mezcles "Pedir", "Pedir +", "Pedir este Especial"
+   y "Pedir en Mesa".
+
+Y no agregues un buscador: no hace falta.
+```
+
+---
+
 ## MÓVIL — Carta
 
 ```
