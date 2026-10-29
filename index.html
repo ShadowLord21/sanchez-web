@@ -1,805 +1,728 @@
-<!DOCTYPE html>
-<html lang="es-AR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-a0DFklkvMD5IecZrubGI9VJDw6e98Nj8uiVamuN2SPE='; style-src 'self' 'sha256-/dEaXVnxy4+2seHMqA/nV5bQeV5ItBeEqOliJJDtAP8='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
-<title>Sánchez &amp; Sánchez — Pizzería y Cafetería en Almagro</title>
-<meta name="description" content="Sánchez &amp; Sánchez, pizzería y cafetería en Almagro (CABA) hace más de 20 años. Mirá la carta, pedí delivery por WhatsApp.">
-<meta name="theme-color" content="#690600">
-<meta property="og:type" content="restaurant.restaurant">
-<meta property="og:title" content="Sánchez &amp; Sánchez — Pizzería y Cafetería en Almagro">
-<meta property="og:description" content="Pizzería y Cafetería en Almagro (CABA) · Más de 20 años en el barrio. Carta completa, delivery y ubicación.">
-<meta property="og:image" content="/assets/img/meta/og-cover.svg">
-<meta property="og:locale" content="es_AR">
-<link rel="canonical" href="https://sanchez-sanchez.com.ar/">
-<link rel="stylesheet" href="assets/fonts/fonts.css">
-<link rel="stylesheet" href="assets/css/tokens.css">
-<style>
-*, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-body);
-  font-size: var(--text-body);
-  line-height: var(--leading-body);
-  -webkit-font-smoothing: antialiased;
-}
-body.nav-open { overflow: hidden; }
-img { max-width: 100%; display: block; }
-[hidden] { display: none !important; }
-a { color: inherit; }
-h1, h2, h3 { font-family: var(--font-display); font-weight: var(--weight-bold); margin: 0; }
-p { margin: 0; }
-ul { margin: 0; padding: 0; list-style: none; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }
-
-.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding-inline: var(--gutter); }
-.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.skip {
-  position: absolute; left: var(--gutter); top: -100px; z-index: 1200;
-  background: var(--accent); color: var(--accent-on);
-  padding: var(--space-sm) var(--space-md); border-radius: var(--radius-lg);
-  font-weight: var(--weight-semibold);
-}
-.skip { display: inline-flex; align-items: center; min-height: var(--tap-min); }
-.skip:focus { top: var(--space-sm); }
-
-/* ---------- Encabezado ---------- */
-.hdr {
-  position: sticky; top: 0; z-index: 1000;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border-soft);
-}
-.hdr__in { display: flex; align-items: center; gap: var(--space-md); min-height: 64px; }
-.hdr__brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; margin-right: auto; }
-.hdr__mark {
-  width: 38px; height: 38px; flex: none;
-  display: grid; place-items: center;
-  background: var(--accent); color: var(--accent-on);
-  border-radius: var(--radius-md);
-  font-family: var(--font-display); font-weight: var(--weight-bold);
-  font-size: 0.8125rem; letter-spacing: -0.02em;
-}
-.hdr__name {
-  font-family: var(--font-display); font-weight: var(--weight-bold);
-  font-size: 1.0625rem; line-height: 1.15; color: var(--accent); letter-spacing: -0.01em;
-}
-.hdr__tag {
-  display: block; font-family: var(--font-body); font-size: var(--text-caption);
-  letter-spacing: var(--tracking-caption); text-transform: uppercase;
-  color: var(--fg-muted); font-weight: var(--weight-medium); margin-top: 1px;
-}
-.hdr__nav { display: none; }
-.hdr__burger {
-  width: var(--tap-min); height: var(--tap-min); flex: none;
-  display: grid; place-items: center; gap: 0;
-  background: var(--bg-warm); border: 1px solid var(--border-soft);
-  border-radius: var(--radius-lg); cursor: pointer; padding: 0;
-}
-.hdr__burger span {
-  display: block; width: 19px; height: 2px; background: var(--fg);
-  border-radius: var(--radius-pill); grid-area: 1 / 1;
-  transition: transform 0.28s var(--ease-out), opacity 0.18s;
-}
-.hdr__burger span:nth-child(1) { transform: translateY(-6px); }
-.hdr__burger span:nth-child(3) { transform: translateY(6px); }
-.hdr__burger.is-open span:nth-child(1) { transform: rotate(45deg); }
-.hdr__burger.is-open span:nth-child(2) { opacity: 0; }
-.hdr__burger.is-open span:nth-child(3) { transform: rotate(-45deg); }
-
-/* Menú desplegable. El fondo es sólido a propósito: con fondo translúcido
-   el contenido de atrás se leía a través. */
-.menu {
-  position: absolute; top: 100%; left: 0; right: 0;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-xs) var(--gutter) var(--space-md);
-  display: flex; flex-direction: column;
-  transform: translateY(-8px); opacity: 0; pointer-events: none;
-  transition: transform 0.3s var(--ease-out), opacity 0.25s;
-}
-.menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-.menu a {
-  display: flex; align-items: center; min-height: var(--tap-min);
-  padding: var(--space-sm) 0; text-decoration: none;
-  font-weight: var(--weight-semibold); font-size: 1.0625rem;
-  border-bottom: 1px solid var(--border-soft);
-}
-.menu a:last-of-type { border-bottom: 0; }
-.menu__cta {
-  margin-top: var(--space-md); justify-content: center;
-  background: var(--accent); color: var(--accent-on);
-  border-radius: var(--radius-lg); border-bottom: 0 !important;
-}
-/* pointer-events none mientras está invisible: si no, intercepta los taps
-   de media pantalla aunque no se vea. */
-.backdrop {
-  position: fixed; inset: 0; z-index: 900;
-  background: rgba(29, 28, 23, 0.5);
-  opacity: 0; pointer-events: none; transition: opacity 0.3s;
-}
-.backdrop.is-open { opacity: 1; pointer-events: auto; }
-
-/* ---------- Botones ---------- */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  min-height: var(--tap-min); padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-lg); border: 1.5px solid transparent;
-  font-family: var(--font-body); font-size: var(--text-label);
-  font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label);
-  text-decoration: none; cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, transform 0.12s;
-}
-.btn:active { transform: scale(0.98); }
-.btn--primary { background: var(--accent); color: var(--accent-on); }
-.btn--primary:hover { background: var(--accent-hover); }
-.btn--ghost { background: transparent; color: var(--fg); border-color: var(--border); }
-.btn--ghost:hover { background: var(--bg-warm); }
-.btn--light { background: var(--surface); color: var(--fg); }
-.btn--outline-light { background: transparent; color: var(--fg-light); border-color: rgba(254, 249, 242, 0.45); }
-.btn--outline-light:hover { background: rgba(254, 249, 242, 0.12); }
-/* despues de .btn a proposito: misma especificidad, gana el ultimo */
-.hdr__cta { display: none; }
-
-/* ---------- Secciones ---------- */
-.sec { padding-block: clamp(2.5rem, 7vw, 4.5rem); scroll-margin-top: 72px; }
-.sec--warm { background: var(--bg-warm); }
-.sec--sunken { background: var(--bg-sunken); }
-.eyebrow {
-  font-size: var(--text-label-sm); font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-caption); text-transform: uppercase;
-  color: var(--amber-deep); margin-bottom: var(--space-xs);
-}
-.sec__title {
-  font-size: var(--text-h1); line-height: var(--leading-heading);
-  letter-spacing: -0.01em; margin-bottom: var(--space-md);
-}
-.sec__intro { color: var(--fg-muted); max-width: 60ch; margin-bottom: var(--space-lg); }
-
-/* ---------- Hero ---------- */
-.hero { position: relative; color: var(--fg-light); overflow: hidden; }
-.hero__bg { position: absolute; inset: 0; }
-.hero__bg img { width: 100%; height: 100%; object-fit: cover; }
-.hero__veil {
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(64,45,40,0.82) 0%, rgba(64,45,40,0.88) 55%, rgba(64,45,40,0.95) 100%);
-}
-.hero__in { position: relative; padding-block: clamp(2.5rem, 9vw, 5rem); }
-.hero__badge {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--amber); color: var(--amber-on);
-  padding: 0.3rem 0.75rem; border-radius: var(--radius-pill);
-  font-size: var(--text-label-sm); font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-label); text-transform: uppercase;
-}
-.hero h1 {
-  font-size: var(--text-display); line-height: var(--leading-display);
-  letter-spacing: var(--tracking-display); margin: var(--space-md) 0 var(--space-sm);
-}
-.hero h1 em { font-style: normal; color: var(--amber); }
-.hero__lead { color: var(--fg-on-dark-muted); max-width: 46ch; }
-.hero__acts { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg); }
-.hero__facts {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-md); margin-top: var(--space-xl);
-  padding-top: var(--space-lg); border-top: 1px solid rgba(254, 249, 242, 0.22);
-}
-/* alinea arriba: si una celda ocupa dos líneas, no desfasa a la de al lado */
-.hero__fact { align-self: start; }
-.hero__fact b {
-  display: block; font-family: var(--font-display);
-  font-size: var(--text-h4); font-weight: var(--weight-semibold); line-height: 1.2;
-}
-.hero__fact span { display: block; font-size: var(--text-sm); color: var(--fg-on-dark-muted); margin-top: 2px; }
-
-/* ---------- Cinta ---------- */
-.ticker {
-  background: var(--accent); color: var(--accent-on);
-  overflow: hidden; padding-block: var(--space-sm);
-}
-.ticker__track { display: flex; width: max-content; animation: desliz 28s linear infinite; }
-.ticker__track > * { display: flex; }
-.ticker li {
-  display: flex; align-items: center; gap: var(--space-md);
-  padding-inline: var(--space-md);
-  font-family: var(--font-display); font-size: var(--text-h4);
-  font-style: italic; white-space: nowrap;
-}
-.ticker li::after { content: "•"; color: var(--amber); font-style: normal; }
-@keyframes desliz { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) {
-  .ticker__track { animation: none; }
-}
-
-/* ---------- Dos cartas ---------- */
-.cartas { display: grid; gap: var(--space-md); }
-.carta-card {
-  background: var(--surface); border: 1px solid var(--border-soft);
-  border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column;
-}
-.carta-card__media { aspect-ratio: 16 / 10; background: var(--bg-sunken); }
-.carta-card__media img { width: 100%; height: 100%; object-fit: cover; }
-.carta-card__body { padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-sm); flex: 1; }
-.carta-card h3 { font-size: var(--text-h3); color: var(--accent); }
-.chips { display: flex; flex-wrap: wrap; gap: 0.375rem; }
-.chip {
-  background: var(--bg-warm); border: 1px solid var(--border-soft);
-  border-radius: var(--radius-pill); padding: 0.25rem 0.7rem;
-  font-size: var(--text-label-sm); font-weight: var(--weight-medium); color: var(--fg-muted);
-}
-.carta-card .btn { margin-top: auto; }
-
-/* ---------- Historia ---------- */
-.historia { display: grid; gap: var(--space-lg); }
-.historia__media { position: relative; border-radius: var(--radius-xl); overflow: hidden; }
-.historia__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.historia__stamp {
-  position: absolute; left: var(--space-md); bottom: var(--space-md);
-  background: var(--bg-dark); color: var(--fg-light);
-  border-radius: var(--radius-lg); padding: var(--space-sm) var(--space-md);
-}
-.historia__stamp b { display: block; font-family: var(--font-display); font-size: 1.75rem; color: var(--amber); line-height: 1; }
-.historia__stamp span { font-size: var(--text-label-sm); color: var(--fg-on-dark-muted); }
-.historia__txt { display: grid; gap: var(--space-md); color: var(--fg-muted); }
-
-/* ---------- Reseñas ---------- */
-.resenas { display: grid; gap: var(--space-md); }
-.resena {
-  background: var(--surface); border: 1px solid var(--border-soft);
-  border-radius: var(--radius-xl); padding: var(--space-lg);
-  display: flex; flex-direction: column; gap: var(--space-md);
-}
-.resena__stars { color: var(--amber); letter-spacing: 2px; font-size: var(--text-sm); }
-.resena__txt { font-style: italic; color: var(--fg); }
-.resena__who { display: flex; align-items: center; gap: 0.625rem; margin-top: auto; }
-.resena__ini {
-  width: 38px; height: 38px; flex: none; border-radius: var(--radius-pill);
-  background: var(--accent-soft); color: var(--accent);
-  display: grid; place-items: center;
-  font-family: var(--font-display); font-weight: var(--weight-bold);
-}
-.resena__who b { display: block; font-size: var(--text-sm); }
-.resena__who span { font-size: var(--text-label-sm); color: var(--fg-muted); }
-
-/* ---------- Menú del día ---------- */
-.menudia { background: var(--bg-dark); color: var(--fg-light); border-radius: var(--radius-xl); overflow: hidden; }
-.menudia__top { padding: var(--space-lg); border-bottom: 1px solid rgba(254, 249, 242, 0.16); }
-.menudia__kicker {
-  display: inline-block; background: var(--amber); color: var(--amber-on);
-  border-radius: var(--radius-pill); padding: 0.25rem 0.7rem;
-  font-size: var(--text-label-sm); font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-label); text-transform: uppercase;
-}
-.menudia__top h2 { font-size: var(--text-h1); margin: var(--space-sm) 0 var(--space-xs); }
-.menudia__price { font-family: var(--font-display); font-size: 2rem; color: var(--amber); line-height: 1.1; }
-.menudia__incluye { color: var(--fg-on-dark-muted); font-size: var(--text-sm); }
-.menudia__nota { color: var(--fg-on-dark-muted); font-size: var(--text-sm); margin-top: var(--space-sm); }
-.menudia__dias {
-  display: flex; gap: var(--space-xs); overflow-x: auto;
-  padding: var(--space-md) var(--space-lg); scrollbar-width: none;
-}
-.menudia__dias::-webkit-scrollbar { display: none; }
-.menudia__dia {
-  flex: none; min-height: var(--tap-min); padding: 0.5rem 1rem;
-  background: transparent; color: var(--fg-on-dark-muted);
-  border: 1px solid rgba(254, 249, 242, 0.28); border-radius: var(--radius-pill);
-  font-family: var(--font-body); font-size: var(--text-label);
-  font-weight: var(--weight-semibold); cursor: pointer; white-space: nowrap;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-.menudia__dia[aria-selected="true"] { background: var(--amber); color: var(--amber-on); border-color: var(--amber); }
-.menudia__platos { padding: 0 var(--space-lg) var(--space-lg); display: grid; gap: var(--space-sm); }
-/* [hidden] trae display:none del navegador, pero cualquier display de autor
-   le gana. Sin esto los cinco dias se muestran juntos. */
-.menudia__platos[hidden] { display: none; }
-.menudia__plato {
-  display: flex; gap: var(--space-md); align-items: flex-start;
-  background: var(--bg-dark-soft); border-radius: var(--radius-lg); padding: var(--space-md);
-}
-.menudia__n {
-  flex: none; width: 26px; height: 26px; border-radius: var(--radius-pill);
-  background: var(--amber); color: var(--amber-on);
-  display: grid; place-items: center;
-  font-size: var(--text-label-sm); font-weight: var(--weight-bold);
-}
-.menudia__extras { padding: 0 var(--space-lg) var(--space-lg); display: grid; gap: var(--space-sm); }
-.menudia__extra {
-  background: var(--bg-dark-soft); border-radius: var(--radius-lg); padding: var(--space-md);
-  display: grid; gap: 2px;
-}
-.menudia__extra b { color: var(--amber); font-family: var(--font-body); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
-.menudia__extra i { font-style: normal; font-size: var(--text-sm); color: var(--fg-on-dark-muted); }
-.menudia__pie {
-  padding: var(--space-md) var(--space-lg);
-  background: rgba(0, 0, 0, 0.18); font-size: var(--text-sm); color: var(--fg-on-dark-muted);
-}
-
-/* ---------- Delivery ---------- */
-.canales { display: grid; gap: var(--space-md); }
-.canal {
-  display: flex; align-items: center; gap: var(--space-md);
-  min-height: var(--tap-min);
-  background: var(--surface); border: 1px solid var(--border-soft);
-  border-radius: var(--radius-xl); padding: var(--space-lg);
-  text-decoration: none;
-  transition: border-color 0.2s, transform 0.12s, box-shadow 0.2s;
-}
-.canal:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
-.canal:active { transform: scale(0.99); }
-.canal__logo { width: 44px; height: 44px; flex: none; display: grid; place-items: center; }
-.canal__logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
-.canal__wa { background: var(--accent); color: var(--accent-on); border-radius: var(--radius-lg); font-weight: var(--weight-bold); font-size: 0.8rem; }
-.canal b { font-size: 1.0625rem; }
-.canal__go { margin-left: auto; color: var(--accent); font-weight: var(--weight-bold); font-size: 1.25rem; }
-
-/* ---------- Ubicación ---------- */
-.datos { display: grid; gap: var(--space-md); }
-.dato {
-  background: var(--surface); border: 1px solid var(--border-soft);
-  border-radius: var(--radius-xl); padding: var(--space-lg);
-}
-.dato b {
-  display: block; font-size: var(--text-label-sm); letter-spacing: var(--tracking-caption);
-  text-transform: uppercase; color: var(--amber-deep); margin-bottom: 0.3rem;
-}
-.dato a { display: inline-flex; align-items: center; min-height: var(--tap-min);
-          text-decoration: none; font-weight: var(--weight-semibold); }
-.dato a:hover { text-decoration: underline; }
-.redes { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
-.redes a {
-  display: inline-flex; align-items: center; min-height: var(--tap-min);
-  padding: 0.5rem 1rem; background: var(--bg-warm);
-  border: 1px solid var(--border-soft); border-radius: var(--radius-pill);
-  text-decoration: none; font-weight: var(--weight-semibold); font-size: var(--text-sm);
-}
-.redes a:hover { border-color: var(--accent); color: var(--accent); }
-
-/* ---------- Pie ---------- */
-.pie { background: var(--bg-dark); color: var(--fg-light); padding-block: var(--space-xl) var(--space-lg); }
-.pie__cols { display: grid; gap: var(--space-lg); }
-.pie h3 { font-family: var(--font-body); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--amber); margin-bottom: var(--space-sm); }
-.pie__marca { font-family: var(--font-display); font-size: var(--text-h3); }
-.pie p, .pie li { color: var(--fg-on-dark-muted); font-size: var(--text-sm); }
-.pie li { margin-bottom: 0.15rem; }
-/* 44px de alto en los enlaces del pie: son chicos y van pegados */
-.pie li a { display: inline-flex; align-items: center; min-height: var(--tap-min); }
-.pie a { text-decoration: none; }
-.pie a:hover { color: var(--amber); }
-.pie__legal {
-  margin-top: var(--space-xl); padding-top: var(--space-md);
-  border-top: 1px solid rgba(254, 249, 242, 0.16);
-  font-size: var(--text-label-sm); color: var(--fg-on-dark-muted);
-}
-
-/* ---------- Barra fija de celular ---------- */
-.barra {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 950;
-  display: flex; gap: var(--space-sm);
-  padding: var(--space-sm) var(--gutter) calc(var(--space-sm) + env(safe-area-inset-bottom));
-  background: var(--bg); border-top: 1px solid var(--border-soft);
-  box-shadow: 0 -4px 16px rgba(43, 26, 21, 0.08);
-}
-.barra .btn { flex: 1; }
-body { padding-bottom: 88px; }
-
-/* ---------- Escritorio ---------- */
-@media (min-width: 900px) {
-  .hdr__nav { display: flex; align-items: center; gap: var(--space-xs); }
-  .hdr__nav a {
-    display: inline-flex; align-items: center; min-height: var(--tap-min);
-    padding: 0.5rem 0.875rem; border-radius: var(--radius-lg);
-    text-decoration: none; font-weight: var(--weight-semibold); font-size: var(--text-label);
-  }
-  .hdr__nav a:hover { background: var(--bg-warm); }
-  .hdr__cta { display: inline-flex; }
-  .hdr__burger, .menu, .backdrop, .barra { display: none; }
-  body { padding-bottom: 0; }
-  .hero__facts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .cartas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .resenas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .canales { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .datos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .historia { grid-template-columns: 1fr 1fr; align-items: center; }
-  .menudia__platos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .menudia__extras { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .pie__cols { grid-template-columns: 2fr 1fr 1fr 1.4fr; }
-  .sec { scroll-margin-top: 80px; }
-}
-</style>
-</head>
-<body>
-<a class="skip" href="#principal">Saltar al contenido</a>
-
-<header class="hdr">
-  <div class="wrap hdr__in">
-    <a class="hdr__brand" href="/">
-      <span class="hdr__mark" aria-hidden="true">S&amp;S</span>
-      <span>
-        <span class="hdr__name">Sánchez &amp; Sánchez</span>
-        <span class="hdr__tag">Pizzería y Cafetería</span>
-      </span>
-    </a>
-    <nav class="hdr__nav" aria-label="Principal">
-      <a href="/carta/">Carta</a>
-      <a href="/cafeteria/">Cafetería</a>
-      <a href="#delivery">Delivery</a>
-      <a href="#contacto">Ubicación</a>
-    </nav>
-    <a class="btn btn--primary hdr__cta" href="https://wa.me/5491159273756?text=Hola!%20Quería%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
-    <button class="hdr__burger" id="burger" type="button" aria-label="Menú" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <nav class="menu" id="menu" aria-label="Menú de celular">
-    <a href="/carta/">Carta</a>
-    <a href="/cafeteria/">Cafetería</a>
-    <a href="#menudeldia">Menú del Día</a>
-    <a href="#delivery">Delivery</a>
-    <a href="#contacto">Ubicación</a>
-    <a class="menu__cta" href="https://wa.me/5491159273756?text=Hola!%20Quería%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
-  </nav>
-</header>
-<div class="backdrop" id="backdrop" hidden></div>
-
-<main id="principal">
-
-  <section class="hero" id="top">
-    <div class="hero__bg">
-      <img src="assets/img/home/exterior-local.jpeg" alt="Frente del local Sánchez &amp; Sánchez" width="1600" height="1067" loading="eager" fetchpriority="high">
-    </div>
-    <div class="hero__veil"></div>
-    <div class="wrap hero__in">
-      <p class="hero__badge">Almagro · CABA</p>
-      <h1>Sánchez <em>&amp;</em> Sánchez</h1>
-      <p class="hero__lead">Pizzería y Cafetería en el corazón de Almagro, con el sabor de siempre desde hace más de 20 años.</p>
-      <div class="hero__acts">
-        <a class="btn btn--primary" href="/carta/">Ver la Carta</a>
-        <a class="btn btn--outline-light" href="/cafeteria/">Cafetería</a>
-        <a class="btn btn--outline-light" href="#menudeldia">Menú del Día</a>
-        <a class="btn btn--outline-light" href="#delivery">Delivery</a>
-      </div>
-      <div class="hero__facts">
-        <div class="hero__fact"><b>+20 años</b><span>En el barrio</span></div>
-        <div class="hero__fact"><b>Pizza a la piedra</b><span>Y empanadas caseras</span></div>
-        <div class="hero__fact"><b>Menú del día</b><span>Lunes a viernes, 12 a 16</span></div>
-        <div class="hero__fact"><b>Delivery</b><span>Y pedidos para llevar</span></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker__track">
-      <ul>
-        <li>Pizza a la piedra</li><li>Empanadas caseras</li><li>Cafetería</li><li>Menú del día</li><li>Delivery</li>
-      </ul>
-      <ul>
-        <li>Pizza a la piedra</li><li>Empanadas caseras</li><li>Cafetería</li><li>Menú del día</li><li>Delivery</li>
-      </ul>
-    </div>
-  </div>
-
-  <section class="sec" id="cartas">
-    <div class="wrap">
-      <p class="eyebrow">Nuestra propuesta</p>
-      <h2 class="sec__title">Dos cartas, la misma cocina</h2>
-      <div class="cartas">
-        <article class="carta-card">
-          <div class="carta-card__media">
-            <img src="assets/img/home/exterior-local.jpeg" alt="Frente del local Sánchez &amp; Sánchez" width="800" height="500" loading="lazy">
-          </div>
-          <div class="carta-card__body">
-            <h3>Carta</h3>
-            <ul class="chips">
-              <li class="chip">Pizza a la piedra</li>
-              <li class="chip">Empanadas caseras</li>
-              <li class="chip">Minutas</li>
-            </ul>
-            <a class="btn btn--primary" href="/carta/">Ver la Carta</a>
-          </div>
-        </article>
-        <article class="carta-card">
-          <div class="carta-card__media">
-            <img src="assets/fotos/cafe-con-medialunas.jpg" alt="Café con medialunas" width="800" height="500" loading="lazy">
-          </div>
-          <div class="carta-card__body">
-            <h3>Cafetería</h3>
-            <ul class="chips">
-              <li class="chip">Medialunas recién hechas</li>
-              <li class="chip">Tortas caseras</li>
-              <li class="chip">Tostados</li>
-            </ul>
-            <a class="btn btn--primary" href="/cafeteria/">Ver Cafetería</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec--warm" id="nosotros">
-    <div class="wrap historia">
-      <div class="historia__media">
-        <img src="assets/img/home/equipo-sanchez.jpeg" alt="El equipo de Sánchez &amp; Sánchez" width="900" height="675" loading="lazy">
-        <p class="historia__stamp"><b>+20</b><span>años en el barrio</span></p>
-      </div>
-      <div>
-        <p class="eyebrow">Nuestra historia</p>
-        <h2 class="sec__title">Más de 20 años en el corazón de Almagro</h2>
-        <div class="historia__txt">
-          <p>Hace más de dos décadas abrimos las puertas de Sánchez &amp; Sánchez en Av. Rivadavia, y desde entonces somos parte del barrio.</p>
-          <p>Nuestras pizzas a la piedra, las empanadas caseras y la cocina de siempre nos convirtieron en un clásico para familias, vecinos y de paso.</p>
-          <p>A la hora del café, la cafetería suma un rincón cálido para desayunar, merendar o hacer una pausa con medialunas recién hechas, tortas caseras y tostados de siempre.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="menudeldia">
-    <div class="wrap">
-      <div class="menudia">
-        <div class="menudia__top">
-          <p class="menudia__kicker">Lunes a Viernes · 12 a 16 hs</p>
-          <h2>Menú del Día</h2>
-          <p class="menudia__price">$20.000</p>
-          <p class="menudia__incluye">Plato principal + bebida + café o postre</p>
-          <p class="menudia__nota">El menú del día está disponible de lunes a viernes. Podés igual mirar la propuesta de cada día con los botones de abajo.</p>
-        </div>
-
-        <div class="menudia__dias" role="tablist" aria-label="Día de la semana">
-          <button class="menudia__dia" type="button" role="tab" id="tab-lunes" aria-controls="dia-lunes" aria-selected="false" data-dia="lunes">Lunes</button>
-          <button class="menudia__dia" type="button" role="tab" id="tab-martes" aria-controls="dia-martes" aria-selected="false" data-dia="martes">Martes</button>
-          <button class="menudia__dia" type="button" role="tab" id="tab-miercoles" aria-controls="dia-miercoles" aria-selected="false" data-dia="miercoles">Miércoles</button>
-          <button class="menudia__dia" type="button" role="tab" id="tab-jueves" aria-controls="dia-jueves" aria-selected="false" data-dia="jueves">Jueves</button>
-          <button class="menudia__dia" type="button" role="tab" id="tab-viernes" aria-controls="dia-viernes" aria-selected="false" data-dia="viernes">Viernes</button>
-        </div>
-
-        <div class="menudia__platos" role="tabpanel" id="dia-lunes" aria-labelledby="tab-lunes" hidden>
-          <p class="menudia__plato"><span class="menudia__n">1</span><span>Pollo a la Mostaza con papas</span></p>
-          <p class="menudia__plato"><span class="menudia__n">2</span><span>Filet de Merluza a la Romana con fritas</span></p>
-          <p class="menudia__plato"><span class="menudia__n">3</span><span>Tartaleta de Vegetales y Pollo</span></p>
-          <p class="menudia__plato"><span class="menudia__n">4</span><span>Churrasquito de cerdo c/ morrón asado, huevo y papas</span></p>
-        </div>
-        <div class="menudia__platos" role="tabpanel" id="dia-martes" aria-labelledby="tab-martes" hidden>
-          <p class="menudia__plato"><span class="menudia__n">1</span><span>Milanesa de Cerdo con Puré</span></p>
-          <p class="menudia__plato"><span class="menudia__n">2</span><span>Milanesa de Soja Napolitana c/ Calabaza</span></p>
-          <p class="menudia__plato"><span class="menudia__n">3</span><span>Shogun de Pollo con Timbal de Arroz y Vegetales</span></p>
-          <p class="menudia__plato"><span class="menudia__n">4</span><span>Ensalada Caesar</span></p>
-        </div>
-        <div class="menudia__platos" role="tabpanel" id="dia-miercoles" aria-labelledby="tab-miercoles" hidden>
-          <p class="menudia__plato"><span class="menudia__n">1</span><span>Filet de Merluza a la Milanesa c/ Puré Mixto</span></p>
-          <p class="menudia__plato"><span class="menudia__n">2</span><span>Milanesa de Pollo Napolitana c/ Papas</span></p>
-          <p class="menudia__plato"><span class="menudia__n">3</span><span>Ensalada Caprese</span></p>
-          <p class="menudia__plato"><span class="menudia__n">4</span><span>Tarta de Verduras</span></p>
-        </div>
-        <div class="menudia__platos" role="tabpanel" id="dia-jueves" aria-labelledby="tab-jueves" hidden>
-          <p class="menudia__plato"><span class="menudia__n">1</span><span>Churrasquito de Cerdo al Verdeo c/ Papas</span></p>
-          <p class="menudia__plato"><span class="menudia__n">2</span><span>Calzone Relleno de Muzza, Jamón y Morrón</span></p>
-          <p class="menudia__plato"><span class="menudia__n">3</span><span>Tartaleta de Jamón y Queso</span></p>
-          <p class="menudia__plato"><span class="menudia__n">4</span><span>Ensalada de Atún</span></p>
-        </div>
-        <div class="menudia__platos" role="tabpanel" id="dia-viernes" aria-labelledby="tab-viernes" hidden>
-          <p class="menudia__plato"><span class="menudia__n">1</span><span>Merluza a la Plancha al Verdeo con Puré</span></p>
-          <p class="menudia__plato"><span class="menudia__n">2</span><span>Omelette Mixto con Mix de Verdes</span></p>
-          <p class="menudia__plato"><span class="menudia__n">3</span><span>Salpicón de Ave</span></p>
-          <p class="menudia__plato"><span class="menudia__n">4</span><span>Pollo a la Plancha c/ Ensalada de Remolacha, Huevo y Zanahoria</span></p>
-        </div>
-
-        <div class="menudia__extras">
-          <p class="menudia__extra"><b>Opción Invierno</b><span>Guiso de Lentejas · Pastel de Papa</span></p>
-          <p class="menudia__extra"><b>Opción Especial</b><span>Bife a Caballo + Papas Fritas — $21.000</span><i>No incluye bebida ni postre</i></p>
-        </div>
-        <p class="menudia__pie">Lunes a Viernes de 12 a 16 hs · Solo efectivo</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec--sunken" id="resenas">
-    <div class="wrap">
-      <p class="eyebrow">Lo que dicen de nosotros</p>
-      <h2 class="sec__title">Reseñas del barrio</h2>
-      <div class="resenas">
-        <article class="resena">
-          <p class="resena__stars" aria-label="5 de 5 estrellas">★★★★★</p>
-          <p class="resena__txt">“Vino el dueño a traernos las empanadas en medio del partido de Argentina, si agrego algo estaría de más. El que no pide acá, no entendió nada.”</p>
-          <p class="resena__who"><span class="resena__ini" aria-hidden="true">S</span><span><b>Sweet Simona</b><span>Local Guide</span></span></p>
-        </article>
-        <article class="resena">
-          <p class="resena__stars" aria-label="5 de 5 estrellas">★★★★★</p>
-          <p class="resena__txt">“Es el lugar donde meriendo con mi abuela de 91 años en silla de ruedas, siempre nos hacen espacio. Las medialunas espectaculares, el café con un vaso de agua generoso y a muy buen precio. También hacen pizzas a la piedra que aún no probé, pero siempre las veo pasar por la mesa y parecen buenísimas.”</p>
-          <p class="resena__who"><span class="resena__ini" aria-hidden="true">G</span><span><b>Gigi</b><span>Local Guide</span></span></p>
-        </article>
-        <article class="resena">
-          <p class="resena__stars" aria-label="5 de 5 estrellas">★★★★★</p>
-          <p class="resena__txt">“Teníamos hambre, pero no sabíamos bien qué comer. Nos cruzamos con un combo que se llama «La Escaloneta», con pizza, birra de litro, picada y alitas crispies. Rico todo, definitivamente vamos a volver.”</p>
-          <p class="resena__who"><span class="resena__ini" aria-hidden="true">C</span><span><b>Caterina</b><span>Local Guide</span></span></p>
-        </article>
-        <article class="resena">
-          <p class="resena__stars" aria-label="5 de 5 estrellas">★★★★★</p>
-          <p class="resena__txt">“Hermoso el lugar, súper tradicional. Nos atendieron bien y rápido. La pizza con gusto a pizza como ya no hay. Me encantó.”</p>
-          <p class="resena__who"><span class="resena__ini" aria-hidden="true">A</span><span><b>Alma Domínguez</b><span>Local Guide</span></span></p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="delivery">
-    <div class="wrap">
-      <p class="eyebrow">Pedí ahora</p>
-      <h2 class="sec__title">Delivery y Pedidos</h2>
-      <p class="sec__intro">Hacemos pedidos para llevar.</p>
-      <div class="canales">
-        <a class="canal" href="https://wa.me/5491159273756?text=Hola!%20Quería%20hacer%20un%20pedido." target="_blank" rel="noopener">
-          <span class="canal__logo"><span class="canal__wa">WA</span></span>
-          <b>WhatsApp</b><span class="canal__go" aria-hidden="true">→</span>
-        </a>
-        <a class="canal" href="https://mpago.li/29KUdv2" target="_blank" rel="noopener">
-          <span class="canal__logo"><img src="assets/logos/mercado-pago.png" alt="Mercado Pago" width="44" height="44" loading="lazy"></span>
-          <b>Mercado Pago</b><span class="canal__go" aria-hidden="true">→</span>
-        </a>
-        <a class="canal" href="https://www.rappi.com.ar/restaurantes/246491-sanchez-y-sanchez" target="_blank" rel="noopener">
-          <span class="canal__logo"><img src="assets/logos/rappi.png" alt="Rappi" width="44" height="44" loading="lazy"></span>
-          <b>Rappi</b><span class="canal__go" aria-hidden="true">→</span>
-        </a>
-        <a class="canal" href="https://www.pedidosya.com.ar/restaurantes/buenos-aires/sanchez-sanchez-pizzeria-cafeteria-6809ea11-e8ea-4e61-ba31-1dc91a1868e1-menu" target="_blank" rel="noopener">
-          <span class="canal__logo"><img src="assets/logos/pedidosya.png" alt="PedidosYa" width="44" height="44" loading="lazy"></span>
-          <b>PedidosYa</b><span class="canal__go" aria-hidden="true">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec--warm" id="contacto">
-    <div class="wrap">
-      <p class="eyebrow">Visitanos</p>
-      <h2 class="sec__title">Dónde estamos</h2>
-      <div class="datos">
-        <div class="dato">
-          <b>Dirección</b>
-          <p>Av. Rivadavia 3399, CABA (Almagro / Balvanera)</p>
-        </div>
-        <div class="dato">
-          <b>Horarios</b>
-          <p>Lunes a Viernes de 7:00 a 00:00</p>
-          <p>Sábados y Domingos de 8:00 a 1:00</p>
-        </div>
-        <div class="dato">
-          <b>Teléfono</b>
-          <p><a href="tel:+5491159273756">11 5927-3756</a></p>
-        </div>
-        <div class="dato">
-          <b>Redes</b>
-          <p class="redes">
-            <a href="https://instagram.com/sanchezysanchez_ok" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.tiktok.com/@sanchezysanchez2006" target="_blank" rel="noopener">TikTok</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="pie">
-  <div class="wrap">
-    <div class="pie__cols">
-      <div>
-        <p class="pie__marca">Sánchez &amp; Sánchez</p>
-        <p>Pizzería y Cafetería en Almagro</p>
-        <p>Hacemos pedidos para llevar</p>
-      </div>
-      <div>
-        <h3>Navegación</h3>
-        <ul>
-          <li><a href="/carta/">Carta</a></li>
-          <li><a href="/cafeteria/">Cafetería</a></li>
-          <li><a href="#delivery">Delivery</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contacto</h3>
-        <ul>
-          <li><a href="tel:+5491159273756">11 5927-3756</a></li>
-          <li><a href="https://instagram.com/sanchezysanchez_ok" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.tiktok.com/@sanchezysanchez2006" target="_blank" rel="noopener">TikTok</a></li>
-          <li>Av. Rivadavia 3399</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Pedí ahora</h3>
-        <ul>
-          <li><a href="/carta/">Ver carta</a></li>
-          <li><a href="https://wa.me/5491159273756?text=Hola!%20Quería%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a></li>
-        </ul>
-      </div>
-    </div>
-    <p class="pie__legal">© <span id="anio">2026</span> Sánchez &amp; Sánchez. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-<div class="barra">
-  <a class="btn btn--ghost" href="/carta/">Ver carta</a>
-  <a class="btn btn--primary" href="https://wa.me/5491159273756?text=Hola!%20Quería%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+<!DOCTYPE html><html lang="es" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,26,21,0.06)]"><div class="h-20 max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Sánchez &amp; Sánchez Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLT-xRyBG4qe-S-SRf70SKlsU8w3PgmtlbBzmkT36TzubsHOyhMtAW77_sQqpCg2MUHXUh7SebKPGH286qlkaYhJhmed4pAbIeFMYnNTkGupZtVdX2r5jHUGCbCACmq-Dpzg4qQx6hc2AViK7AMa-teFxc8ut-ROFOGNnC5W4TUG3r5KF_YaMwDJAQIzi6HXj0b7amwu7Fq3AwWQqdPzsrerE_BZgY3oe7I1T1isE"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">Sánchez &amp; Sánchez</span><span class="font-caption text-caption text-on-surface-variant tracking-wider uppercase mt-0.5">Pizzería &amp; Cafetería</span></div><span class="hidden lg:inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md ml-2 shadow-[0_1px_3px_rgba(43,26,21,0.08)]">Más de 20 años en Almagro</span></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a aria-current="page" class="px-3 py-2 transition-colors bg-primary-container text-on-primary font-label-lg rounded-lg" data-path="inicio" href="#">Inicio</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="carta-pizzeria" href="#">Carta Pizzería</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="carta-cafeteria" href="#">Carta Cafetería</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="menu-del-dia" href="#">Menú del Día</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="delivery" href="#">Delivery</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ubicacion" href="#">Ubicación</a></nav></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- HERO SECTION CON IMAGEN EMBEBIDA Y ACCIONES RÁPIDAS -->
+<section class="relative w-full overflow-hidden bg-tertiary text-on-tertiary">
+<div class="absolute inset-0 z-0">
+<img alt="Pizzería Sánchez &amp; Sánchez salón y pizza a la piedra porteña" class="w-full h-full object-cover object-center opacity-35 scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaHd51qPj25GUTLI73Mfij6bHqVODl3XxjLEuegrR-K4HniveZasm1d6pq_lMHTpZfTF0p7sYektUKxsHxTSo-fDiwUk3QkVP0nFK_bHWQoWB5OhKTX-Agr_zcHbnGF4oWV1kx2NjlOCXU-nlwOJC2DKA_H83z_s1PMfbiF3d1DDVVLZDCTyjG4YShDjfG3A0klwrHiwz2C8kh6_cPbsfcXz0VzeEZnw_EJjaPhms">
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary via-tertiary/70 to-tertiary/40"></div>
 </div>
+<div class="relative z-10 max-w-[1200px] mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-xl">
+<!-- Badge de descuento mostrador -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container shadow-md mb-space-md">
 
+
+</div>
+<!-- Título & Bajada -->
+<div class="max-w-3xl space-y-space-sm mb-space-lg">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-container-lowest leading-tight">
+          Más de 20 años amasando barrio y tradición en Almagro
+        </h1>
+<p class="font-body-lg text-body-lg text-tertiary-fixed max-w-2xl">
+          Un clásico en Av. Rivadavia 3399 para familias, vecinos y gente de paso. Pizzas a la piedra de molde o finitas, empanadas de verdad y el café de siempre con medialunas recién horneadas.
+        </p>
+</div>
+<!-- Call to Actions Directos -->
+<div class="flex flex-wrap items-center gap-3 pt-space-xs">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-lg hover:bg-primary-container active:scale-95 transition-all" href="#cartas">
+<span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+<span class="">Ver la Carta</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-md hover:bg-surface-container-high active:scale-95 transition-all" href="#pedidos">
+<span class="material-symbols-outlined text-[20px]">moped</span>
+<span class="">Pedí Delivery</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-tertiary-container/80 text-surface-container-lowest font-label-lg text-label-lg hover:bg-tertiary-container active:scale-95 transition-all" href="#ubicacion">
+<span class="material-symbols-outlined text-[20px]">map</span>
+<span class="">Cómo llegar y Horarios</span>
+</a>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-space-xl pt-space-lg border-t border-outline/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[28px]">local_pizza</span>
+<div>
+<span class="block font-label-lg text-surface-container-lowest leading-none">Horno Continuo</span>
+<span class="font-caption text-caption text-tertiary-fixed-dim">Desde 11:30 hs non-stop</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[28px]">coffee</span>
+<div>
+<span class="block font-label-lg text-surface-container-lowest leading-none">Café desde 07:00 hs</span>
+<span class="font-caption text-caption text-tertiary-fixed-dim">Medialunas calentitas</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[28px]">star</span>
+<div>
+<span class="block font-label-lg text-surface-container-lowest leading-none">4.9 en Google</span>
+<span class="font-caption text-caption text-tertiary-fixed-dim">+1.800 reseñas barriales</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+
+
+</div>
+</div>
+</div>
+</section>
+<!-- ACCESOS DIRECTOS A LAS DOS CARTAS (PIZZERÍA & CAFETERÍA) -->
+<section class="w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl" id="cartas">
+<div class="text-center max-w-2xl mx-auto mb-space-lg">
+<span class="font-caption text-caption text-primary uppercase font-bold tracking-widest">Nuestra Propuesta Gastronómica</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Dos mundos, la misma pasión porteña</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Elegí lo que te tiente ahora mismo: masa horneada al punto justo o el corte de café con tostadas que te reinicia el día.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Tarjeta 1: Pizzería Tradicional -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -right-8 -top-8 w-40 h-40 bg-secondary-fixed/30 rounded-full blur-2xl group-hover:bg-secondary-fixed/50 transition-colors"></div>
+<div class="relative z-10 space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+              Al Molde &amp; A la Piedra
+            </span>
+<span class="font-caption text-caption text-secondary font-bold">DESDE 2006</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Pizzería Tradicional</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+              Muzza burbujeante con orégano silvestre, Fugazzeta rellena con queso cremoso y cebollas doradas, Calabresa picantona, Empanadas cortadas a cuchillo y la infaltable Fainá crocante.
+            </p>
+</div>
+<div class="h-48 w-full rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up appetizing top view of a classic Argentine mozzarella pizza baked to golden perfection with melted cheese, green olives, sprinkled oregano, and a side of crispy golden fainá on a rustic wooden pizzeria table with warm ambient glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADEjO0qLQWQz-0daIwjoEEmgejarcMACfJSX-6CrSSJban-KN1FUxI1nrfmJf4OKljtAo7-XBQ9s_aMTogFd5pBDtiEC98Z_gu05F92Pd4hXDvhYdmYwXNeyrevlfetXWFsKJ0RGywLT-A6iNy86_HddZ49fJQS8lBrOdxqtYJQH6ubMgO1O5R3I5TNxGFwZWtqXKXA3OWYOQEOLLQ_ZftuOYNMbiYq93I6UIw_CI">
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-caption text-caption">Muzza al corte</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-caption text-caption">Fugazzeta rellena</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-caption text-caption">Fainá clásica</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-caption text-caption">Empanadas salteñas</span>
+</div>
+</div>
+<div class="relative z-10 pt-space-lg">
+<a class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all" data-path="carta-pizzeria" href="#">
+<span class="">Ver Carta de Pizzas</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Tarjeta 2: Cafetería de Barrio -->
+<div class="group relative rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
+<div class="absolute -right-8 -top-8 w-40 h-40 bg-primary-fixed/20 rounded-full blur-2xl group-hover:bg-primary-fixed/40 transition-colors"></div>
+<div class="relative z-10 space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">bakery_dining</span>
+              Desayunos &amp; Meriendas
+            </span>
+<span class="font-caption text-caption text-on-surface-variant font-bold">ABIERTO 07:00 HS</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-secondary font-bold">Cafetería de Barrio</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+              Café en jarrito con espuma densa, cortado doble, medialunas de manteca recién sacadas del horno, tostados en pan de miga doradito o pebete bien cargado, y tortas caseras del día.
+            </p>
+</div>
+<div class="h-48 w-full rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Warm cozy traditional Buenos Aires cafe table with two freshly baked shiny butter medialunas, a ceramic cup of cortado coffee with microfoam, a small glass of sparkling soda water, and a morning newspaper on polished mahogany wood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0wCkNzE-gikEm-oBSYON8Qvh_wdFETcvGm4gJqPQSDh8x-W8EVXpBuEeS1cpb_svqYaowCDxrHLbuEQFpQI7n6KG5iBXKrbAx2q7ymyoSup42KG0TPVL2EUfZEtZxyvKXlJitp6f1_4jjhX61BIDghPb-LMLwoPNZjYJvBxuBTwdCAQSTYe8jMeS3j3OPY-8vsak8VbD-FRcQkOj6D0g7c5e381f2z2uXzDR6c3o">
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-caption text-caption">Cortado en jarrito</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-caption text-caption">Medialunas de manteca</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-caption text-caption">Tostado de miga</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-caption text-caption">Submarino con vainillas</span>
+</div>
+</div>
+<div class="relative z-10 pt-space-lg">
+<a class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg shadow-md hover:bg-on-secondary-container transition-all" data-path="carta-cafeteria" href="#">
+<span class="">Ver Carta de Café</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- MENÚ DEL DÍA (LUNES A VIERNES DE 12 A 16 HS - $20.000) -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin space-y-space-lg">
+<!-- Banner Cabecera Menú Ejecutivo -->
+<div class="bg-primary text-on-primary rounded-xl p-space-md md:p-space-lg shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-on-primary/15 text-primary-fixed text-caption uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">lunch_dining</span>
+            Almuerzos Ejecutivos en el Salón &amp; Para Llevar
+          </div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-primary">Menú del Día Porteño</h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim">
+            Lunes a Viernes de 12:00 a 16:00 hs · Incluye Plato Principal + Bebida a elección + Café o Postre casero
+          </p>
+</div>
+<div class="flex flex-col items-start md:items-end bg-on-primary/10 px-5 py-3 rounded-lg w-full md:w-auto">
+<span class="font-caption text-caption text-primary-fixed uppercase tracking-wider">Precio Único Especial</span>
+<span class="font-display-lg text-display-lg-mobile md:text-display-lg font-bold leading-none text-surface-container-lowest">$20.000</span>
+<span class="font-caption text-caption text-primary-fixed-dim mt-1">Solo Efectivo en Mostrador o Salón</span>
+</div>
+</div>
+<!-- Selector Interactivo de Días (Tabs) -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="day-tabs">
+<button class="day-tab px-5 py-2.5 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-surface-container-high text-on-surface hover:bg-surface-variant" data-day="lunes" type="button">
+<span class="">Lunes</span>
+</button>
+<button class="day-tab px-5 py-2.5 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-surface-container-high text-on-surface hover:bg-surface-variant" data-day="martes" type="button">
+<span class="">Martes</span>
+</button>
+<button class="day-tab px-5 py-2.5 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-surface-container-high text-on-surface hover:bg-surface-variant" data-day="miercoles" type="button">
+<span class="">Miércoles</span>
+</button>
+<button class="day-tab px-5 py-2.5 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-primary text-on-primary shadow-sm" data-day="jueves" type="button">
+<span class="">Jueves</span>
+</button>
+<button class="day-tab px-5 py-2.5 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-surface-container-high text-on-surface hover:bg-surface-variant" data-day="viernes" type="button">
+<span class="">Viernes</span>
+</button>
+</div>
+<!-- Contenedores de platos por día -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="day-content">
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">Imperdible</span>
+                <span class="font-caption text-caption text-on-surface-variant font-medium">Incluye bebida &amp; postre</span>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Matambre tiernizado al verdeo</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">Cocción lenta con crema de cebollas de verdeo y papas</p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-outline-variant/30 flex items-center justify-between">
+              <span class="font-label-md text-label-md text-primary font-bold">Menú Completo</span>
+              <span class="font-label-lg text-label-lg font-bold text-on-surface">$20.000</span>
+            </div>
+          </div>
+        
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">Tradición</span>
+                <span class="font-caption text-caption text-on-surface-variant font-medium">Incluye bebida &amp; postre</span>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Ñoquis caseros de papa (29 de cada mes)</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">Los tradicionales del 29 con bolognesa o cuatro quesos</p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-outline-variant/30 flex items-center justify-between">
+              <span class="font-label-md text-label-md text-primary font-bold">Menú Completo</span>
+              <span class="font-label-lg text-label-lg font-bold text-on-surface">$20.000</span>
+            </div>
+          </div>
+        
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">Casero</span>
+                <span class="font-caption text-caption text-on-surface-variant font-medium">Incluye bebida &amp; postre</span>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Zapallitos rellenos gratinados</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">Con carne picada especial y queso provolone dorado</p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-outline-variant/30 flex items-center justify-between">
+              <span class="font-label-md text-label-md text-primary font-bold">Menú Completo</span>
+              <span class="font-label-lg text-label-lg font-bold text-on-surface">$20.000</span>
+            </div>
+          </div>
+        
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">Al Plato</span>
+                <span class="font-caption text-caption text-on-surface-variant font-medium">Incluye bebida &amp; postre</span>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Cuarto de pollo con ensalada rusa</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">Pollo crocante servido con papas, arvejas y mayonesa casera</p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-outline-variant/30 flex items-center justify-between">
+              <span class="font-label-md text-label-md text-primary font-bold">Menú Completo</span>
+              <span class="font-label-lg text-label-lg font-bold text-on-surface">$20.000</span>
+            </div>
+          </div>
+        </div>
+<!-- Opciones Especiales Destacadas -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="flex items-center gap-4 bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[26px]">soup_kitchen</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Opción de Invierno &amp; Cazuela</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-caption text-caption font-bold">Recomendado</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Guiso de lentejas bien espeso con panceta y chorizo colorado o Pastel de papas gratinado tradicional.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[26px]">skillet</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary font-semibold">Especial Bodegón Porteño</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">$21.000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Bife de chorizo a caballo con dos huevos fritos dorados y papas bastón fritas en el momento.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HISTORIA Y IDENTIDAD DE BARRIO (MÁS DE 2 DÉCADAS EN ALMAGRO) -->
+<section class="w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Columna Imagen con composición vintage -->
+<div class="lg:col-span-5 relative">
+<div class="w-full h-96 rounded-xl overflow-hidden shadow-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Atmospheric warm view of a historic Buenos Aires corner pizzeria interior with dark wooden booth tables, tiled walls, vintage soda siphons, and an artisan baker pulling a steaming pizza from a wood-fired brick oven" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpWYT4f4I1oUkcZW79EyliQBkrky7QAEWszFAi4Pf7Ub6J1CwPOI46wrgenIIOEUdhJa0sXS3y6bUTr_5zI7at7fJkULXvFKZMcjmv1HiE7NbO_NN7yv9IATDGsxaqxf0YWSpnXs7mhUXUAelpl5Q09ZZCUT9hFJpDZ4ypJyZSZCNznJ0yijfrVv2BPacc5jQwBnDYGG9Zbkij0Ft7flYpyNk-rmUQAkfyEg_G1J8">
+</div>
+<div class="absolute -bottom-6 -right-4 bg-tertiary text-on-tertiary p-4 rounded-xl shadow-lg max-w-[240px]">
+<span class="font-display-lg text-[32px] font-bold text-secondary-container leading-none">20+</span>
+<p class="font-caption text-caption text-surface-container-lowest mt-1">Años viendo crecer al barrio en la misma ochava de Rivadavia.</p>
+</div>
+</div>
+<!-- Columna Narrativa Porteña -->
+<div class="lg:col-span-7 space-y-space-md lg:pl-space-md">
+<div class="space-y-1">
+<span class="font-caption text-caption text-secondary font-bold uppercase tracking-widest">Identidad &amp; Corazón Almagrense</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Un rincón donde el tiempo pasa entre amigos y buen morfi</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Nacimos con una premisa simple en Av. Rivadavia 3399: que ningún vecino se vaya con hambre y que el café se sirva siempre hirviendo, en jarrito y con cariño. Somos el puente cálido entre Almagro y Balvanera.
+        </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Acá se respira esa Buenos Aires que resiste: mesas de madera maciza lustradas por miles de charlas cotidianas, hornallas prendidas desde las siete de la mañana, olor a muzzarella tostada en el horno a la piedra y el sonido inconfundible de los pocillos chocando contra el mostrador. Sánchez &amp; Sánchez no es una franquicia: es la casa de los vecinos.
+        </p>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+<div class="p-3 rounded-lg bg-surface-container">
+<span class="material-symbols-outlined text-primary text-[22px] mb-1">bakery_dining</span>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Masa Madre Propia</h4>
+<p class="font-caption text-caption text-on-surface-variant">Leudado lento 24 hs</p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container">
+<span class="material-symbols-outlined text-primary text-[22px] mb-1">handyman</span>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Oficio de Maestro</h4>
+<p class="font-caption text-caption text-on-surface-variant">Pizzeros de carrera</p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container col-span-2 sm:col-span-1">
+<span class="material-symbols-outlined text-primary text-[22px] mb-1">favorite</span>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Atención de Dueño</h4>
+<p class="font-caption text-caption text-on-surface-variant">Siempre en el salón</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PRUEBA SOCIAL - RESEÑAS REALES DE GOOGLE -->
+<section class="w-full bg-surface-container-high py-space-xl">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin space-y-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold mb-2">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="">Opiniones Reales Verificadas</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">La voz del barrio en cada mesa</h2>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-lowest px-4 py-2.5 rounded-xl shadow-sm">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">4.9 / 5.0</span>
+<span class="font-caption text-caption text-on-surface-variant block">+1.800 reseñas en Google</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Reseña 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-3">
+<div class="space-y-2">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "Las mejores pizzas a la piedra de la zona sin vueltas. La muzza es abundante y de calidad, no escatiman nada. El combo 'La Escaloneta' es una fiesta para comer entre amigos viendo el partido."
+            </p>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-caption">MG</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Martín G.</span>
+<span class="font-caption text-caption text-on-surface-variant">Vecino de Almagro</span>
+</div>
+</div>
+</div>
+<!-- Reseña 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-3">
+<div class="space-y-2">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "El rincón cafetero de Rivadavia. Las medialunas recién salidas a las 8 de la mañana te alegran el día. Te atienden los dueños con una sonrisa sincera que ya no se ve en todos lados."
+            </p>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-caption">SM</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Silvia M.</span>
+<span class="font-caption text-caption text-on-surface-variant">Cliente habitual matutina</span>
+</div>
+</div>
+</div>
+<!-- Reseña 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-3">
+<div class="space-y-2">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "El menú del día de $20.000 al mediodía es imbatible en precio, porción y sabor. El flan casero con dulce de leche de postre es un viaje a la comida de la abuela."
+            </p>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-caption">JP</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Javier P.</span>
+<span class="font-caption text-caption text-on-surface-variant">Oficinista en Rivadavia</span>
+</div>
+</div>
+</div>
+<!-- Reseña 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-3">
+<div class="space-y-2">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "Venimos todos los domingos con la familia después del almuerzo o a cenar pizza con faina. Clásico que nunca falla, limpísimo y con oficio de verdad."
+            </p>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-caption">LC</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Laura &amp; Carlos</span>
+<span class="font-caption text-caption text-on-surface-variant">Familia de Boedo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CANALES DE PEDIDO RÁPIDO & DELIVERY -->
+<section class="w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl" id="pedidos">
+<div class="bg-surface-container rounded-2xl p-space-lg md:p-space-xl shadow-sm">
+<div class="max-w-2xl mx-auto text-center space-y-space-sm mb-space-lg">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span class="">Sin vueltas ni demoras</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Pedí y te lo llevamos al toque</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Pedí para retirar por mostrador o te lo llevamos a tu casa volando en Almagro, Caballito, Balvanera y Boedo.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- WhatsApp Directo -->
+<a class="p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-high shadow-sm transition-all group flex flex-col justify-between" href="https://wa.me/5491159273756?text=Hola%20S%C3%A1nchez%20y%20S%C3%A1nchez,%20quiero%20hacer%20un%20pedido" rel="noopener noreferrer" target="_blank">
+<div>
+<div class="w-12 h-12 rounded-lg bg-[#25D366]/15 text-[#128C7E] flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[28px]">chat</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">WhatsApp Directo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">11 5927-3756</p>
+<span class="font-caption text-caption text-secondary font-semibold block mt-1">Atención rápida en vivo</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-primary font-label-md">
+<span class="">Chateá y pedí ahora</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Mercado Pago -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-[#009EE3]/15 text-[#009EE3] flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[28px]">payments</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mercado Pago</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">QR &amp; Transferencias</p>
+<span class="font-caption text-caption text-on-surface-variant block mt-1">Aboná con saldo o tarjeta</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+              Aceptado en mostrador
+            </span>
+</div>
+</div>
+<!-- Rappi -->
+<a class="p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-high shadow-sm transition-all group flex flex-col justify-between" href="https://www.rappi.com.ar" rel="noopener noreferrer" target="_blank">
+<div>
+<div class="w-12 h-12 rounded-lg bg-[#FF441F]/15 text-[#FF441F] flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[28px]">electric_moped</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Rappi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Seguimiento en vivo</p>
+<span class="font-caption text-caption text-on-surface-variant block mt-1">Entregas hasta 4 km</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-primary font-label-md">
+<span class="">Pedir por Rappi</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- PedidosYa -->
+<a class="p-space-md rounded-xl bg-surface-container-lowest hover:bg-surface-container-high shadow-sm transition-all group flex flex-col justify-between" href="https://www.pedidosya.com.ar" rel="noopener noreferrer" target="_blank">
+<div>
+<div class="w-12 h-12 rounded-lg bg-[#EA0029]/15 text-[#EA0029] flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[28px]">delivery_dining</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">PedidosYa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Promociones online</p>
+<span class="font-caption text-caption text-on-surface-variant block mt-1">Menú completo disponible</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-primary font-label-md">
+<span class="">Pedir por PedidosYa</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- UBICACIÓN, HORARIOS Y CÓMO LLEGAR -->
+<section class="w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin pb-space-xl" id="ubicacion">
+<div class="text-center max-w-2xl mx-auto mb-space-lg">
+<span class="font-caption text-caption text-primary uppercase font-bold tracking-widest">Encontranos Fácil</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Vení a visitarnos a la esquina</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">En el corazón de la Avenida Rivadavia, con acceso directo por tren, subte y múltiples líneas de colectivo.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Datos Prácticos y Horarios -->
+<div class="lg:col-span-5 space-y-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+<h3 class="font-headline-sm text-headline-sm">Dirección</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">
+            Av. Rivadavia 3399
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Esquina Sánchez de Loria · Límite Almagro y Balvanera, Ciudad Autónoma de Buenos Aires.
+          </p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md text-label-md hover:bg-primary-fixed-dim transition-colors" href="https://maps.google.com/?q=Av.+Rivadavia+3399,+CABA" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span>
+<span class="">Abrir en Google Maps</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[24px]">schedule</span>
+<h3 class="font-headline-sm text-headline-sm">Horarios de Atención</h3>
+</div>
+<div class="space-y-2 font-body-md">
+<div class="flex justify-between items-center p-2 rounded bg-surface-container">
+<span class="text-on-surface font-medium">Lunes a Viernes:</span>
+<span class="font-semibold text-primary">07:00 a 00:00 hs</span>
+</div>
+<div class="flex justify-between items-center p-2 rounded bg-surface-container">
+<span class="text-on-surface font-medium">Sábados y Domingos:</span>
+<span class="font-semibold text-primary">08:00 a 01:00 hs</span>
+</div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant block">
+            * El horno de pizza opera ininterrumpidamente desde las 11:30 hs hasta el cierre.
+          </span>
+</div>
+<!-- Cómo Llegar (Transporte) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-[24px]">directions_subway</span>
+<h3 class="font-headline-sm text-headline-sm">Transporte Cercano</h3>
+</div>
+<div class="space-y-2">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Subte Línea A:</span>
+<span class="font-caption text-caption text-on-surface-variant">Estación Loria (a 50 metros) o Estación Castro Barros.</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Colectivos que te dejan en la puerta:</span>
+<div class="flex flex-wrap gap-1.5 mt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-md text-on-surface">Línea 5</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-md text-on-surface">Línea 8</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-md text-on-surface">Línea 86</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-md text-on-surface">Línea 105</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-md text-on-surface">Línea 132</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-md text-on-surface">Línea 146</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mapa y Canales de Redes -->
+<div class="lg:col-span-7 flex flex-col justify-between space-y-4">
+<!-- Componente de Mapa Integrado -->
+<div class="relative w-full h-[360px] md:h-full min-h-[340px] rounded-xl overflow-hidden shadow-sm bg-surface-container-high" data-location="Av. Rivadavia 3399, Almagro, Buenos Aires, Argentina" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDmErkoyW9Hk0rR3VLzsBqPU4nJNAltIAezIGzGM0J9J_IAEErXXDOid0_kbm25MQhQeT2H0yKYjhUCNs26Q_f_T5Fss4ajCefiFmISTDecMgaj9dQApwpvNhACNi_HrQNaomgKK_xFulNkJS9pgDjvtf8q5RU_RQ7bW7CBf5u-hdsPvWtZFf2e2qlB-QN_Ok1oeDHbNXCKwYlnenv2ipa2FhV2jY8gFQjxxvpnEho&quot;);">
+<div class="absolute top-4 left-4 z-10 bg-surface/90 backdrop-blur-md px-3.5 py-2 rounded-lg shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">storefront</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-bold">Sánchez &amp; Sánchez</span>
+<span class="font-caption text-caption text-on-surface-variant">Av. Rivadavia 3399, Almagro</span>
+</div>
+</div>
+<div class="absolute bottom-4 right-4 z-10 bg-surface/90 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-md">
+<span class="font-caption text-caption text-secondary font-bold">A 50m de Subte A (Loria)</span>
+</div>
+</div>
+<!-- Barra de Redes Sociales -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block font-semibold">Seguinos en el barrio</span>
+<span class="font-caption text-caption text-on-surface-variant">Promociones del día y fotos de las pizzas recién salidas</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors" href="https://instagram.com/sanchezysanchez_ok" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-primary">camera_alt</span>
+<span class="">@sanchezysanchez_ok</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors" href="https://tiktok.com/@sanchezysanchez2006" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-primary">play_circle</span>
+<span class="">TikTok</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Script interactivo para el Menú del Día -->
 <script>
-(function () {
-  'use strict';
+    (function() {
+      const menuData = {
+        lunes: [
+          { nombre: "Milanesa napolitana con puré o fritas", desc: "Clásica de ternera con abundante muzza y salsa casera", tag: "Favorito" },
+          { nombre: "Pollo al horno con papas y batatas", desc: "Pata muslo dorada con hierbas y papas rústicas", tag: "Al Horno" },
+          { nombre: "Ravioles caseros de verdura y ricota", desc: "Pasta fresca al huevo con tuco tradicional y pesto", tag: "Pastas" },
+          { nombre: "Tarta casera de calabaza y queso", desc: "Masa hojaldrada acompañada de ensalada mixta fresca", tag: "Liviano" }
+        ],
+        martes: [
+          { nombre: "Pastel de papas con carne braseada", desc: "Carne cortada al horno, aceitunas y puré gratinado", tag: "Clásico" },
+          { nombre: "Suprema a la suiza con papas rejilla", desc: "Pechuga crocante bañada en salsa blanca y queso", tag: "Recomendado" },
+          { nombre: "Canelones de verdura con salsa mixta", desc: "Masa casera con relleno abundante de acelga y queso", tag: "Pastas" },
+          { nombre: "Pechuguita grillé con ensalada completa", desc: "Pollo a la plancha con lechuga, tomate, zanahoria y huevo", tag: "Liviano" }
+        ],
+        miercoles: [
+          { nombre: "Albóndigas caseras con arroz o puré", desc: "Carne vacuna de primera en salsa pomodoro con arvejas", tag: "De la Casa" },
+          { nombre: "Costillitas de cerdo con puré de manzana", desc: "A la plancha bien doradas con puré agridulce o papas", tag: "Especial" },
+          { nombre: "Fideos tagliatelle con estofado", desc: "Pasta larga al huevo amasada con estofado de carne", tag: "Pastas" },
+          { nombre: "Filet de merluza a la romana con puré", desc: "Pescado fresco rebozado y frito con limón y puré mixto", tag: "Pescado" }
+        ],
+        jueves: [
+          { nombre: "Matambre tiernizado al verdeo", desc: "Cocción lenta con crema de cebollas de verdeo y papas", tag: "Imperdible" },
+          { nombre: "Ñoquis caseros de papa (29 de cada mes)", desc: "Los tradicionales del 29 con bolognesa o cuatro quesos", tag: "Tradición" },
+          { nombre: "Zapallitos rellenos gratinados", desc: "Con carne picada especial y queso provolone dorado", tag: "Casero" },
+          { nombre: "Cuarto de pollo con ensalada rusa", desc: "Pollo crocante servido con papas, arvejas y mayonesa casera", tag: "Al Plato" }
+        ],
+        viernes: [
+          { nombre: "Pescado del día con papas al natural", desc: "Merluza o lenguado a la plancha con perejil y oliva", tag: "Liviano" },
+          { nombre: "Sorrentinos de jamón y muzza", desc: "Pasta rellena artesanal con salsa scarparo bien espesa", tag: "Pastas" },
+          { nombre: "Milanesa de ternera a caballo con fritas", desc: "Tamaño generoso con dos huevos fritos a punto", tag: "Bodegón" },
+          { nombre: "Cazuela de pollo y vegetales", desc: "Salteado criollo con morrones, cebollas y arroz pilaf", tag: "Olla" }
+        ]
+      };
 
-  /* ---- Menú de celular ---- */
-  var burger = document.getElementById('burger');
-  var menu = document.getElementById('menu');
-  var backdrop = document.getElementById('backdrop');
+      const dayNames = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+      const todayIndex = new Date().getDay();
+      let currentDay = dayNames[todayIndex];
 
-  function setNav(abierto) {
-    menu.classList.toggle('is-open', abierto);
-    burger.classList.toggle('is-open', abierto);
-    backdrop.classList.toggle('is-open', abierto);
-    backdrop.hidden = false;
-    burger.setAttribute('aria-expanded', String(abierto));
-    document.body.classList.toggle('nav-open', abierto);
-  }
+      // Si es fin de semana, por defecto mostramos Lunes
+      if (currentDay === 'sabado' || currentDay === 'domingo') {
+        currentDay = 'lunes';
+      }
 
-  burger.addEventListener('click', function () {
-    setNav(!menu.classList.contains('is-open'));
-  });
-  backdrop.addEventListener('click', function () { setNav(false); });
-  Array.prototype.forEach.call(menu.querySelectorAll('a'), function (a) {
-    a.addEventListener('click', function () { setNav(false); });
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
-      setNav(false);
-      burger.focus();
-    }
-  });
+      function renderDishes(day) {
+        const container = document.getElementById('day-content');
+        if (!container) return;
 
-  /* ---- Menú del día: arranca en el día de hoy ---- */
-  var dias = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes'];
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.menudia__dia'));
+        const dishes = menuData[day] || menuData.lunes;
+        container.innerHTML = dishes.map(dish => `
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">${dish.tag}</span>
+                <span class="font-caption text-caption text-on-surface-variant font-medium">Incluye bebida & postre</span>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm text-on-surface leading-snug">${dish.nombre}</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">${dish.desc}</p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-outline-variant/30 flex items-center justify-between">
+              <span class="font-label-md text-label-md text-primary font-bold">Menú Completo</span>
+              <span class="font-label-lg text-label-lg font-bold text-on-surface">$20.000</span>
+            </div>
+          </div>
+        `).join('');
+      }
 
-  function mostrar(dia) {
-    tabs.forEach(function (t) {
-      var activo = t.dataset.dia === dia;
-      t.setAttribute('aria-selected', String(activo));
-      t.tabIndex = activo ? 0 : -1;
-      document.getElementById('dia-' + t.dataset.dia).hidden = !activo;
-    });
-  }
+      function updateTabs(selectedDay) {
+        const tabs = document.querySelectorAll('.day-tab');
+        tabs.forEach(tab => {
+          const day = tab.getAttribute('data-day');
+          if (day === selectedDay) {
+            tab.className = 'day-tab px-5 py-2.5 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-primary text-on-primary shadow-sm';
+          } else {
+            tab.className = 'day-tab px-5 py-2.5 rounded-lg font-label-lg text-label-lg transition-all flex items-center gap-2 bg-surface-container-high text-on-surface hover:bg-surface-variant';
+          }
+        });
+      }
 
-  tabs.forEach(function (t) {
-    t.addEventListener('click', function () { mostrar(t.dataset.dia); });
-    t.addEventListener('keydown', function (e) {
-      var i = tabs.indexOf(t), j = -1;
-      if (e.key === 'ArrowRight') { j = (i + 1) % tabs.length; }
-      if (e.key === 'ArrowLeft') { j = (i - 1 + tabs.length) % tabs.length; }
-      if (j < 0) { return; }
-      e.preventDefault();
-      mostrar(tabs[j].dataset.dia);
-      tabs[j].focus();
-    });
-  });
+      // Event listeners para los tabs
+      const tabButtons = document.querySelectorAll('.day-tab');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetDay = this.getAttribute('data-day');
+          updateTabs(targetDay);
+          renderDishes(targetDay);
+        });
+      });
 
-  // getDay(): 0 domingo .. 6 sábado. Fin de semana cae en lunes.
-  var hoy = new Date().getDay();
-  var inicial = hoy >= 1 && hoy <= 5 ? dias[hoy - 1] : 'lunes';
-  mostrar(inicial);
+      // Inicialización con el día actual
+      updateTabs(currentDay);
+      renderDishes(currentDay);
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-2px_12px_rgba(43,26,21,0.04)]"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-space-xl"><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">location_on</span><span class="">Visitanos</span></h3><p class="font-body-md text-body-md text-on-surface">Av. Rivadavia 3399<br><span class="text-on-surface-variant font-caption text-caption uppercase">Esquina Sánchez de Loria · Almagro, CABA</span></p><div class="pt-space-xs"><span class="font-label-md text-label-md text-on-surface-variant block">Teléfono de línea / Take-away:</span><a class="font-title-md text-title-md text-primary hover:underline" href="tel:1159273756">11 5927-3756</a></div></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">schedule</span><span class="">Horarios del Salón</span></h3><ul class="space-y-1.5 font-body-md text-body-md text-on-surface"><li class="flex justify-between"><span class="text-on-surface-variant">Lunes a Viernes:</span><span class="font-medium">07:00 a 00:00 hs</span></li><li class="flex justify-between"><span class="text-on-surface-variant">Sábados y Domingos:</span><span class="font-medium">08:00 a 01:00 hs</span></li></ul><p class="font-caption text-caption text-on-surface-variant pt-1">Horno continuo de pizzas encendido desde las 11:30 hs.</p></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">moped</span><span class="">Delivery &amp; Contacto</span></h3><div class="flex flex-wrap gap-1.5"><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">WhatsApp Directo</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">Mercado Pago</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">PedidosYa</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">Rappi</span></div><div class="pt-space-xs space-y-1"><div class="flex flex-col gap-1"></div></div></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-center sm:text-left"><p class="font-caption text-caption text-on-surface-variant">© 2024 Sánchez &amp; Sánchez Pizzería y Cafetería. Tradición y Calidad Porteña en Almagro, CABA.</p><p class="font-caption text-caption text-on-surface-variant">Masa al molde, fainá, cortado doble y medialunas artesanales.</p></div></div></footer>
 
-  // La fila de días scrollea en horizontal: si hoy es jueves o viernes,
-  // la pestaña activa arranca fuera de vista. La traigo al centro sin
-  // mover el scroll de la página.
-  var activo = document.querySelector('.menudia__dia[data-dia="' + inicial + '"]');
-  var fila = document.querySelector('.menudia__dias');
-  if (activo && fila && fila.scrollWidth > fila.clientWidth) {
-    fila.scrollLeft = activo.offsetLeft - (fila.clientWidth - activo.offsetWidth) / 2;
-  }
-
-  /* ---- Año del pie ---- */
-  document.getElementById('anio').textContent = String(new Date().getFullYear());
-})();
-</script>
-</body>
-</html>
+</body></html>

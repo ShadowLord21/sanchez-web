@@ -1,0 +1,9 @@
+{
+  "name": "sanchez-build",
+  "private": true,
+  "description": "Compila el CSS de Tailwind una sola vez. El sitio publicado no depende de esto.",
+  "scripts": {
+    "css": "tailwindcss -c tailwind.config.js -i input.css -o ../../assets/css/app.css --minify"
+  },
+  "devDependencies": { "tailwindcss": "^3.4.17" }
+}
