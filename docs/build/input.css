@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Material Symbols es una fuente variable: el eje FILL rellena el icono.
+     Stitch lo resolvia con style="" inline, que la CSP estricta no permite. */
+  .icon-fill {
+    font-variation-settings: 'FILL' 1;
+  }
+
+  /* Stitch usa esta clase pero no la define: se apoyaba en el
+     ::-webkit-scrollbar global. Se declara para que funcione en Firefox. */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

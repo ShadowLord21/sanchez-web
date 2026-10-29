@@ -1,0 +1,6 @@
+# Valor para pegar en Cloudflare (Transform Rule -> Set static).
+# Etapa 1: nombre del header = Content-Security-Policy-Report-Only
+# Etapa 2: nombre del header = Content-Security-Policy
+# Generado por docs/scripts/regen_csp.py - no editar a mano.
+
+default-src 'self'; script-src 'self' 'sha256-HxMJ6Ac/XBYYxLBz4NE4LovmUVbpxK68ViNJI5zLiVc=' 'sha256-F/JCDXOI3ifF5sM15VdQxqfR1tOKm+2Uz9Rm0QPOwEM=' 'sha256-W6A3yUTA2cJpKfVTu1xcrKCc/XGSO2IPgE68zZGuJwQ='; style-src 'self' 'sha256-PtzGGbqN443e18Sox775kz4K74dp99NovR7oEOG2RpQ=' 'sha256-YnGismgNmpwoC9V0/2B3SQ5PAq7i8owZPEOZV7IEFKE=' 'sha256-U24AyUcgE62/S0juwvcm2ieqhxwhkQWqcPjbn3xpAEs=' 'sha256-2F8hicn0zRL1ACwVpq59pCdJ2CK5JPZna6fU2fw26eU='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'self'; upgrade-insecure-requests

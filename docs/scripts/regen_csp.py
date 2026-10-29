@@ -85,7 +85,11 @@ def main() -> int:
         csp = build_csp(html_sin_meta, extra)
         meta = f'<meta http-equiv="Content-Security-Policy" content="{csp}">'
 
-        viewport = re.search(r'<meta name="viewport"[^>]*>', html_sin_meta)
+        # Tolerante al orden de atributos: Stitch escribe
+        # <meta content="..." name="viewport"> y el resto del sitio al reves.
+        viewport = re.search(
+            r'<meta(?=[^>]*\bname="viewport")[^>]*>', html_sin_meta
+        )
         if not viewport:
             print(f"  ERROR: {rel} no tiene <meta name=\"viewport\">, salteado")
             continue
