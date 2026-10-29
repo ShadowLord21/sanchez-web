@@ -229,3 +229,221 @@ puro**, sin framework ni build, en GitHub Pages detrás de Cloudflare.
 
 **No se cambia el contenido:** nombres de productos, precios, descripciones, teléfono,
 dirección, horarios y enlaces de delivery. El refactor es visual.
+
+---
+---
+
+# SEGUNDA TANDA — Versión móvil + carrito
+
+La primera tanda volvió en **escritorio**, y además inventó bastante contenido. Esta
+tanda corrige las dos cosas y suma el pedido por carrito, que se decidió después de
+ver los primeros diseños.
+
+**Antes de pegar:** poné Stitch en **modo móvil**. El prompt lo repite, pero el toggle
+es lo que manda.
+
+## Qué cambia respecto de la primera tanda
+
+| | Primera tanda | Esta |
+|---|---|---|
+| Formato | Escritorio ancho | Móvil |
+| Pedido | Botones sueltos sin flujo | Carrito real con cierre por WhatsApp |
+| Contenido | Inventó años, descuentos, reseñas, colectivos | Cláusula explícita de no inventar |
+| Producto | Decía "al molde" | Es **a la piedra** |
+
+---
+
+## CONTEXTO MÓVIL (pegar antes de cada pantalla)
+
+```
+Diseñá para CELULAR el sitio de "Sánchez & Sánchez", pizzería y cafetería de barrio en
+Av. Rivadavia 3399, Almagro, Ciudad de Buenos Aires. Hace más de 20 años en el mismo
+lugar. Las pizzas son A LA PIEDRA.
+
+Es un diseño de celular, no una reducción de uno de escritorio: resolvelo pensando en
+una mano, pulgar, y pantalla angosta.
+
+Quien entra busca una de tres cosas, casi siempre apurado: ver la carta con precios,
+hacer un pedido, o saber dónde queda y hasta qué hora abre.
+
+Tono: cálido, de barrio, con oficio y tradición, pero con ejecución actual y prolija.
+Las fotos de los platos son el activo más fuerte del sitio. Son fotos reales, de comida,
+con tonos cálidos sobre madera o fondos oscuros.
+
+Todo en español rioplatense (voseo): "Carta", "Pedí ahora", "Visitanos".
+
+IMPORTANTE — NO INVENTES DATOS. Usá solamente los que te doy. Nada de años de fundación,
+porcentajes de descuento, cantidad de reseñas, puntajes, tiempos de entrega, líneas de
+colectivo, estaciones de subte ni zonas de reparto. Si un dato no está, dejá el lugar
+vacío o no pongas la sección, pero no lo completes por tu cuenta.
+
+Tenés libertad total para paleta, tipografías, retícula y estilo de componentes.
+Lo que sigue es qué tiene que haber y qué tiene que poder hacer el usuario,
+no cómo debe verse.
+```
+
+---
+
+## EL CARRITO (va junto con la pantalla de Carta y la de Cafetería)
+
+```
+EL PEDIDO FUNCIONA ASÍ, Y ES IMPORTANTE QUE EL DISEÑO LO DEJE CLARO:
+la persona arma el pedido en el sitio, pero NO paga ni recibe nada acá. Al confirmar,
+se abre WhatsApp con el pedido ya escrito, y el retiro es EN EL LOCAL. No hay envío
+por este camino y no hay pago online. Eso tiene que entenderse sin que nadie lo explique:
+nadie debería creer que ya compró.
+
+HACE FALTA:
+- Poder sumar un producto al pedido desde la tarjeta, sin abrir el detalle, y también
+  desde el detalle.
+- Elegir cantidad, y poder bajarla o sacar el producto.
+- Un indicador del pedido siempre al alcance del pulgar, que muestre cuántos productos
+  lleva y cuánto suma. Tiene que estar visible mientras recorre la carta.
+- Una vista del pedido: qué eligió, cantidades, precio por producto y total. Ahí tiene
+  que poder modificar cantidades o vaciar todo.
+- Un cierre que diga claramente que es retiro en el local y que al confirmar se sigue
+  por WhatsApp.
+- El pedido puede mezclar productos de la pizzería y de la cafetería.
+
+DEJÁ LUGAR (todavía no funciona, pero va a ir ahí): elegir a qué hora lo pasa a retirar,
+y un campo de aclaraciones.
+```
+
+---
+
+## MÓVIL — Carta
+
+```
+Diseñá para celular la carta de la pizzería. Incluí el carrito descrito aparte.
+
+1) PROMOS, ARRIBA DE TODO. Tres niveles, la jerarquía entre ellos importa.
+En los combos, lo que incluye pesa tanto como el precio.
+
+PRINCIPALES:
+- Muzza grande + bebida grande — $26.000
+- 6 empanadas a elección + muzza grande + bebida grande — $35.000
+- Fugazzeta rellena + bebida grande + 4 porciones de faina — $44.000
+- 2 porciones de muzza + 2 faina + bebida chica — $10.500
+- Muzza grande + jamón y morrón grande + bebida grande — $40.000
+
+TAKE AWAY, solo para llevar, es otra modalidad y conviene diferenciarla:
+- Muzza grande + 2 faina — $12.000
+
+PARA COMPARTIR, un escalón abajo pero visibles:
+- Crispi para 2 — $24.000
+- Crispi para 4 — $34.000
+- Imperdible — $38.000
+- Reina Empanadas — $29.000
+
+2) EL RESTO. Tres grupos: Comidas (24), Pizzas (28), Empanadas (10). Son 62 productos:
+en celular NO pueden ir todos de corrido. El usuario elige un grupo y ve solo ese,
+cambiando sin recargar ni perder el lugar. Dos tarjetas por fila para que entren más
+por pantalla. Todos tienen foto.
+
+Ejemplos reales:
+- Mozzarella, pizza entera. Chica $20.000 / Grande $24.000.
+- Napolitana, porción. $3.700.
+- Empanada de carne. $3.000. "Carne cortada a cuchillo, cebolla y huevo".
+
+La tarjeta tiene que resolver dos cosas: las pizzas enteras llevan DOS precios (chica y
+grande) que no se tienen que confundir con un precio raro, y algunos productos tienen
+descripción corta de ingredientes y otros no.
+
+Diseñá también el detalle que se abre al tocar una tarjeta: foto grande, nombre,
+descripción completa, precio y cantidad.
+
+3) Sumá el bloque de delivery (WhatsApp, Mercado Pago, Rappi, PedidosYa) y el de
+ubicación con dirección, horarios y mapa.
+```
+
+---
+
+## MÓVIL — Cafetería
+
+```
+Diseñá para celular la carta de cafetería. Incluí el carrito descrito aparte.
+Acá no hay foto por producto: son listas de ítems con precio. El problema es ordenar
+mucha información en poco espacio sin que sea una lista infinita.
+
+Son 8 categorías. Mostrá estas 3 y dejá indicadas las otras 5 (Licuados y Bebidas,
+Tortas y Dulces, Panadería y Facturas, Waffles, Tostados y Panes):
+
+PROMOS, TODO EL DÍA
+Dos combos con más peso visual que el resto:
+- "Clásico — café con leche". $8.000. Acompañalo con: 2 tostones con huevo y palta,
+  tostado de jamón y queso, o croissant de jamón y queso.
+- "Premium — tazón". $10.000. Acompañalo con: bagel a elección o waffle.
+Y una lista común:
+- Café con leche + 3 medialunas. $5.200.
+- Licuado o café con leche + torta. $11.500.
+
+CAFÉS E INFUSIONES
+- Café expreso. $3.000.
+- Café con leche. $3.500.
+- Capuccino. $5.500.
+- Té con 2 medialunas. $3.000.
+
+ESPECIALES DE LA CASA
+- Capuccino "Sánchez". $7.000. Aclaración: "choco, crema, canela".
+- Capuccino Italiano. $7.000. Aclaración: "crema, choco rallado".
+
+Esos precios son los reales: no los cambies.
+
+Tiene que poder encontrar rápido la categoría que busca sin recorrer las ocho.
+
+Arriba, una franja de productos nuevos destacados con foto vertical: bagels, waffles,
+croissants rellenos, muffins, tortas y volcán de chocolate.
+
+Sumá el bloque de delivery (WhatsApp, Mercado Pago, Rappi, PedidosYa) y el de ubicación
+con dirección, horarios y mapa.
+```
+
+---
+
+## MÓVIL — Inicio
+
+```
+Diseñá para celular la pantalla de inicio.
+
+QUÉ TIENE QUE TRANSMITIR
+- Qué es y dónde queda: pizzería y cafetería en Almagro, CABA.
+- Más de 20 años en el barrio: es su principal argumento de confianza.
+- Su historia: más de dos décadas en Av. Rivadavia; pizzas a la piedra, empanadas
+  caseras y cocina de siempre; y un rincón de cafetería para desayunar o merendar con
+  medialunas recién hechas, tortas caseras y tostados.
+- Prueba social: cuatro reseñas reales de Google, de clientes del barrio. Hablan de la
+  atención, las medialunas, el café, las pizzas a la piedra y un combo llamado
+  "La Escaloneta". Son cuatro: no inventes más ni pongas cantidades totales.
+- Menú del Día: $20.000, incluye plato principal + bebida + café o postre.
+  Lunes a viernes de 12 a 16 hs, solo efectivo. Hay cuatro platos distintos por cada día.
+  Además una opción de invierno (guiso de lentejas o pastel de papa) y una especial de
+  bife a caballo con papas fritas a $21.000. No inventes los nombres de los platos:
+  dejá el lugar para cuatro por día.
+- Que hacen pedidos para llevar.
+
+QUÉ TIENE QUE PODER HACER
+- Ir a la carta de la pizzería y a la de la cafetería.
+- Ver el menú del día de cada día de lunes a viernes, arrancando por el día actual.
+- Pedir por WhatsApp, Mercado Pago, Rappi o PedidosYa.
+- Ver dirección, horarios y cómo llegar (hay un mapa embebido).
+- Llamar por teléfono e ir a las redes.
+
+CONTACTO
+Av. Rivadavia 3399, CABA (Almagro / Balvanera)
+Lunes a Viernes 7:00 a 00:00 · Sábados y Domingos 8:00 a 01:00
+Teléfono 11 5927-3756 · Instagram @sanchezysanchez_ok · TikTok @sanchezysanchez2006
+```
+
+---
+
+## Nota técnica del carrito (NO va a Stitch)
+
+| Tema | Resolución |
+|---|---|
+| Estado | `localStorage`, así sobrevive al pasar de carta a cafetería |
+| Cierre | Link `https://wa.me/5491159273756?text=<pedido urlencoded>` |
+| Backend | Ninguno. Todo en el navegador |
+| Tope | El texto de WhatsApp aguanta ~2.000 caracteres: el pedido va compacto, sin descripciones |
+| Trazabilidad | El pedido no existe hasta que la persona manda el mensaje. No hay registro de abandonos |
+| CSP | Sin problema: es JS propio. Correr `regen_csp.py` después |
+| Precios | Viven en el HTML. Hay que mantener una sola fuente para que carrito y tarjeta no se desincronicen |

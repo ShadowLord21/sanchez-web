@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Vollkorn:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed-dim": "#dec0b8", "surface-container-high": "#ece7e1", "on-background": "#1d1c17", "on-error-container": "#93000a", "on-surface": "#1d1c17", "on-secondary-fixed-variant": "#663e00", "on-surface-variant": "#58413d", "on-tertiary-container": "#ceb1a9", "on-tertiary": "#ffffff", "primary-fixed-dim": "#ffb4a6", "inverse-primary": "#ffb4a6", "surface-container-lowest": "#ffffff", "surface-variant": "#e7e2db", "secondary-fixed": "#ffddba", "tertiary-fixed": "#fcdcd3", "on-error": "#ffffff", "inverse-surface": "#32302c", "on-secondary-container": "#6f4300", "outline": "#8c716c", "surface": "#fef9f2", "error": "#ba1a1a", "primary-fixed": "#ffdad4", "secondary": "#875300", "surface-container": "#f2ede6", "on-primary-fixed": "#400200", "background": "#fef9f2", "on-primary-container": "#ff9d8b", "outline-variant": "#e0bfb9", "tertiary-container": "#59433d", "surface-container-low": "#f8f3ec", "surface-bright": "#fef9f2", "secondary-fixed-dim": "#ffb964", "inverse-on-surface": "#f5f0e9", "surface-dim": "#ded9d3", "tertiary": "#402d28", "on-secondary": "#ffffff", "primary": "#690600", "secondary-container": "#fdae49", "on-tertiary-fixed-variant": "#57423c", "on-primary-fixed-variant": "#891d0e", "surface-container-highest": "#e7e2db", "surface-tint": "#ab3523", "on-secondary-fixed": "#2b1700", "on-primary": "#ffffff", "primary-container": "#8b1e0f", "error-container": "#ffdad6", "on-tertiary-fixed": "#281713" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "gutter": "1rem", "margin": "2rem", "space-md": "1rem", "margin-mobile": "1rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "headline-lg-mobile": [ "Vollkorn" ], "body-lg": [ "Be Vietnam Pro" ], "caption": [ "Be Vietnam Pro" ], "body-md": [ "Be Vietnam Pro" ], "headline-sm": [ "Vollkorn" ], "display-lg-mobile": [ "Vollkorn" ], "headline-lg": [ "Vollkorn" ], "headline-md": [ "Vollkorn" ], "label-lg": [ "Be Vietnam Pro" ], "display-lg": [ "Vollkorn" ], "label-md": [ "Be Vietnam Pro" ], "title-md": [ "Be Vietnam Pro" ] }, "fontSize": { "headline-lg-mobile": [ "26px", { "lineHeight": "32px", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "caption": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "body-md": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-sm": [ "20px", { "lineHeight": "26px", "fontWeight": "600" } ], "display-lg-mobile": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "30px", "fontWeight": "600" } ], "label-lg": [ "14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "display-lg": [ "44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "title-md": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,26,21,0.06)]"><div class="h-20 max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Sánchez &amp; Sánchez Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLT-xRyBG4qe-S-SRf70SKlsU8w3PgmtlbBzmkT36TzubsHOyhMtAW77_sQqpCg2MUHXUh7SebKPGH286qlkaYhJhmed4pAbIeFMYnNTkGupZtVdX2r5jHUGCbCACmq-Dpzg4qQx6hc2AViK7AMa-teFxc8ut-ROFOGNnC5W4TUG3r5KF_YaMwDJAQIzi6HXj0b7amwu7Fq3AwWQqdPzsrerE_BZgY3oe7I1T1isE"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">Sánchez &amp; Sánchez</span><span class="font-caption text-caption text-on-surface-variant tracking-wider uppercase mt-0.5">Pizzería &amp; Cafetería Porteña</span></div><span class="hidden lg:inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md ml-2 shadow-[0_1px_3px_rgba(43,26,21,0.08)]">Más de 20 años en Almagro</span></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="inicio" href="#">Inicio</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="carta-pizzeria" href="#">Carta Pizzería</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="carta-cafeteria" href="#">Carta Cafetería</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="menu-del-dia" href="#">Menú del Día</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="delivery" href="#">Delivery</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ubicacion" href="#">Ubicación</a></nav><div class="flex items-center gap-space-sm"><a class="hidden md:flex flex-col text-right" href="tel:1159273756"><span class="font-caption text-caption text-on-surface-variant leading-none">Llamadas &amp; Mesas</span><span class="font-label-lg text-label-lg text-primary font-semibold leading-tight">11 5927-3756</span></a><a class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg shadow-[0_2px_8px_rgba(43,26,21,0.12)] hover:bg-primary transition-all active:scale-95" href="https://wa.me/5491159273756" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span>Pedí por WhatsApp</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Cabecera de Sección & Contexto de Barrio -->
+<section class="relative overflow-hidden bg-surface-container-low px-margin-mobile md:px-margin py-space-xl">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-space-lg relative z-10">
+<div class="max-w-2xl space-y-space-sm">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">coffee</span>
+<span>Despacho de café y tostadero desde 1998</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">
+          Carta de Cafetería &amp; Desayunos
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Café de barista y tostadero de barrio, medialunas recién horneadas y panadería artesanal desde las 7:00 hs. Sentate tranquilo en el salón o llevatelo al paso.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-3 bg-surface p-3 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">schedule</span>
+<div>
+<p class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Salón abierto</p>
+<p class="font-label-lg text-label-lg text-on-surface">Lunes a Domingo 07:00 hs</p>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface p-3 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[28px]">local_cafe</span>
+<div>
+<p class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Grano seleccionado</p>
+<p class="font-label-lg text-label-lg text-on-surface">Tostado natural 100% Arábica</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filtro Rápido Sticky y Buscador -->
+<div class="sticky top-20 z-40 bg-surface/95 backdrop-blur-md shadow-sm py-3 px-margin-mobile md:px-margin">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-3">
+<!-- Input de búsqueda en vivo -->
+<div class="relative w-full md:w-72 flex-shrink-0">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 text-body-md font-body-md rounded-xl bg-surface-container text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface focus:shadow-inner" id="menuSearchInput" placeholder="¿Qué tenés ganas de tomar o comer?" type="text"/>
+</div>
+<!-- Chips Navegables Horizontales -->
+<nav class="flex items-center gap-2 overflow-x-auto w-full no-scrollbar py-1 text-nowrap" id="categoryChips">
+<a class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm" href="#promos">
+<span>Promos todo el día</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest/20 text-on-primary text-[10px]">4</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" href="#cafes">
+<span>Cafés e Infusiones</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">11</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" href="#especiales">
+<span>Especiales</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">2</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" href="#licuados">
+<span>Licuados &amp; Bebidas</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">7</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" href="#tortas">
+<span>Tortas &amp; Dulces</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">6</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" href="#panaderia">
+<span>Panadería &amp; Facturas</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">8</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" href="#waffles">
+<span>Waffles</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">1</span>
+</a>
+<a class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" href="#tostados">
+<span>Tostados &amp; Panes</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">8</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- SECCIÓN DESTACADA: NUEVAS TENTACIONES -->
+<section class="max-w-[1200px] mx-auto w-full px-margin-mobile md:px-margin pt-space-xl pb-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-2">
+<div>
+<div class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+<span>Novedades en mostrador</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Nuevas Tentaciones de la Cafetería</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+        Nuestras incorporaciones de estación. Elaboración artesanal en nuestra panadería cada mañana.
+      </p>
+</div>
+<!-- Carrusel / Grid de 6 Tarjetas Verticales -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- 1. Bagels -->
+<article class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bagel artesanal tostado relleno de salmón ahumado crema y alcaparras sobre plato de cerámica vintage en un café porteño con luz cálida de mañana" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC25vU9O0yQCf-TbW1VYxsGgvQbqzCSUVTLme9W41OxOlFxBXaZuTxSbe7NDGtSbuAvFgLtE8YksAZiZjxDrrrlZtvidIFkxChtD4VkdYnBlnj0Np18COk4mNJTBh2BdyjC7pxLlLHCMxBYN1Owifh9ERnk1axsLlbUe4fpJZ6pzY1kzRByJSTvYUER3lMK0Uyna8jzzLKxMr6BzXx9KDdIQ4sCjw-Pa1J_F6YanE"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-label-md text-label-md shadow-sm">
+            NUEVO
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Bagels Artesanales</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Salmón ahumado, Jamón crudo y rúcula, o Pastrón tibio casero con mostaza a la antigua.
+            </p>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="font-title-md text-title-md text-primary font-bold">$12.500</span>
+<a class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-colors flex items-center gap-1" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20pedir%20Bagels%20Artesanales" target="_blank">
+<span>Pedir</span>
+<span class="material-symbols-outlined text-[16px]">add</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 2. Waffles -->
+<article class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Waffle belga crocante dorado con generoso dulce de leche repostero argentino y frutos rojos frescos servido con café con leche" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUUxKyvUL1Jn8NxIALjEcCGbULvxrLInVlZt2K1W0nCsVPqgR8S9ez4zr8e_2mGz-L51kn7cyjGdtTcl9ibWCq4hc4uCfTJG3iHSKmOMxF1SvuvaznnwcPl88DUQ25d-4sRJBb2BMtc_v0IyEIsc41LHLGRaNQmP9n0ywls6uu3w_wJN8vfRZXu1V25GoSIfSHPOWmuRSZajqcMv0lDJANOjt37xFPQE8bNx_GngE"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-label-md text-label-md shadow-sm">
+            NUEVO
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Waffles Belgas Dorados</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Masa aireada con perlas de azúcar, dulce de leche de campo y lluvia de frutos rojos patagónicos.
+            </p>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="font-title-md text-title-md text-primary font-bold">$6.800</span>
+<a class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-colors flex items-center gap-1" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20pedir%20Waffles%20Belgas" target="_blank">
+<span>Pedir</span>
+<span class="material-symbols-outlined text-[16px]">add</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 3. Croissants -->
+<article class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Croissant hojaldrado con crema de pistacho verde espolvoreado con azúcar glas sobre servilleta en mesa de madera de cafetería tradicional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFLMABaXYYvMe-HN3YkkK9_TmR2zKjS3UtxVXur12YFOmC-Ok6nREXLXcWf7dD5zZdIwx8Qb2_NcbIl5laIOaU1KoYcvarqKNgWcwv3A7Rp0eq8Vnh7FUWj9vs-P7JIjzLzBECyiNoz3aFQDqaErbHCkEHJJhYSRcKcRDXryA50CpmeZpqBYgrD-QKMqxvaI1LGgQUwrErodKShdRkIkd6S08-67MEG6MdMnAVLWQ"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-label-md text-label-md shadow-sm">
+            NUEVO
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Croissants Rellenos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Hojaldre 100% manteca, rellenos al instante con crema de pistachos de San Juan o pastelera de vainilla.
+            </p>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="font-title-md text-title-md text-primary font-bold">$4.900</span>
+<a class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-colors flex items-center gap-1" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20pedir%20Croissant%20Relleno" target="_blank">
+<span>Pedir</span>
+<span class="material-symbols-outlined text-[16px]">add</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 4. Muffins -->
+<article class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Muffin casero esponjoso de arándanos frescos y chispas de chocolate belga saliendo del horno en una panadería de Almagro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV1voJXKEEno_NbVpN-8kizssPIiaR7L9j--ioc5kZqxaabe6f-dmRPJOWWS-tQj7P8d31WTbI6J9UkVIC3Cx3EIF3o6p1KevN8C5CiNaOjY6vv-sn64a2_QGYMco_tQs7638voAndM1p-2bGiQI4q9CQYCXxW4NEHFPpFzegIh49OWinqNk2aAWy5NHULXOpFjMqklHLkS2r0teYAYfQ5UXMhlJx7KIJGXkGhE8Y"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-label-md text-label-md shadow-sm">
+            NUEVO
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Muffins Caseros</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Horneados en la madrugada. Arándanos silvestres o doble chocolate con corazón semi-amargo.
+            </p>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="font-title-md text-title-md text-primary font-bold">$3.600</span>
+<a class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-colors flex items-center gap-1" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20pedir%20Muffin%20Casero" target="_blank">
+<span>Pedir</span>
+<span class="material-symbols-outlined text-[16px]">add</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 5. Tortas por porción -->
+<article class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Porción generosa de Torta Marquise con base de chocolate dulce de leche y merengue italiano en plato antiguo de bodegón porteño" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL56OVMtu7-qLG96zO5orWRzIzMyJ1awDLxaO3uyQizef3DysZyzJD0SXMlfbdKZXoKM9cw9s-bb_64dNLtF-7amW3vmmxCttbDlMUMBSEiapQDNZMJnyQiAwFqh4tPkyUxUB1lxKK2y1xZv7LyT67AGAqR_QuxtW4TLS3l8y0olS2kTdf4ghgVLx_U3sScgLyOjcvsEP5bqLeF4kvzfvJZ5IXPFAInN-UuAII7aw"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-label-md text-label-md shadow-sm">
+            NUEVO
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Tortas por Porción</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Marquise intensa, Lemon Pie con merengue quemado o Ricota suave de campo al limón.
+            </p>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="font-title-md text-title-md text-primary font-bold">$8.500</span>
+<a class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-colors flex items-center gap-1" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20pedir%20una%20porción%20de%20torta" target="_blank">
+<span>Pedir</span>
+<span class="material-symbols-outlined text-[16px]">add</span>
+</a>
+</div>
+</div>
+</article>
+<!-- 6. Volcán de chocolate -->
+<article class="group bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="relative h-56 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Volcán de chocolate caliente recién horneado con centro líquido derramándose y bocha de helado de crema americana artesanal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAATi4hfbFDdqxx-BKiVDk2PisxiYuHP_ObZcgafIrxqSj1KpJbphdGcBfM6RFzDeWgBPTcwUn086OPxqnNoBC4swTuTYe1y2Ay9Ua0wFtoQdUwxYCGw0YAPsC7N3V5msDV7Hoi6BScSy47PGUgpLbqf4nwKTQhBnt8PByvNFjcBQJJyR_ztEhomHmgXwIDoCFd-SGlo3vcNCXSH1YpqaHZ5YJX0fa0pHneTOlxYz0"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-label-md text-label-md shadow-sm">
+            NUEVO
+          </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Volcán de Chocolate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Cocción exacta al momento: corazón caliente fundente acompañado de helado de crema americana.
+            </p>
+</div>
+<div class="pt-4 flex items-center justify-between mt-auto">
+<span class="font-title-md text-title-md text-primary font-bold">$7.800</span>
+<a class="px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-colors flex items-center gap-1" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20pedir%20Volcán%20de%20Chocolate" target="_blank">
+<span>Pedir</span>
+<span class="material-symbols-outlined text-[16px]">add</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- CONTENEDOR PRINCIPAL DE LAS 8 CATEGORÍAS -->
+<div class="max-w-[1200px] mx-auto w-full px-margin-mobile md:px-margin space-y-space-xl py-space-md">
+<!-- 1. PROMOS DE TODO EL DÍA -->
+<section class="scroll-mt-36" id="promos">
+<div class="flex items-center gap-3 mb-space-md">
+<span class="w-2.5 h-8 bg-primary rounded-full"></span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Promos de Todo el Día</h2>
+</div>
+<!-- Destacados Estilo Cuadro Menú Bistró -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-md">
+<!-- Combo 1 Clásico Porteño -->
+<div class="p-space-lg rounded-2xl bg-surface-container-high relative overflow-hidden shadow-sm flex flex-col justify-between">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-4">
+<span class="inline-flex px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md uppercase font-bold">
+                El Preferido de Almagro
+              </span>
+<span class="font-headline-md text-headline-md text-primary font-bold">$8.000</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Clásico Porteño</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Café con leche o cortado en jarrito + 2 medialunas de manteca recién salidas (o tostadas con mermelada y queso blanco) + vasito de soda helada.
+            </p>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Servido a toda hora</span>
+<a class="px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20la%20Promo%20Clásico%20Porteño" target="_blank">
+              Pedir en Mesa / WhatsApp
+            </a>
+</div>
+</div>
+<!-- Combo 2 Desayuno Premium Sánchez -->
+<div class="p-space-lg rounded-2xl bg-surface-container-high relative overflow-hidden shadow-sm flex flex-col justify-between">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-4">
+<span class="inline-flex px-2.5 py-1 rounded bg-primary-container text-on-primary font-label-md text-label-md uppercase font-bold">
+                Especial Completo
+              </span>
+<span class="font-headline-md text-headline-md text-primary font-bold">$10.000</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Desayuno Premium Sánchez</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Tazón de café con leche o submarino con chocolate Águila + tostado de miga jamón y queso (o huevos revueltos con palta) + jugo de naranja exprimido.
+            </p>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Ideal para arrancar el día</span>
+<a class="px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20el%20Desayuno%20Premium%20Sánchez" target="_blank">
+              Pedir en Mesa / WhatsApp
+            </a>
+</div>
+</div>
+</div>
+<!-- Otras 4 Promos del día compactas -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Promo Medialunas con Jugo</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">2 medialunas de manteca o grasa + exprimido chico</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold ml-4">$5.200</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Promo Tostado Chico</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Medio tostado en pan de miga + café en jarrito + soda</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold ml-4">$7.800</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Promo Merienda Doble</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">2 infusiones a elección + tostado completo + 2 porciones dulces</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold ml-4">$11.500</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Promo Frappé &amp; Budín</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Frapuccino helado con dulce de leche + porción de budín del día</p>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold ml-4">$8.900</span>
+</div>
+</div>
+</section>
+<!-- 2. CAFÉS E INFUSIONES -->
+<section class="scroll-mt-36" id="cafes">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-2 mb-space-sm gap-2">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-8 bg-secondary rounded-full"></span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Cafés e Infusiones</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-caption text-caption px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-medium">
+            Extras: Leche vegetal +$600 · Crema chantilly +$800
+          </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+<!-- Ítems lista bistró -->
+<div class="flex items-baseline justify-between py-2 border-b-0 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Pocillo / Espresso</span>
+<p class="font-caption text-caption text-on-surface-variant">Extracción corta, crema densa y aroma intenso</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$2.000</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Cortado en Jarrito</span>
+<p class="font-caption text-caption text-on-surface-variant">El clásico porteño con toque de leche espumada</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$2.500</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Café con Leche en Taza</span>
+<p class="font-caption text-caption text-on-surface-variant">Equilibrio perfecto en taza de loza tradicional</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$3.200</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Café Doble</span>
+<p class="font-caption text-caption text-on-surface-variant">Doble molienda en jarrito o taza grande</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$3.400</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Capuccino Clásico Canela</span>
+<p class="font-caption text-caption text-on-surface-variant">Espuma densa de leche, cacao amargo y canela molida</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$4.200</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Submarino Águila</span>
+<p class="font-caption text-caption text-on-surface-variant">Leche hirviendo en vaso con barra de chocolate Águila</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$4.500</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Americano Grande</span>
+<p class="font-caption text-caption text-on-surface-variant">Espresso doble rebajado con agua filtrada caliente</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$3.000</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Lágrima Doble</span>
+<p class="font-caption text-caption text-on-surface-variant">Mucha leche cremosa con una gota justa de espresso</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$3.200</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Té en Hebras Selección</span>
+<p class="font-caption text-caption text-on-surface-variant">Negro Earl Grey, Verde con jazmín, o Manzanilla y cedrón</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$2.500</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Mate Cocido Especial</span>
+<p class="font-caption text-caption text-on-surface-variant">Yerba mate tostada premium servido solo o con leche</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$2.000</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div class="pr-2">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Café Irlandés</span>
+<p class="font-caption text-caption text-on-surface-variant">Café negro, medida de whisky Jameson y capa de crema batida</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$5.500</span>
+</div>
+</div>
+</section>
+<!-- 3. ESPECIALES DE LA CASA (2 ÍTEMS DESTACADOS) -->
+<section class="scroll-mt-36" id="especiales">
+<div class="flex items-center gap-3 mb-space-md">
+<span class="w-2.5 h-8 bg-primary rounded-full"></span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Especiales de la Casa</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Capuccino Almagro Bombón -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-caption text-caption px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-semibold">
+                RECETA HISTÓRICA
+              </span>
+<span class="font-headline-md text-headline-md text-primary font-bold">$7.000</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Capuccino Almagro Bombón</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Espresso doble concentrado, base untuosa de dulce de leche repostero y leche condensada, coronado con abundante espuma cremosa, virutas de chocolate negro y cacao amargo espolvoreado.
+            </p>
+</div>
+<div class="pt-4 mt-auto">
+<a class="w-full py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-sm" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20un%20Capuccino%20Almagro%20Bombón" target="_blank">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Pedir este Especial</span>
+</a>
+</div>
+</div>
+<!-- Mocaccino Casero Sánchez -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-caption text-caption px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-semibold">
+                CHOCOLATE REAL
+              </span>
+<span class="font-headline-md text-headline-md text-primary font-bold">$7.000</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Mocaccino Casero Sánchez</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Chocolate fundido artesanal en el momento con espresso suave, leche vaporizada, crema fresca batida a mano, suave toque de canela ceilán y crocante de avellanas tostadas.
+            </p>
+</div>
+<div class="pt-4 mt-auto">
+<a class="w-full py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-sm" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20un%20Mocaccino%20Casero%20Sánchez" target="_blank">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>Pedir este Especial</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. LICUADOS Y BEBIDAS -->
+<section class="scroll-mt-36" id="licuados">
+<div class="flex items-center gap-3 mb-space-md">
+<span class="w-2.5 h-8 bg-secondary rounded-full"></span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Licuados &amp; Bebidas Refrescantes</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Exprimido de Naranja o Pomelo</span>
+<p class="font-caption text-caption text-on-surface-variant">Fruta exprimida en el momento, 100% natural</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$4.500</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Licuado con Agua</span>
+<p class="font-caption text-caption text-on-surface-variant">Fruta a elección: frutilla madura, banana o durazno</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$5.200</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Licuado con Leche o Yogur</span>
+<p class="font-caption text-caption text-on-surface-variant">Textura cremosa y suave, endulzado a gusto</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$5.900</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Limonada Menta &amp; Jengibre (Jarra)</span>
+<p class="font-caption text-caption text-on-surface-variant">Jarra de 1 litro helada para compartir</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$6.500</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Gaseosas 500ml / Aguas Saborizadas</span>
+<p class="font-caption text-caption text-on-surface-variant">Línea Coca-Cola, Sprite, Aquarius o agua mineral</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$2.500</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Cerveza Tirada Chopp 500ml</span>
+<p class="font-caption text-caption text-on-surface-variant">Rubia clásica bien helada en copa de bodegón</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$5.000</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Milkshake Artesanal</span>
+<p class="font-caption text-caption text-on-surface-variant">Helado artesanal batido con leche: chocolate, dulce de leche o vainilla</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$9.000</span>
+</div>
+</div>
+</section>
+<!-- 5. TORTAS Y DULCES -->
+<section class="scroll-mt-36" id="tortas">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-8 bg-primary rounded-full"></span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Tortas &amp; Dulces</h2>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-semibold bg-surface-container px-3 py-1 rounded-full">
+          $8.500 cada porción
+        </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-space-sm">
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-title-md text-title-md text-on-surface">Marquise de Chocolate</h3>
+<span class="font-title-md text-title-md text-primary font-bold">$8.500</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Base húmeda pura de chocolate, dulce de leche repostero y merengue italiano flameado.
+          </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-title-md text-title-md text-on-surface">Cheesecake de Frutos Rojos</h3>
+<span class="font-title-md text-title-md text-primary font-bold">$8.500</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Masa crocante de vainilla, crema suave de queso y reducción casera de frambuesas y moras.
+          </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-title-md text-title-md text-on-surface">Lemon Pie Clásico</h3>
+<span class="font-title-md text-title-md text-primary font-bold">$8.500</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Curd de limón cítrico equilibrado sobre masa quebrada, con picos de merengue dorado.
+          </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-title-md text-title-md text-on-surface">Torta Balcarce Casera</h3>
+<span class="font-title-md text-title-md text-primary font-bold">$8.500</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Bizcochuelo tierno, capas de crema chantilly, dulce de leche, merengue seco y castañas.
+          </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-title-md text-title-md text-on-surface">Selva Negra Tradicional</h3>
+<span class="font-title-md text-title-md text-primary font-bold">$8.500</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Capas de bizcochuelo de chocolate oscuro, cerezas maceradas, crema batida y virutas.
+          </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-title-md text-title-md text-on-surface">Tarta de Ricota de la Casa</h3>
+<span class="font-title-md text-title-md text-primary font-bold">$8.500</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Receta de conventillo porteño: ricota cremosa perfumada a la naranja y azúcar glas.
+          </p>
+</div>
+</div>
+</section>
+<!-- 6. PANADERÍA Y FACTURAS -->
+<section class="scroll-mt-36" id="panaderia">
+<div class="flex items-center gap-3 mb-space-md">
+<span class="w-2.5 h-8 bg-secondary rounded-full"></span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Panadería &amp; Facturas de Manteca</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Medialuna de Manteca Caliente</span>
+<p class="font-caption text-caption text-on-surface-variant">Almíbar tradicional, esponjosa y hojaldrada</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$1.000</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Medialuna de Grasa Crocante</span>
+<p class="font-caption text-caption text-on-surface-variant">Puntas crocantes doradas al horno continuo</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$1.000</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Vigilante con Membrillo o Crema</span>
+<p class="font-caption text-caption text-on-surface-variant">Factura alargada tradicional con azúcar impalpable</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$1.100</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Churro Relleno con Dulce de Leche</span>
+<p class="font-caption text-caption text-on-surface-variant">Frito en el momento, relleno generoso sin mezquindades</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$1.200</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Porción de Tostadas (x3)</span>
+<p class="font-caption text-caption text-on-surface-variant">Pan de campo con manteca de primera y mermelada casera</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$3.500</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Budín del Día x Porción</span>
+<p class="font-caption text-caption text-on-surface-variant">Limón glaseado, zanahoria y nuez, o marmolado</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$3.200</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Chipá Correntino Calentito (x3 u.)</span>
+<p class="font-caption text-caption text-on-surface-variant">Puro queso estacionado y fécula de mandioca</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$4.200</span>
+</div>
+<div class="flex items-baseline justify-between py-2 group">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Canasta de Facturas Surtidas x 6</span>
+<p class="font-caption text-caption text-on-surface-variant">Medialunas, vigilantes, cañoncitos y bolas de fraile</p>
+</div>
+<div class="flex-1 mx-2 border-b border-dotted border-outline-variant/50 hidden sm:block"></div>
+<span class="font-title-md text-title-md text-primary font-bold">$5.800</span>
+</div>
+</div>
+</section>
+<!-- 7. WAFFLES -->
+<section class="scroll-mt-36" id="waffles">
+<div class="flex items-center gap-3 mb-space-md">
+<span class="w-2.5 h-8 bg-primary rounded-full"></span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Waffles</h2>
+</div>
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Waffle Belga Simple al Gusto</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Masa crocante dorada en plancha pesada, servido caliente con opción de miel pura de monte, lluvia de azúcar impalpable o dulce de leche repostero.
+          </p>
+</div>
+<div class="flex items-center gap-4 flex-shrink-0">
+<span class="font-headline-md text-headline-md text-primary font-bold">$4.000</span>
+<a class="px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" href="https://wa.me/5491159273756?text=Hola!%20Quiero%20pedir%20Waffle%20Belga%20Simple" target="_blank">
+            Pedir
+          </a>
+</div>
+</div>
+</section>
+<!-- 8. TOSTADOS Y PANES -->
+<section class="scroll-mt-36" id="tostados">
+<div class="flex items-center gap-3 mb-space-md">
+<span class="w-2.5 h-8 bg-secondary rounded-full"></span>
+<h2 class="font-headline-lg text-headline-lg text-tertiary">Tostados &amp; Panes Porteños</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Tostado tradicional de miga -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tostado de Miga Tradicional</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Pan de miga blanco o negro, jamón cocido seleccionado y queso derretido en carlitera.</p>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold ml-2">$7.500</span>
+</div>
+</div>
+<!-- Tostado en Pebete -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tostado Mixto en Pebete</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Pan pebete artesanal esponjoso y dorado a la manteca, jamón y queso abundante.</p>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold ml-2">$8.200</span>
+</div>
+</div>
+<!-- Carlitos Porteño -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Carlitos Porteño Clásico</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">En pan de miga con salsa golf casera, jamón, queso y pincelada de manteca tostada crocante.</p>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold ml-2">$8.900</span>
+</div>
+</div>
+<!-- Tostón Masa Madre con Palta -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tostón de Masa Madre &amp; Palta</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rodaja gruesa de pan rústico, palta pisada con limón, huevo poché y semillas tostadas.</p>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold ml-2">$10.500</span>
+</div>
+</div>
+<!-- Tostado Lomito & Provolone -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Lomito Ahumado &amp; Provolone</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Lomito finamente fileteado y queso provolone hilado gratinado en pan francés crocante.</p>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold ml-2">$11.000</span>
+</div>
+</div>
+<!-- Ciabatta Bondiola Braseada -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ciabatta de Bondiola Braseada</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Desmenuzada al malbec con queso muzzarella fundido y cebollas caramelizadas.</p>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold ml-2">$12.500</span>
+</div>
+</div>
+<!-- Crudo, Brie y Rúcula -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Jamón Crudo, Brie &amp; Rúcula</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Jamón crudo estacionado 12 meses, queso brie cremoso, rúcula silvestre y aceite de oliva virgen.</p>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold ml-2">$14.000</span>
+</div>
+</div>
+<!-- Tabla Completa de Tostados -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tabla Completa para Compartir</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Variedad de triángulos de miga tostados, chipá, pancitos saborizados y cazuelas de dips caseros.</p>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold ml-2">$15.000</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- BANNER DE CONTACTO, PEDIDOS DIRECTOS & HORARIOS -->
+<section class="mt-space-xl bg-surface-container px-margin-mobile md:px-margin py-space-xl">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-space-lg items-center">
+<div class="space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Sin intermediarios</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">¿Pedís para llevar o querés la mesa lista?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Escribinos directo por WhatsApp y te preparamos el pedido caliente para retirar o te reservamos un lugarcito en el salón.
+        </p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container transition-all" href="https://wa.me/5491159273756?text=Hola%20Sánchez%20y%20Sánchez!%20Quiero%20hacer%20un%20pedido%20de%20cafetería" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Pedí al 11 5927-3756</span>
+</a>
+<div class="flex items-center justify-center gap-2">
+<span class="font-caption text-caption text-on-surface-variant">Aceptamos:</span>
+<span class="px-2 py-0.5 rounded bg-surface text-on-surface font-label-md text-label-md">Mercado Pago</span>
+<span class="px-2 py-0.5 rounded bg-surface text-on-surface font-label-md text-label-md">Efectivo (10% off)</span>
+</div>
+</div>
+<div class="bg-surface p-space-md rounded-2xl shadow-sm space-y-2">
+<div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span>Mostrador de Almagro</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+<strong>Av. Rivadavia 3399</strong> esq. Sánchez de Loria
+        </p>
+<p class="font-caption text-caption text-on-surface-variant">
+          Cafetería y panadería abierta todos los días ininterrumpidamente desde las 07:00 hs.
+        </p>
+</div>
+</div>
+</section>
+<!-- Script ligero para filtrar el menú en vivo según la búsqueda del usuario -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('menuSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          const items = document.querySelectorAll('#promos article, #promos .p-4, #cafes .group, #especiales .p-space-lg, #licuados .group, #tortas .p-4, #panaderia .group, #waffles .p-space-lg, #tostados .p-4');
+          
+          items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (query === '' || text.includes(query)) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-2px_12px_rgba(43,26,21,0.04)]"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-space-xl"><div class="space-y-space-sm"><div class="flex items-center gap-space-sm"><img alt="Sánchez &amp; Sánchez Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLT-xRyBG4qe-S-SRf70SKlsU8w3PgmtlbBzmkT36TzubsHOyhMtAW77_sQqpCg2MUHXUh7SebKPGH286qlkaYhJhmed4pAbIeFMYnNTkGupZtVdX2r5jHUGCbCACmq-Dpzg4qQx6hc2AViK7AMa-teFxc8ut-ROFOGNnC5W4TUG3r5KF_YaMwDJAQIzi6HXj0b7amwu7Fq3AwWQqdPzsrerE_BZgY3oe7I1T1isE"/><span class="font-headline-sm text-headline-sm text-primary">Sánchez &amp; Sánchez</span></div><p class="font-body-md text-body-md text-on-surface-variant">Pizzería de masa al molde y café tradicional en el corazón porteño de Almagro. Horno de barro, fainá crocante y vermut servido con historia.</p><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md"><span class="material-symbols-outlined text-[16px]">verified</span><span>Desde 2004 en el barrio</span></div></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">location_on</span><span>Visitanos</span></h3><p class="font-body-md text-body-md text-on-surface">Av. Rivadavia 3399<br/><span class="text-on-surface-variant font-caption text-caption uppercase">Esquina Sánchez de Loria · Almagro, CABA</span></p><div class="pt-space-xs"><span class="font-label-md text-label-md text-on-surface-variant block">Teléfono de línea / Take-away:</span><a class="font-title-md text-title-md text-primary hover:underline" href="tel:1159273756">11 5927-3756</a></div></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">schedule</span><span>Horarios del Salón</span></h3><ul class="space-y-1.5 font-body-md text-body-md text-on-surface"><li class="flex justify-between"><span class="text-on-surface-variant">Lunes a Viernes:</span><span class="font-medium">07:00 a 00:00 hs</span></li><li class="flex justify-between"><span class="text-on-surface-variant">Sábados y Domingos:</span><span class="font-medium">08:00 a 01:00 hs</span></li></ul><p class="font-caption text-caption text-on-surface-variant pt-1">Horno continuo de pizzas encendido desde las 11:30 hs.</p></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">moped</span><span>Delivery &amp; Contacto</span></h3><div class="flex flex-wrap gap-1.5"><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">WhatsApp Directo</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">Mercado Pago</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">PedidosYa</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">Rappi</span></div><div class="pt-space-xs space-y-1"><span class="font-label-md text-label-md text-on-surface-variant block">Seguinos en Instagram:</span><div class="flex flex-col gap-1"><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors flex items-center gap-1" href="https://instagram.com/sanchezysanchez_ok" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">alternate_email</span>sanchezysanchez_ok</a><a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors flex items-center gap-1" href="https://instagram.com/sanchezysanchez2006" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">alternate_email</span>sanchezysanchez2006</a></div></div></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-center sm:text-left"><p class="font-caption text-caption text-on-surface-variant">© 2024 Sánchez &amp; Sánchez Pizzería y Cafetería. Tradición y Calidad Porteña en Almagro, CABA.</p><p class="font-caption text-caption text-on-surface-variant">Masa al molde, fainá, cortado doble y medialunas artesanales.</p></div></div></footer></body></html>
