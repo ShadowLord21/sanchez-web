@@ -1,16 +1,14 @@
 PIZZAS SIN FOTO
 
-Faltan estas 9. El nombre del archivo tiene que ser exacto:
+Faltan estas 4. El nombre del archivo tiene que ser exacto:
 
   fugazza.jpg
-  cuatro-quesos.jpg
   queso-brie.jpg
-  parma.jpg
   queso-azul-argentino.jpg
-  vegetariana.jpg
   calabresa.jpg
-  pollo-deshuesado.jpg
-  pollo-argentino.jpg
 
-Cuadradas, JPG. Las demás del proyecto están a 900x900; si las tuyas vienen
-más grandes o de costado no importa, las acomodo yo.
+Cuadradas, JPG. Si vienen más grandes, de costado o pesadas no importa:
+se recortan y bajan a 900x900.
+
+Mientras no estén, esos 4 productos están APAGADOS: tienen el atributo
+data-sin-foto en carta/index.html y no se muestran en la carta.

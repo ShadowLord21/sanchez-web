@@ -1,0 +1,13 @@
+MINUTAS SIN FOTO
+
+Faltan estas 2:
+
+  pollo-deshuesado.jpg
+  pollo-argentino.jpg
+
+(Van acá y no en pizzas: son minutas del grupo "Comidas", no pizzas.)
+
+Cuadradas, JPG. Si vienen más grandes o de costado no importa.
+
+Mientras no estén, esos 2 productos están APAGADOS: tienen el atributo
+data-sin-foto en carta/index.html y no se muestran en la carta.

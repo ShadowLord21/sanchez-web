@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="es" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-j94vq0kn6he9MvepM93WG0mDNmEDsTo3AC7Vwp3hEl8='; style-src 'self' 'sha256-PtzGGbqN443e18Sox775kz4K74dp99NovR7oEOG2RpQ='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"><meta content="web_standard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link rel="stylesheet" href="../assets/fonts/fonts.css">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-hFh9It97JDr7T4ucwUCZNhRo9D+zLqXV3ephm4JKsmo='; style-src 'self' 'sha256-PtzGGbqN443e18Sox775kz4K74dp99NovR7oEOG2RpQ='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"><meta content="web_standard" name="shell-type"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link rel="stylesheet" href="../assets/fonts/fonts.css">
 <link rel="stylesheet" href="../assets/css/app.css">
 </head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,26,21,0.06)]"><div class="h-20 max-w-[1200px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><a class="flex items-center gap-space-sm min-h-[44px]" href="/"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">Sánchez &amp; Sánchez</span><span class="font-caption text-caption text-on-surface-variant tracking-wider uppercase mt-0.5">Pizzería &amp; Cafetería</span></div><span class="hidden lg:inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md ml-2 shadow-[0_1px_3px_rgba(43,26,21,0.08)]">Más de 20 años en Almagro</span></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg"><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="carta-pizzeria" href="/carta/">Carta</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="carta-cafeteria" href="/cafeteria/">Cafetería</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="menu-del-dia" href="/#menu-del-dia">Menú del Día</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="delivery" href="#pedidos">Delivery</a><a class="px-3 py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ubicacion" href="#ubicacion">Ubicación</a></nav></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
 <!-- HERO COMPACTO / ENCABEZADO DE CARTA -->
@@ -67,7 +67,7 @@
 <!-- Promo 1 -->
 <article class="bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(43,26,21,0.08)] overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all">
 <div class="relative h-48 overflow-hidden">
-<img loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Foto en camino" src="../assets/img/placeholders/placeholder-promo.svg">
+<img loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Muzza grande + Bebida grande" src="../assets/img/promos/muzza-bebida.jpg">
 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold shadow-sm">
               La más pedida del barrio
             </span>
@@ -137,7 +137,7 @@
 </div>
 </article>
 <!-- Promo 4 -->
-<article class="bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(43,26,21,0.08)] overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all">
+<article data-sin-foto class="bg-surface-container-lowest rounded-xl shadow-[0_2px_12px_rgba(43,26,21,0.08)] overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all">
 <div class="relative h-48 overflow-hidden">
 <img loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Foto en camino" src="../assets/img/placeholders/placeholder-promo.svg">
 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md font-bold shadow-sm">
@@ -308,15 +308,9 @@
 </div>
 <!-- Botones Píldora de Selección -->
 <div class="flex items-center gap-2 p-1.5 bg-surface-container-high rounded-full overflow-x-auto">
-<button class="px-5 min-h-[44px] inline-flex items-center rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold shadow-sm transition-all whitespace-nowrap" id="tab-pizzas" data-cat="pizzas">
-            Pizzas al Molde &amp; Corte (28)
-          </button>
-<button class="px-5 min-h-[44px] inline-flex items-center rounded-full text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg font-medium transition-all whitespace-nowrap" id="tab-empanadas" data-cat="empanadas">
-            Empanadas Caseras (14)
-          </button>
-<button class="px-5 min-h-[44px] inline-flex items-center rounded-full text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg font-medium transition-all whitespace-nowrap" id="tab-minutas" data-cat="minutas">
-            Comidas &amp; Minutas (20)
-          </button>
+<button class="px-5 min-h-[44px] inline-flex items-center rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold shadow-sm transition-all whitespace-nowrap" id="tab-pizzas" data-cat="pizzas"><span>Pizzas y Fainá</span> <span data-conteo="pizzas">—</span></button>
+<button class="px-5 min-h-[44px] inline-flex items-center rounded-full text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg font-medium transition-all whitespace-nowrap" id="tab-empanadas" data-cat="empanadas"><span>Empanadas</span> <span data-conteo="empanadas">—</span></button>
+<button class="px-5 min-h-[44px] inline-flex items-center rounded-full text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg font-medium transition-all whitespace-nowrap" id="tab-minutas" data-cat="minutas"><span>Comidas y Minutas</span> <span data-conteo="minutas">—</span></button>
 </div>
 </div>
 <!-- ==================================== -->
@@ -531,7 +525,7 @@ Grande: <strong class="text-primary-container font-bold">$43.000</strong>
 </div>
 </div>
 </article>
-<article class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<article data-sin-foto class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
 <div class="relative h-36 md:h-44 overflow-hidden">
 <img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Fugazza" src="../assets/img/placeholders/placeholder-producto.svg">
 <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-high/90 backdrop-blur font-caption text-caption text-on-surface font-semibold">Las de Siempre</span>
@@ -576,14 +570,14 @@ Chica: <strong class="text-primary font-bold">$25.000</strong>
 Grande: <strong class="text-primary-container font-bold">$34.500</strong>
 </span>
 </div>
-<button type="button" class="js-detalle w-full min-h-[44px] rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" data-dish-badge="Las de Siempre" data-dish-name="Cuatro Quesos" data-dish-desc="De 8 porciones con mozzarella, roquefort, cheddar y provolone." data-dish-grande="34500" data-dish-type="pizza" data-dish-img="../assets/img/placeholders/placeholder-producto.svg" data-dish-chica="25000">
+<button type="button" class="js-detalle w-full min-h-[44px] rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" data-dish-badge="Las de Siempre" data-dish-name="Cuatro Quesos" data-dish-desc="De 8 porciones con mozzarella, roquefort, cheddar y provolone." data-dish-grande="34500" data-dish-type="pizza" data-dish-img="../assets/img/pizzas/cuatro-quesos.jpg" data-dish-chica="25000">
 <span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
 <span>Ver Detalle</span>
 </button>
 </div>
 </div>
 </article>
-<article class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<article data-sin-foto class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
 <div class="relative h-36 md:h-44 overflow-hidden">
 <img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Queso Brie" src="../assets/img/placeholders/placeholder-producto.svg">
 <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-high/90 backdrop-blur font-caption text-caption text-on-surface font-semibold">Las de Siempre</span>
@@ -663,7 +657,7 @@ Grande: <strong class="text-primary-container font-bold">$32.000</strong>
 </article>
 <article class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
 <div class="relative h-36 md:h-44 overflow-hidden">
-<img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Parma" src="../assets/img/placeholders/placeholder-producto.svg">
+<img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Parma" src="../assets/img/pizzas/parma.jpg">
 <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-high/90 backdrop-blur font-caption text-caption text-on-surface font-semibold">Las de Hoy</span>
 </div>
 <div class="p-3 md:p-space-sm flex flex-col flex-1 justify-between gap-2">
@@ -680,7 +674,7 @@ Chica: <strong class="text-primary font-bold">$26.500</strong>
 Grande: <strong class="text-primary-container font-bold">$29.500</strong>
 </span>
 </div>
-<button type="button" class="js-detalle w-full min-h-[44px] rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" data-dish-badge="Las de Hoy" data-dish-name="Parma" data-dish-desc="De 8 porciones con salsa de tomate, mozzarella, jamón crudo de parma, rúcula y aceitunas negras." data-dish-grande="29500" data-dish-type="pizza" data-dish-img="../assets/img/placeholders/placeholder-producto.svg" data-dish-chica="26500">
+<button type="button" class="js-detalle w-full min-h-[44px] rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" data-dish-badge="Las de Hoy" data-dish-name="Parma" data-dish-desc="De 8 porciones con salsa de tomate, mozzarella, jamón crudo de parma, rúcula y aceitunas negras." data-dish-grande="29500" data-dish-type="pizza" data-dish-img="../assets/img/pizzas/parma.jpg" data-dish-chica="26500">
 <span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
 <span>Ver Detalle</span>
 </button>
@@ -739,7 +733,7 @@ Grande: <strong class="text-primary-container font-bold">$30.500</strong>
 </div>
 </div>
 </article>
-<article class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<article data-sin-foto class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
 <div class="relative h-36 md:h-44 overflow-hidden">
 <img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Queso Azul Argentino" src="../assets/img/placeholders/placeholder-producto.svg">
 <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-high/90 backdrop-blur font-caption text-caption text-on-surface font-semibold">Las de Hoy</span>
@@ -793,7 +787,7 @@ Grande: <strong class="text-primary-container font-bold">$30.500</strong>
 </article>
 <article class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
 <div class="relative h-36 md:h-44 overflow-hidden">
-<img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Vegetariana" src="../assets/img/placeholders/placeholder-producto.svg">
+<img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Vegetariana" src="../assets/img/pizzas/vegetariana.jpg">
 <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-high/90 backdrop-blur font-caption text-caption text-on-surface font-semibold">Las de Hoy</span>
 </div>
 <div class="p-3 md:p-space-sm flex flex-col flex-1 justify-between gap-2">
@@ -810,7 +804,7 @@ Chica: <strong class="text-primary font-bold">$25.000</strong>
 Grande: <strong class="text-primary-container font-bold">$29.000</strong>
 </span>
 </div>
-<button type="button" class="js-detalle w-full min-h-[44px] rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" data-dish-badge="Las de Hoy" data-dish-name="Vegetariana" data-dish-desc="De 8 porciones con mozzarella, juliana de vegetales, salsa de soja y aceitunas negras." data-dish-grande="29000" data-dish-type="pizza" data-dish-img="../assets/img/placeholders/placeholder-producto.svg" data-dish-chica="25000">
+<button type="button" class="js-detalle w-full min-h-[44px] rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" data-dish-badge="Las de Hoy" data-dish-name="Vegetariana" data-dish-desc="De 8 porciones con mozzarella, juliana de vegetales, salsa de soja y aceitunas negras." data-dish-grande="29000" data-dish-type="pizza" data-dish-img="../assets/img/pizzas/vegetariana.jpg" data-dish-chica="25000">
 <span class="material-symbols-outlined text-[16px]" aria-hidden="true">visibility</span>
 <span>Ver Detalle</span>
 </button>
@@ -869,7 +863,7 @@ Grande: <strong class="text-primary-container font-bold">$33.000</strong>
 </div>
 </div>
 </article>
-<article class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<article data-sin-foto class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
 <div class="relative h-36 md:h-44 overflow-hidden">
 <img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Calabresa" src="../assets/img/placeholders/placeholder-producto.svg">
 <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-high/90 backdrop-blur font-caption text-caption text-on-surface font-semibold">Las de Hoy</span>
@@ -1325,7 +1319,7 @@ Ver
 </div>
 </div>
 </article>
-<article class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<article data-sin-foto class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
 <div class="relative h-36 md:h-44 overflow-hidden">
 <img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Pollo Deshuesado" src="../assets/img/placeholders/placeholder-producto.svg">
 <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-high/90 backdrop-blur font-caption text-caption text-on-surface font-semibold">Minutas + Guarnición</span>
@@ -1346,7 +1340,7 @@ Ver
 </div>
 </div>
 </article>
-<article class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<article data-sin-foto class="bg-surface-container-lowest rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
 <div class="relative h-36 md:h-44 overflow-hidden">
 <img class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Pollo Argentino" src="../assets/img/placeholders/placeholder-producto.svg">
 <span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-high/90 backdrop-blur font-caption text-caption text-on-surface font-semibold">Minutas + Guarnición</span>
@@ -2058,6 +2052,19 @@ Ver
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closeDishDetail(); }
   });
+
+  // Conteo de cada pestaña: se calcula de los productos realmente visibles,
+  // asi no hay que tocarlo al prender o apagar uno.
+  (function () {
+    var mapa = { pizzas: 'group-pizzas', empanadas: 'group-empanadas', minutas: 'group-minutas' };
+    Object.keys(mapa).forEach(function (k) {
+      var cont = document.getElementById(mapa[k]);
+      var slot = document.querySelector('[data-conteo="' + k + '"]');
+      if (!cont || !slot) { return; }
+      var n = cont.querySelectorAll('article:not([data-sin-foto])').length;
+      slot.textContent = '(' + n + ')';
+    });
+  })();
 </script></main><footer class="w-full bg-surface-container-low shadow-[0_-2px_12px_rgba(43,26,21,0.04)]"><div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-space-xl"><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">location_on</span><span class="">Visitanos</span></h3><p class="font-body-md text-body-md text-on-surface">Av. Rivadavia 3399<br><span class="text-on-surface-variant font-caption text-caption uppercase">Esquina Sánchez de Loria · Almagro, CABA</span></p><div class="pt-space-xs"><span class="font-label-md text-label-md text-on-surface-variant block">Teléfono de línea / Take-away:</span><a class="font-title-md text-title-md text-primary hover:underline" href="tel:+5491159273756">11 5927-3756</a></div></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">schedule</span><span class="">Horarios del Salón</span></h3><ul class="space-y-1.5 font-body-md text-body-md text-on-surface"><li class="flex justify-between"><span class="text-on-surface-variant">Lunes a Viernes:</span><span class="font-medium">07:00 a 00:00 hs</span></li><li class="flex justify-between"><span class="text-on-surface-variant">Sábados y Domingos:</span><span class="font-medium">08:00 a 01:00 hs</span></li></ul></div><div class="space-y-space-sm"><h3 class="font-headline-sm text-headline-sm text-tertiary flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-primary">moped</span><span class="">Delivery &amp; Contacto</span></h3><div class="flex flex-wrap gap-1.5"><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">WhatsApp Directo</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">Mercado Pago</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">PedidosYa</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-md text-label-md">Rappi</span></div><div class="pt-space-xs space-y-1"><div class="flex flex-col gap-1"></div></div></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-center sm:text-left"><p class="font-caption text-caption text-on-surface-variant">© <span id="anio">2026</span> Sánchez &amp; Sánchez Pizzería y Cafetería. Tradición y Calidad Porteña en Almagro, CABA.</p><p class="font-caption text-caption text-on-surface-variant">Masa a la piedra, fainá, cortado doble y medialunas artesanales.</p></div></div></footer>
 
 

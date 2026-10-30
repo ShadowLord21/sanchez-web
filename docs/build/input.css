@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer components {
+  /* Productos apagados a la espera de su foto. Para reactivar uno, se le
+     saca el atributo data-sin-foto en el HTML y listo; el conteo de la
+     pestaña se recalcula solo.
+     Lleva !important porque las tarjetas traen display:flex de Tailwind. */
+  [data-sin-foto] {
+    display: none !important;
+  }
+
   /* Stitch usa animate-in / fade-in / zoom-in-95 del plugin
      tailwindcss-animate, que no esta instalado. Se definen a mano: las
      usa el modal de detalle de producto en la carta. */
