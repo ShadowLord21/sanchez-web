@@ -3,6 +3,36 @@
 @tailwind utilities;
 
 @layer components {
+  /* Stitch usa animate-in / fade-in / zoom-in-95 del plugin
+     tailwindcss-animate, que no esta instalado. Se definen a mano: las
+     usa el modal de detalle de producto en la carta. */
+  .animate-in {
+    animation: entrada var(--duracion-entrada, 200ms) var(--ease-smooth, cubic-bezier(0.4, 0, 0.2, 1)) both;
+  }
+  .fade-in {
+    --entrada-opacidad: 0;
+  }
+  .zoom-in-95 {
+    --entrada-escala: 0.95;
+  }
+
+  @keyframes entrada {
+    from {
+      opacity: var(--entrada-opacidad, 1);
+      transform: scale(var(--entrada-escala, 1));
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-in {
+      animation: none;
+    }
+  }
+
   /* Material Symbols es una fuente variable: el eje FILL rellena el icono.
      Stitch lo resolvia con style="" inline, que la CSP estricta no permite. */
   .icon-fill {
