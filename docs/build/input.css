@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Productos apagados a la espera de su foto. Para reactivar uno, se le
+     saca el atributo data-sin-foto en el HTML y listo; el conteo de la
+     pestaña se recalcula solo.
+     Lleva !important porque las tarjetas traen display:flex de Tailwind. */
+  [data-sin-foto] {
+    display: none !important;
+  }
+
+  /* Stitch usa animate-in / fade-in / zoom-in-95 del plugin
+     tailwindcss-animate, que no esta instalado. Se definen a mano: las
+     usa el modal de detalle de producto en la carta. */
+  .animate-in {
+    animation: entrada var(--duracion-entrada, 200ms) var(--ease-smooth, cubic-bezier(0.4, 0, 0.2, 1)) both;
+  }
+  .fade-in {
+    --entrada-opacidad: 0;
+  }
+  .zoom-in-95 {
+    --entrada-escala: 0.95;
+  }
+
+  @keyframes entrada {
+    from {
+      opacity: var(--entrada-opacidad, 1);
+      transform: scale(var(--entrada-escala, 1));
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-in {
+      animation: none;
+    }
+  }
+
+  /* Material Symbols es una fuente variable: el eje FILL rellena el icono.
+     Stitch lo resolvia con style="" inline, que la CSP estricta no permite. */
+  .icon-fill {
+    font-variation-settings: 'FILL' 1;
+  }
+
+  /* Stitch usa estas clases pero no las define: se apoyaba en el
+     ::-webkit-scrollbar global. Se declaran para que funcionen en Firefox.
+     Usa los dos nombres segun la pagina, asi que van los dos. */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

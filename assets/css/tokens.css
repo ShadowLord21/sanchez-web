@@ -1,0 +1,126 @@
+/* ============================================================
+   Sánchez & Sánchez — tokens de diseño
+   Sistema visual derivado de los diseños de Google Stitch.
+   Ver docs/PROMPT-STITCH.md y docs/stitch/ para el origen.
+
+   Vive en una hoja externa a propósito: el CSS externo no
+   necesita hash de CSP, así que tocar un color no obliga a
+   regenerar docs/csp-header.txt.
+   ============================================================ */
+
+:root {
+  /* ---- Color -------------------------------------------------
+     Paleta Material 3 de Stitch. El acento pasó del terracota
+     #BF4A2B al bordó profundo #690600: el contraste sobre el
+     fondo sube de 4,85:1 a 12,32:1.                            */
+
+  /* Superficies, de la más clara a la más oscura */
+  --surface: #FFFFFF;
+  --bg: #FEF9F2;
+  --bg-warm: #F8F3EC;
+  --bg-sunken: #F2EDE6;
+  --bg-dark: #402D28;
+  --bg-dark-soft: #59433D;
+
+  /* Texto */
+  --fg: #1D1C17;
+  --fg-muted: #58413D;
+  --fg-light: #FEF9F2;
+  --fg-on-dark-muted: #CEB1A9;
+
+  /* Acento: el bordó de la marca */
+  --accent: #690600;
+  --accent-hover: #8B1E0F;
+  --accent-soft: rgba(105, 6, 0, 0.06);
+  --accent-on: #FFFFFF;
+  --accent-light: #FF9D8B;
+
+  /* Ámbar: destacados, badges, "nuevo", promos.
+     Ojo: el par texto/fondo del badge da 4,57:1, justo por
+     encima del mínimo. No aclarar el fondo ni usar texto más
+     claro que --amber-on.                                      */
+  --amber: #FDAE49;
+  --amber-on: #6F4300;
+  --amber-deep: #875300;
+
+  /* Bordes y líneas */
+  --border: #E0BFB9;
+  --border-soft: #ECE7E1;
+  --outline: #8C716C;
+
+  /* Estado */
+  --error: #BA1A1A;
+  --green: #3D6B4F;
+
+  /* ---- Tipografía --------------------------------------------
+     Vollkorn (display, variable 600-700) + Be Vietnam Pro.
+     Self-hosteadas en assets/fonts/. Nunca enlazar a Google.    */
+  --font-display: 'Vollkorn', Georgia, 'Times New Roman', serif;
+  --font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+
+  /* Escala tipográfica. Los pares -mobile se aplican por media
+     query; el resto escala solo con clamp().                    */
+  --text-display: clamp(2rem, 1.5rem + 2.5vw, 2.75rem);   /* 32 -> 44 */
+  --text-h1: clamp(1.625rem, 1.3rem + 1.6vw, 2rem);       /* 26 -> 32 */
+  --text-h2: 1.5rem;                                       /* 24 */
+  --text-h3: 1.25rem;                                      /* 20 */
+  --text-h4: 1.125rem;                                     /* 18 */
+  --text-body: 1rem;                                       /* 16 */
+  --text-sm: 0.875rem;                                     /* 14 */
+  --text-label: 0.875rem;                                  /* 14 */
+  --text-label-sm: 0.75rem;                                /* 12 */
+  --text-caption: 0.6875rem;                               /* 11 */
+
+  --leading-display: 1.18;
+  --leading-heading: 1.25;
+  --leading-body: 1.625;
+
+  --tracking-display: -0.02em;
+  --tracking-label: 0.02em;
+  --tracking-caption: 0.04em;
+
+  --weight-body: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Espaciado ---------------------------------------------- */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  /* Margen lateral: más angosto en celular */
+  --gutter: clamp(1rem, 4vw, 2rem);
+
+  /* ---- Radios -------------------------------------------------
+     Stitch resuelve bastante más cuadrado que el sitio anterior
+     (antes 4/8/16/24px).                                        */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  /* ---- Sombras ------------------------------------------------ */
+  --shadow-sm: 0 1px 3px rgba(43, 26, 21, 0.08);
+  --shadow-md: 0 4px 12px rgba(43, 26, 21, 0.08);
+  --shadow-lg: 0 16px 32px rgba(43, 26, 21, 0.12);
+
+  /* ---- Movimiento --------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- Zonas táctiles -----------------------------------------
+     Mínimo de 44px: hubo bugs reales de hitbox en celular.      */
+  --tap-min: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ease-out: linear;
+    --ease-smooth: linear;
+  }
+}

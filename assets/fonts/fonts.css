@@ -1,108 +1,118 @@
-/* latin-ext */
+/* Vollkorn + Be Vietnam Pro - self-hosteadas, subsets latin y latin-ext.
+   Bajadas de Google Fonts; el sitio no hace ningun pedido a Google.
+   Vollkorn es variable (eje wght 600-700): un archivo cubre ambos pesos. */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(dmsans-850928f5.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(bevietnampro-400-latin-ext-d380962c.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(dmsans-002a94d0.woff2) format('woff2');
+  src: url(bevietnampro-400-latin-312fd8b5.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(dmsans-850928f5.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(bevietnampro-500-latin-ext-e3798f6b.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(dmsans-002a94d0.woff2) format('woff2');
+  src: url(bevietnampro-500-latin-4994cf94.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(dmsans-850928f5.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(bevietnampro-600-latin-ext-dfcc8f10.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(dmsans-002a94d0.woff2) format('woff2');
+  src: url(bevietnampro-600-latin-7aec41b3.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(dmsans-850928f5.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(bevietnampro-700-latin-ext-0320066c.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(dmsans-002a94d0.woff2) format('woff2');
+  src: url(bevietnampro-700-latin-a60e689c.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
+
 @font-face {
-  font-family: 'DM Serif Display';
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 600 700;
   font-display: swap;
-  src: url(dmserifdisplay-559c46cb.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url(vollkorn-var-latin-ext-c719ec64.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+
 @font-face {
-  font-family: 'DM Serif Display';
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 600 700;
   font-display: swap;
-  src: url(dmserifdisplay-447695f5.woff2) format('woff2');
+  src: url(vollkorn-var-latin-18ae41a9.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin-ext */
+
+/* Material Symbols Outlined - subset con los 39 iconos del diseño.
+   Bajada de Google Fonts y self-hosteada: el sitio no le pide nada a Google. */
 @font-face {
-  font-family: 'DM Serif Display';
+  font-family: 'Material Symbols Outlined';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
-  src: url(dmserifdisplay-d75ec794.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-display: block;
+  src: url(materialsymbols-c12ab20b.woff2) format('woff2');
 }
-/* latin */
-@font-face {
-  font-family: 'DM Serif Display';
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
   font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(dmserifdisplay-6e4e3d44.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
