@@ -3,4 +3,4 @@
 # Etapa 2: nombre del header = Content-Security-Policy
 # Generado por docs/scripts/regen_csp.py - no editar a mano.
 
-default-src 'self'; script-src 'self' 'sha256-KSGIRKe9MU8zCyi+M1IXoMRStxbtvnKoLUt38/8qwbo=' 'sha256-hUwOOrwlyHJZibSnCYjbl/ECdI3fkogorpWN3NPMkcY=' 'sha256-Muep4ts6EmC2uA92P1geXbgZifYd0fkJEQf88GUKmBc='; style-src 'self' 'sha256-PtzGGbqN443e18Sox775kz4K74dp99NovR7oEOG2RpQ=' 'sha256-2F8hicn0zRL1ACwVpq59pCdJ2CK5JPZna6fU2fw26eU='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'self'; upgrade-insecure-requests
+default-src 'self'; script-src 'self' 'sha256-l5Vvz3dj6jalQTanr0ZJ76teCGub/udx8lqgAkT0XUg=' 'sha256-hUwOOrwlyHJZibSnCYjbl/ECdI3fkogorpWN3NPMkcY=' 'sha256-Muep4ts6EmC2uA92P1geXbgZifYd0fkJEQf88GUKmBc='; style-src 'self' 'sha256-PtzGGbqN443e18Sox775kz4K74dp99NovR7oEOG2RpQ=' 'sha256-2F8hicn0zRL1ACwVpq59pCdJ2CK5JPZna6fU2fw26eU='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'self'; upgrade-insecure-requests

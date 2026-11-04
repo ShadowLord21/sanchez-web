@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="es-AR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-KSGIRKe9MU8zCyi+M1IXoMRStxbtvnKoLUt38/8qwbo='; style-src 'self' 'sha256-PtzGGbqN443e18Sox775kz4K74dp99NovR7oEOG2RpQ='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-l5Vvz3dj6jalQTanr0ZJ76teCGub/udx8lqgAkT0XUg='; style-src 'self' 'sha256-PtzGGbqN443e18Sox775kz4K74dp99NovR7oEOG2RpQ='; img-src 'self' data:; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <link rel="icon" href="assets/img/meta/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/meta/apple-touch-icon.png">
 <title>Sánchez &amp; Sánchez — Pizzería y Cafetería en Almagro</title>
@@ -265,21 +265,21 @@
 <span class="font-label-lg text-label-lg font-bold text-on-surface">$20.000</span>
 </div>
 </div>
+<div class="bg-primary-container text-on-primary p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-caption text-caption font-bold">Especial del día</span>
+<span class="font-caption text-caption font-medium">No incluye bebida ni postre</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm leading-snug">Bife a Caballo + papas fritas</h4>
+</div>
+<div class="pt-3 mt-3 border-t border-surface/30 flex items-center justify-end">
+<span class="font-label-lg text-label-lg font-bold">$22.000</span>
+</div>
+</div>
 </div>
 <!-- Opciones Especiales Destacadas -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-<div class="flex items-center gap-4 bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
-<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
-<span class="material-symbols-outlined text-[26px]">skillet</span>
-</div>
-<div class="flex-1">
-<div class="flex items-center justify-between gap-2">
-<span class="font-label-lg text-label-lg text-primary font-semibold">Opción Especial · Lunes a miércoles</span>
-<span class="font-label-lg text-label-lg font-bold text-primary">$22.000</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">Bife a Caballo + papas fritas. No incluye bebida ni postre.</p>
-</div>
-</div>
 <div class="flex items-center gap-4 bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
 <div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
 <span class="material-symbols-outlined text-[26px]">check_circle</span>
@@ -607,7 +607,7 @@ Horno continuo de pizzas encendido desde las 11:30 hs.
             { n: 5, nombre: "Pollo grillado con ensalada de remolacha, huevo y zanahoria" },
             { n: 6, nombre: "Espaguetis con salsa mixta" }
           ],
-          especial: null
+          especial: { nombre: "Bife a Caballo + papas fritas", precio: "$22.000", nota: "No incluye bebida ni postre" }
         },
         martes: {
           platos: [
@@ -618,7 +618,7 @@ Horno continuo de pizzas encendido desde las 11:30 hs.
             { n: 5, nombre: "Espaguetis con salsa mixta" },
             { n: 6, nombre: "Pizza individual rústica" }
           ],
-          especial: null
+          especial: { nombre: "Bife a Caballo + papas fritas", precio: "$22.000", nota: "No incluye bebida ni postre" }
         },
         miercoles: {
           platos: [
@@ -629,7 +629,7 @@ Horno continuo de pizzas encendido desde las 11:30 hs.
             { n: 5, nombre: "Espaguetis con salsa scarparo" },
             { n: 6, nombre: "Merluza a la plancha con puré o ensalada" }
           ],
-          especial: null
+          especial: { nombre: "Bife a Caballo + papas fritas", precio: "$22.000", nota: "No incluye bebida ni postre" }
         },
         jueves: {
           platos: [
